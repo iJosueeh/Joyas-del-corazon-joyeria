@@ -29,7 +29,7 @@ public class MenuInicial extends javax.swing.JFrame {
         btnIniciarSesion = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
+        btnIniciarCliente = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
@@ -79,14 +79,14 @@ public class MenuInicial extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(255, 138, 138));
         jSeparator2.setForeground(new java.awt.Color(255, 138, 138));
 
-        jButton2.setBackground(new java.awt.Color(255, 149, 0));
-        jButton2.setFont(new java.awt.Font("Readex Pro Light", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Soy un Cliente");
-        jButton2.setBorderPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciarCliente.setBackground(new java.awt.Color(255, 149, 0));
+        btnIniciarCliente.setFont(new java.awt.Font("Readex Pro Light", 1, 18)); // NOI18N
+        btnIniciarCliente.setForeground(new java.awt.Color(0, 0, 0));
+        btnIniciarCliente.setText("Soy un Cliente");
+        btnIniciarCliente.setBorderPainted(false);
+        btnIniciarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnIniciarClienteActionPerformed(evt);
             }
         });
 
@@ -118,7 +118,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnIniciarCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -143,7 +143,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnIniciarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addContainerGap(96, Short.MAX_VALUE))
@@ -187,9 +187,12 @@ public class MenuInicial extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnIniciarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarClienteActionPerformed
+        MenuUsuario menuUsuario = new MenuUsuario();
+        menuUsuario.setVisible(true);
+        menuUsuario.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnIniciarClienteActionPerformed
 
     private void btnIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSesionMouseClicked
 
@@ -200,8 +203,8 @@ public class MenuInicial extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIniciarCliente;
     private javax.swing.JButton btnIniciarSesion;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
