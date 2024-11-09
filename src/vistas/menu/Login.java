@@ -92,6 +92,11 @@ public class Login extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Login.png"))); // NOI18N
         jButton2.setText("Iniciar Sesion");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -189,6 +194,13 @@ public class Login extends javax.swing.JFrame {
         menuInicial.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        MenuGestionar menuGestionar = new MenuGestionar();
+        menuGestionar.setVisible(true);
+        menuGestionar.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
