@@ -57,8 +57,9 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel3.setText("eres un nuevo cliente y únete a nuestra familia de amantes de la joyería.");
 
         btnIniciarSesion.setBackground(new java.awt.Color(255, 149, 0));
-        btnIniciarSesion.setFont(new java.awt.Font("Readex Pro Light", 1, 18)); // NOI18N
+        btnIniciarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Login.png"))); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesion");
         btnIniciarSesion.setBorderPainted(false);
         btnIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -80,8 +81,9 @@ public class MenuInicial extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(255, 138, 138));
 
         btnIniciarCliente.setBackground(new java.awt.Color(255, 149, 0));
-        btnIniciarCliente.setFont(new java.awt.Font("Readex Pro Light", 1, 18)); // NOI18N
+        btnIniciarCliente.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         btnIniciarCliente.setForeground(new java.awt.Color(0, 0, 0));
+        btnIniciarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         btnIniciarCliente.setText("Soy un Cliente");
         btnIniciarCliente.setBorderPainted(false);
         btnIniciarCliente.addActionListener(new java.awt.event.ActionListener() {
