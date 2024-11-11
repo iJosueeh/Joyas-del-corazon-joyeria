@@ -180,9 +180,12 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/recursos/icons/Login.png"/>
+                  <Image iconType="3" name="/recursos/icons/Administrator.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Iniciar Sesion"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
+                </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -226,6 +229,9 @@
                   <Image iconType="3" name="/recursos/icons/User.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Soy un Cliente"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
+                </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
               </Properties>
               <Events>

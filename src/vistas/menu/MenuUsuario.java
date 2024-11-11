@@ -6,6 +6,7 @@ package vistas.menu;
 
 import javax.swing.JOptionPane;
 import vistas.secciones.Catalogo;
+import vistas.secciones.SobreNosotros;
 
 /**
  *
@@ -35,11 +36,14 @@ public class MenuUsuario extends javax.swing.JFrame {
         btnCatalogo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnSobreNosotros = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         btnAbandonar = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         btnPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,14 +84,19 @@ public class MenuUsuario extends javax.swing.JFrame {
         jButton3.setMaximumSize(new java.awt.Dimension(141, 18));
         jButton3.setMinimumSize(new java.awt.Dimension(141, 18));
 
-        jButton4.setBackground(new java.awt.Color(255, 149, 0));
-        jButton4.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Info Squared.png"))); // NOI18N
-        jButton4.setText("Sobre Nosotros");
-        jButton4.setBorder(null);
-        jButton4.setMaximumSize(new java.awt.Dimension(141, 18));
-        jButton4.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnSobreNosotros.setBackground(new java.awt.Color(255, 149, 0));
+        btnSobreNosotros.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
+        btnSobreNosotros.setForeground(new java.awt.Color(0, 0, 0));
+        btnSobreNosotros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Info Squared.png"))); // NOI18N
+        btnSobreNosotros.setText("Sobre Nosotros");
+        btnSobreNosotros.setBorder(null);
+        btnSobreNosotros.setMaximumSize(new java.awt.Dimension(141, 18));
+        btnSobreNosotros.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnSobreNosotros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSobreNosotrosActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(255, 149, 0));
         jButton5.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
@@ -132,7 +141,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                     .addComponent(jSeparator1)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                    .addComponent(btnSobreNosotros, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(btnAbandonar, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE))
@@ -150,7 +159,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSobreNosotros, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
@@ -164,15 +173,45 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         btnPanel.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Readex Pro Light", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(109, 38, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Joyas del Corazón");
+
+        jSeparator2.setBackground(new java.awt.Color(255, 138, 138));
+        jSeparator2.setForeground(new java.awt.Color(255, 138, 138));
+
+        jLabel2.setFont(new java.awt.Font("Readex Pro Light", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("El brillo que hace latir tu corazón");
+
         javax.swing.GroupLayout btnPanelLayout = new javax.swing.GroupLayout(btnPanel);
         btnPanel.setLayout(btnPanelLayout);
         btnPanelLayout.setHorizontalGroup(
             btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
+            .addGroup(btnPanelLayout.createSequentialGroup()
+                .addGap(212, 212, 212)
+                .addGroup(btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnPanelLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel1))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPanelLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel2)
+                        .addGap(17, 17, 17)))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
         btnPanelLayout.setVerticalGroup(
             btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(btnPanelLayout.createSequentialGroup()
+                .addGap(280, 280, 280)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(325, Short.MAX_VALUE))
         );
 
         jPanel1.add(btnPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 760, 680));
@@ -224,6 +263,14 @@ public class MenuUsuario extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCatalogoActionPerformed
 
+    private void btnSobreNosotrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreNosotrosActionPerformed
+        SobreNosotros sobreNosotros = new SobreNosotros();
+        sobreNosotros.setVisible(true);
+        sobreNosotros.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnSobreNosotrosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -232,13 +279,16 @@ public class MenuUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnAbandonar;
     private javax.swing.JButton btnCatalogo;
     private javax.swing.JPanel btnPanel;
+    private javax.swing.JButton btnSobreNosotros;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }
