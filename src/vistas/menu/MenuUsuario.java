@@ -5,6 +5,7 @@
 package vistas.menu;
 
 import javax.swing.JOptionPane;
+import vistas.secciones.Catalogo;
 
 /**
  *
@@ -31,14 +32,14 @@ public class MenuUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        btnCatalogo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         btnAbandonar = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        btnPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,14 +48,19 @@ public class MenuUsuario extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 186, 161));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 680));
 
-        jButton1.setBackground(new java.awt.Color(255, 149, 0));
-        jButton1.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Shopping-Cart.png"))); // NOI18N
-        jButton1.setText("Catalogo Productos");
-        jButton1.setBorder(null);
-        jButton1.setMaximumSize(new java.awt.Dimension(141, 18));
-        jButton1.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnCatalogo.setBackground(new java.awt.Color(255, 149, 0));
+        btnCatalogo.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
+        btnCatalogo.setForeground(new java.awt.Color(0, 0, 0));
+        btnCatalogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Shopping-Cart.png"))); // NOI18N
+        btnCatalogo.setText("Catalogo Productos");
+        btnCatalogo.setBorder(null);
+        btnCatalogo.setMaximumSize(new java.awt.Dimension(141, 18));
+        btnCatalogo.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnCatalogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCatalogoActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 149, 0));
         jButton2.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
@@ -122,7 +128,7 @@ public class MenuUsuario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator1)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
@@ -138,7 +144,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                 .addGap(135, 135, 135)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -156,20 +162,20 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        btnPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout btnPanelLayout = new javax.swing.GroupLayout(btnPanel);
+        btnPanel.setLayout(btnPanelLayout);
+        btnPanelLayout.setHorizontalGroup(
+            btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 760, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        btnPanelLayout.setVerticalGroup(
+            btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 680, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 760, 680));
+        jPanel1.add(btnPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 760, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,13 +216,22 @@ public class MenuUsuario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnAbandonarActionPerformed
 
+    private void btnCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogoActionPerformed
+        Catalogo calogoProductos = new Catalogo();
+        calogoProductos.setVisible(true);
+        calogoProductos.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnCatalogoActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbandonar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCatalogo;
+    private javax.swing.JPanel btnPanel;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -224,7 +239,6 @@ public class MenuUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
