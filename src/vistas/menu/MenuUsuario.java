@@ -6,6 +6,7 @@ package vistas.menu;
 
 import javax.swing.JOptionPane;
 import vistas.secciones.Catalogo;
+import vistas.secciones.Sedes;
 import vistas.secciones.SobreNosotros;
 
 /**
@@ -83,6 +84,11 @@ public class MenuUsuario extends javax.swing.JFrame {
         jButton3.setBorder(null);
         jButton3.setMaximumSize(new java.awt.Dimension(141, 18));
         jButton3.setMinimumSize(new java.awt.Dimension(141, 18));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         btnSobreNosotros.setBackground(new java.awt.Color(255, 149, 0));
         btnSobreNosotros.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
@@ -270,6 +276,14 @@ public class MenuUsuario extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_btnSobreNosotrosActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Sedes sedeLocales = new Sedes();
+        sedeLocales.setVisible(true);
+        sedeLocales.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
