@@ -39,7 +39,6 @@ public class MenuInicial extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 186, 161));
-        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Readex Pro Light", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(109, 38, 0));
@@ -49,16 +48,13 @@ public class MenuInicial extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 138, 138));
 
         jLabel1.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Inicia sesión para descubrir piezas únicas y exclusivas, o regístrate si");
 
         jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("eres un nuevo cliente y únete a nuestra familia de amantes de la joyería.");
 
         btnIniciarSesion.setBackground(new java.awt.Color(255, 149, 0));
         btnIniciarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        btnIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
         btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Administrator.png"))); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesion");
         btnIniciarSesion.setBorder(null);
@@ -75,7 +71,6 @@ public class MenuInicial extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Readex Pro Light", 0, 10)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Solo pueden ingresar administradores o personas con acceso. *");
 
         jSeparator2.setBackground(new java.awt.Color(255, 138, 138));
@@ -83,7 +78,6 @@ public class MenuInicial extends javax.swing.JFrame {
 
         btnIniciarCliente.setBackground(new java.awt.Color(255, 149, 0));
         btnIniciarCliente.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        btnIniciarCliente.setForeground(new java.awt.Color(0, 0, 0));
         btnIniciarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         btnIniciarCliente.setText("Soy un Cliente");
         btnIniciarCliente.setBorder(null);
@@ -95,7 +89,6 @@ public class MenuInicial extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Readex Pro Light", 0, 10)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Recuerda que deberás registrarte una vez ingresado a la aplicación. *");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
