@@ -6,6 +6,7 @@ package vistas.menu;
 
 import javax.swing.JOptionPane;
 import vistas.secciones.Catalogo;
+import vistas.secciones.Citas;
 import vistas.secciones.Sedes;
 import vistas.secciones.SobreNosotros;
 
@@ -112,6 +113,11 @@ public class MenuUsuario extends javax.swing.JFrame {
         jButton5.setBorder(null);
         jButton5.setMaximumSize(new java.awt.Dimension(141, 18));
         jButton5.setMinimumSize(new java.awt.Dimension(141, 18));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         btnAbandonar.setBackground(new java.awt.Color(255, 149, 0));
         btnAbandonar.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
@@ -284,6 +290,14 @@ public class MenuUsuario extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Citas citas = new Citas();
+        citas.setVisible(true);
+        citas.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
