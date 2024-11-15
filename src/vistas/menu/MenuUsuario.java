@@ -7,6 +7,7 @@ package vistas.menu;
 import javax.swing.JOptionPane;
 import vistas.secciones.Catalogo;
 import vistas.secciones.Citas;
+import vistas.secciones.Colecciones;
 import vistas.secciones.Sedes;
 import vistas.secciones.SobreNosotros;
 
@@ -36,7 +37,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         btnCatalogo = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnColecciones = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnSobreNosotros = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -68,14 +69,19 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 149, 0));
-        jButton2.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Collectibles.png"))); // NOI18N
-        jButton2.setText("Colecciones");
-        jButton2.setBorder(null);
-        jButton2.setMaximumSize(new java.awt.Dimension(141, 18));
-        jButton2.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnColecciones.setBackground(new java.awt.Color(255, 149, 0));
+        btnColecciones.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
+        btnColecciones.setForeground(new java.awt.Color(0, 0, 0));
+        btnColecciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Collectibles.png"))); // NOI18N
+        btnColecciones.setText("Colecciones");
+        btnColecciones.setBorder(null);
+        btnColecciones.setMaximumSize(new java.awt.Dimension(141, 18));
+        btnColecciones.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnColecciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColeccionesActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 149, 0));
         jButton3.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
@@ -151,7 +157,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator1)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                    .addComponent(btnColecciones, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(btnSobreNosotros, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
@@ -167,7 +173,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(btnCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnColecciones, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -299,6 +305,12 @@ public class MenuUsuario extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void btnColeccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColeccionesActionPerformed
+        Colecciones colecciones = new Colecciones();
+        colecciones.setVisible(true);
+        colecciones.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnColeccionesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -306,9 +318,9 @@ public class MenuUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbandonar;
     private javax.swing.JButton btnCatalogo;
+    private javax.swing.JButton btnColecciones;
     private javax.swing.JPanel btnPanel;
     private javax.swing.JButton btnSobreNosotros;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;

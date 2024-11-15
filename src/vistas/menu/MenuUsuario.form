@@ -62,7 +62,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnCatalogo" max="32767" attributes="0"/>
                           <Component id="jSeparator1" max="32767" attributes="0"/>
-                          <Component id="jButton2" pref="221" max="32767" attributes="0"/>
+                          <Component id="btnColecciones" pref="221" max="32767" attributes="0"/>
                           <Component id="jButton3" pref="221" max="32767" attributes="0"/>
                           <Component id="btnSobreNosotros" pref="221" max="32767" attributes="0"/>
                           <Component id="jButton5" pref="221" max="32767" attributes="0"/>
@@ -81,7 +81,7 @@
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="btnCatalogo" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnColecciones" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton3" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -129,7 +129,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCatalogoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="btnColecciones">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="95" red="ff" type="rgb"/>
@@ -154,6 +154,9 @@
                   <Dimension value="[141, 18]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnColeccionesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
