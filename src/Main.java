@@ -6,10 +6,6 @@ import vistas.menu.MenuInicial;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-/**
- *
- * @author HOME
- */
 public class Main {
     public static void main(String[] args) {
         // Inicializar el menu inicial
