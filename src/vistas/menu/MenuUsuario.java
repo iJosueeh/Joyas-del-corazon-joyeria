@@ -10,6 +10,7 @@ import vistas.secciones.Citas;
 import vistas.secciones.Colecciones;
 import vistas.secciones.Sedes;
 import vistas.secciones.SobreNosotros;
+import vistas.secciones.perfil.LoginCliente;
 
 /**
  *
@@ -147,6 +148,11 @@ public class MenuUsuario extends javax.swing.JFrame {
         jButton7.setBorder(null);
         jButton7.setMaximumSize(new java.awt.Dimension(141, 18));
         jButton7.setMinimumSize(new java.awt.Dimension(141, 18));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -310,6 +316,12 @@ public class MenuUsuario extends javax.swing.JFrame {
         colecciones.setVisible(true);
         colecciones.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnColeccionesActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        LoginCliente loginCliente = new LoginCliente();
+        loginCliente.setVisible(true);
+        loginCliente.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
