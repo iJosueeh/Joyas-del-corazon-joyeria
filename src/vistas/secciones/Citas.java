@@ -9,6 +9,8 @@ public class Citas extends javax.swing.JFrame {
     public Citas() {
         initComponents(); // Inicialización de los componentes
         agregarMotivos(); // Llenamos el JComboBox
+        agregarModosDeCita(); // Agrega los valores al JComboBox2
+        agregarPreferenciasDeContacto(); // Agrega los valores al JComboBox3
     }
 
     /**
@@ -33,6 +35,25 @@ public class Citas extends javax.swing.JFrame {
         jComboBox1.addItem(motivo);
     }
 }
+    // Método para agregar los modos de cita
+     private void agregarModosDeCita() {
+    jComboBox2.removeAllItems(); // Limpia los valores actuales
+    String[] modos = {"Presencial", "Virtual", "Telefónica"};
+    for (String modo : modos) {
+        jComboBox2.addItem(modo); // Agrega los valores al JComboBox
+    }
+   }
+
+    // Método para agregar las preferencias de contacto
+    private void agregarPreferenciasDeContacto() {
+    jComboBox3.removeAllItems(); // Limpia los valores actuales
+    String[] preferencias = {"Correo Electrónico", "Llamada Telefónica", "Mensaje de Texto"};
+    for (String preferencia : preferencias) {
+        jComboBox3.addItem(preferencia); // Agrega los valores al JComboBox
+    }
+   }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
