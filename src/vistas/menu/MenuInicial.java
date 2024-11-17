@@ -34,7 +34,6 @@ public class MenuInicial extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(797, 469));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -42,22 +41,19 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Readex Pro Light", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(109, 38, 0));
-        jLabel2.setText("Joyas del Corazon");
+        jLabel2.setText("Radiant Legacy");
 
         jSeparator1.setBackground(new java.awt.Color(255, 138, 138));
         jSeparator1.setForeground(new java.awt.Color(255, 138, 138));
 
         jLabel1.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Inicia sesión para descubrir piezas únicas y exclusivas, o regístrate si");
 
         jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("eres un nuevo cliente y únete a nuestra familia de amantes de la joyería.");
 
         btnIniciarSesion.setBackground(new java.awt.Color(255, 149, 0));
         btnIniciarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        btnIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
         btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Administrator.png"))); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesion");
         btnIniciarSesion.setBorder(null);
@@ -81,7 +77,6 @@ public class MenuInicial extends javax.swing.JFrame {
 
         btnIniciarCliente.setBackground(new java.awt.Color(255, 149, 0));
         btnIniciarCliente.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        btnIniciarCliente.setForeground(new java.awt.Color(0, 0, 0));
         btnIniciarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         btnIniciarCliente.setText("Soy un Cliente");
         btnIniciarCliente.setBorder(null);
@@ -99,10 +94,6 @@ public class MenuInicial extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(93, 93, 93))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -124,6 +115,10 @@ public class MenuInicial extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -147,7 +142,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addComponent(btnIniciarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 470));
