@@ -1,23 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vistas.secciones;
 
 import vistas.menu.MenuUsuario;
 
-/**
- *
- * @author HOME
- */
+
 public class Citas extends javax.swing.JFrame {
+    
+    public Citas() {
+        initComponents(); // Inicialización de los componentes
+        agregarMotivos(); // Llenamos el JComboBox
+    }
 
     /**
      * Creates new form Citas
      */
-    public Citas() {
-        initComponents();
+
+    private void agregarMotivos() {
+    // Limpiamos cualquier elemento existente en el JComboBox
+    jComboBox1.removeAllItems();
+
+    // Agregamos los motivos
+    String[] motivos = {
+        "Consulta por pedido",
+        "Compra de joyas personalizadas",
+        "Entrega en tienda",
+        "Eventos especiales ",
+        "Otro"
+    };
+
+    // Llenamos el JComboBox con los motivos
+    for (String motivo : motivos) {
+        jComboBox1.addItem(motivo);
     }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,7 +67,6 @@ public class Citas extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 149, 0));
         jButton1.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         jButton1.setText("Regresar");
         jButton1.setBorder(null);
@@ -63,7 +77,6 @@ public class Citas extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Readex Pro Medium", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Citas");
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
@@ -72,56 +85,59 @@ public class Citas extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 138, 138));
 
         jLabel2.setFont(new java.awt.Font("Readex Pro bold", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Solicitar una Cita");
 
         jLabel4.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Motivo *");
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.setBorder(null);
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Información de Contacto *");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("jTextField1");
         jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Descripción breve");
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField2.setText("jTextField2");
         jTextField2.setBorder(null);
         jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Modo de Cita");
 
-        jComboBox2.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox2.setBorder(null);
 
         jLabel7.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Preferencia de Contacto\t");
 
-        jComboBox3.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox3.setBorder(null);
 
         jButton2.setBackground(new java.awt.Color(255, 149, 0));
         jButton2.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Solicitar");
         jButton2.setBorder(null);
 
@@ -235,6 +251,18 @@ public class Citas extends javax.swing.JFrame {
         menuInicial.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
