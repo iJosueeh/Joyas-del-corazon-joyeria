@@ -38,8 +38,8 @@ public class LoginCliente extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnRegistrarse = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,27 +80,27 @@ public class LoginCliente extends javax.swing.JFrame {
         jButton1.setText("Iniciar Sesión");
         jButton1.setBorder(null);
 
-        jButton2.setBackground(new java.awt.Color(255, 149, 0));
-        jButton2.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Register.png"))); // NOI18N
-        jButton2.setText("Registrarse");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarse.setBackground(new java.awt.Color(255, 149, 0));
+        btnRegistrarse.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
+        btnRegistrarse.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegistrarse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Register.png"))); // NOI18N
+        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.setBorder(null);
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegistrarseActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 149, 0));
-        jButton3.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
-        jButton3.setText("Regresar");
-        jButton3.setBorder(null);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(255, 149, 0));
+        btnRegresar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
+        btnRegresar.setText("Regresar");
+        btnRegresar.setBorder(null);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -124,9 +124,9 @@ public class LoginCliente extends javax.swing.JFrame {
                             .addComponent(jSeparator2)
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -150,8 +150,8 @@ public class LoginCliente extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
 
@@ -186,25 +186,29 @@ public class LoginCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        RegisterCliente registerCliente = new RegisterCliente();
+        registerCliente.setVisible(true);
+        registerCliente.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         MenuUsuario menuInicial = new MenuUsuario();
         menuInicial.setVisible(true);
         menuInicial.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrarse;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

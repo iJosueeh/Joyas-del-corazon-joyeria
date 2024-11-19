@@ -315,12 +315,16 @@ public class MenuUsuario extends javax.swing.JFrame {
         Colecciones colecciones = new Colecciones();
         colecciones.setVisible(true);
         colecciones.setLocationRelativeTo(null);
+        
+        this.dispose();
     }//GEN-LAST:event_btnColeccionesActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         LoginCliente loginCliente = new LoginCliente();
         loginCliente.setVisible(true);
         loginCliente.setLocationRelativeTo(null);
+        
+        this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
