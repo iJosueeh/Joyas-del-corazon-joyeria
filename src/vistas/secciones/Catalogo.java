@@ -170,7 +170,7 @@ public class Catalogo extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Coins.png"))); // NOI18N
-        jLabel5.setText("$120");
+        jLabel5.setText("$50");
 
         btnComprar1.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar1.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -228,7 +228,7 @@ public class Catalogo extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Coins.png"))); // NOI18N
-        jLabel9.setText("$120");
+        jLabel9.setText("$100");
 
         btnComprar3.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar3.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -501,13 +501,17 @@ public class Catalogo extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1013, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
