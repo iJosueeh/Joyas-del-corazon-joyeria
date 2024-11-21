@@ -44,7 +44,7 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,7 +74,7 @@ public class Login extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(255, 138, 138));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(255, 149, 0));
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Readex Pro Light", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Back.png"))); // NOI18N
         jButton1.setText("Volver");
@@ -84,7 +84,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 149, 0));
+        jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Readex Pro Light", 1, 10)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Login.png"))); // NOI18N
         jButton2.setText("Iniciar Sesion");

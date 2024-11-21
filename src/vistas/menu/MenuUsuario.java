@@ -37,7 +37,6 @@ public class MenuUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        btnCatalogo = new javax.swing.JButton();
         btnColecciones = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnSobreNosotros = new javax.swing.JButton();
@@ -53,23 +52,10 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 680));
 
-        btnCatalogo.setBackground(new java.awt.Color(255, 149, 0));
-        btnCatalogo.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        btnCatalogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Shopping-Cart.png"))); // NOI18N
-        btnCatalogo.setText("Catalogo Productos");
-        btnCatalogo.setBorder(null);
-        btnCatalogo.setMaximumSize(new java.awt.Dimension(141, 18));
-        btnCatalogo.setMinimumSize(new java.awt.Dimension(141, 18));
-        btnCatalogo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCatalogoActionPerformed(evt);
-            }
-        });
-
-        btnColecciones.setBackground(new java.awt.Color(255, 149, 0));
+        btnColecciones.setBackground(new java.awt.Color(204, 204, 204));
         btnColecciones.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         btnColecciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Collectibles.png"))); // NOI18N
         btnColecciones.setText("Colecciones");
@@ -82,7 +68,7 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 149, 0));
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
         jButton3.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Location.png"))); // NOI18N
         jButton3.setText("Sedes");
@@ -95,7 +81,7 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        btnSobreNosotros.setBackground(new java.awt.Color(255, 149, 0));
+        btnSobreNosotros.setBackground(new java.awt.Color(204, 204, 204));
         btnSobreNosotros.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         btnSobreNosotros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Info Squared.png"))); // NOI18N
         btnSobreNosotros.setText("Sobre Nosotros");
@@ -108,7 +94,7 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 149, 0));
+        jButton5.setBackground(new java.awt.Color(204, 204, 204));
         jButton5.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Quote.png"))); // NOI18N
         jButton5.setText("Citas");
@@ -154,7 +140,6 @@ public class MenuUsuario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator1)
                     .addComponent(btnColecciones, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
@@ -169,9 +154,7 @@ public class MenuUsuario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(135, 135, 135)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(btnCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(88, 88, 88)
                 .addComponent(btnColecciones, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,7 +187,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         btnPanelLayout.setHorizontalGroup(
             btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(266, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(265, 265, 265))
             .addGroup(btnPanelLayout.createSequentialGroup()
@@ -215,7 +198,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                     .addGroup(btnPanelLayout.createSequentialGroup()
                         .addGap(212, 212, 212)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btnPanelLayout.setVerticalGroup(
             btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,14 +253,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnAbandonarActionPerformed
 
-    private void btnCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogoActionPerformed
-        Catalogo calogoProductos = new Catalogo();
-        calogoProductos.setVisible(true);
-        calogoProductos.setLocationRelativeTo(null);
-        
-        this.dispose();
-    }//GEN-LAST:event_btnCatalogoActionPerformed
-
     private void btnSobreNosotrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreNosotrosActionPerformed
         SobreNosotros sobreNosotros = new SobreNosotros();
         sobreNosotros.setVisible(true);
@@ -320,7 +295,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbandonar;
-    private javax.swing.JButton btnCatalogo;
     private javax.swing.JButton btnColecciones;
     private javax.swing.JPanel btnPanel;
     private javax.swing.JButton btnSobreNosotros;

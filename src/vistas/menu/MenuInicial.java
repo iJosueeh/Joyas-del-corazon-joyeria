@@ -37,7 +37,7 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,7 +54,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("eres un nuevo cliente y únete a nuestra familia de amantes de la joyería.");
 
-        btnIniciarSesion.setBackground(new java.awt.Color(255, 149, 0));
+        btnIniciarSesion.setBackground(new java.awt.Color(204, 204, 204));
         btnIniciarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Administrator.png"))); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesion");
@@ -75,10 +75,10 @@ public class MenuInicial extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Solo pueden ingresar administradores o personas con acceso. *");
 
-        jSeparator2.setBackground(new java.awt.Color(255, 138, 138));
-        jSeparator2.setForeground(new java.awt.Color(255, 138, 138));
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnIniciarCliente.setBackground(new java.awt.Color(255, 149, 0));
+        btnIniciarCliente.setBackground(new java.awt.Color(204, 204, 204));
         btnIniciarCliente.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         btnIniciarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         btnIniciarCliente.setText("Soy un Cliente");

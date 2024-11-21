@@ -39,7 +39,7 @@ public class Catalogo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        panelBackground = new javax.swing.JPanel();
+        Midas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
@@ -86,11 +86,11 @@ public class Catalogo extends javax.swing.JFrame {
 
         jScrollPane2.setBorder(null);
 
-        panelBackground.setBackground(new java.awt.Color(0, 0, 0));
+        Midas.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Readex Pro Medium", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Catalogo de Productos");
+        jLabel1.setText("Colecion Midas Touch");
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -106,7 +106,7 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        Card_Product.setBackground(new java.awt.Color(102, 102, 0));
+        Card_Product.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel3.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,7 +173,7 @@ public class Catalogo extends javax.swing.JFrame {
                     .addGap(83, 83, 83)))
         );
 
-        Card_Product1.setBackground(new java.awt.Color(102, 102, 0));
+        Card_Product1.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel5.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -234,7 +234,7 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Card_Product3.setBackground(new java.awt.Color(102, 102, 0));
+        Card_Product3.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel9.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -294,7 +294,7 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Card_Product4.setBackground(new java.awt.Color(102, 102, 0));
+        Card_Product4.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel11.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -354,7 +354,7 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Card_Product5.setBackground(new java.awt.Color(102, 102, 0));
+        Card_Product5.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel13.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -414,7 +414,7 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Card_Product6.setBackground(new java.awt.Color(102, 102, 0));
+        Card_Product6.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel15.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -474,44 +474,44 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        javax.swing.GroupLayout panelBackgroundLayout = new javax.swing.GroupLayout(panelBackground);
-        panelBackground.setLayout(panelBackgroundLayout);
-        panelBackgroundLayout.setHorizontalGroup(
-            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBackgroundLayout.createSequentialGroup()
+        javax.swing.GroupLayout MidasLayout = new javax.swing.GroupLayout(Midas);
+        Midas.setLayout(MidasLayout);
+        MidasLayout.setHorizontalGroup(
+            MidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MidasLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(MidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelBackgroundLayout.createSequentialGroup()
-                        .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(MidasLayout.createSequentialGroup()
+                        .addGroup(MidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Card_Product, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Card_Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(35, 35, 35)
-                        .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Card_Product3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Card_Product4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
-                        .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Card_Product6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Card_Product5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(1040, 1088, Short.MAX_VALUE))
         );
-        panelBackgroundLayout.setVerticalGroup(
-            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBackgroundLayout.createSequentialGroup()
+        MidasLayout.setVerticalGroup(
+            MidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MidasLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(MidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Card_Product, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Card_Product5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Card_Product3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(MidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Card_Product4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Card_Product6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Card_Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -520,23 +520,23 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(24, 24, 24))
         );
 
-        jScrollPane2.setViewportView(panelBackground);
+        jScrollPane2.setViewportView(Midas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1013, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(9, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 994, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -597,6 +597,7 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JPanel Card_Product4;
     private javax.swing.JPanel Card_Product5;
     private javax.swing.JPanel Card_Product6;
+    private javax.swing.JPanel Midas;
     private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnComprar1;
     private javax.swing.JButton btnComprar3;
@@ -632,6 +633,5 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JPanel panelBackground;
     // End of variables declaration//GEN-END:variables
 }
