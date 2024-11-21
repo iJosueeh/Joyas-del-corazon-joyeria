@@ -56,7 +56,6 @@ public class RegisterCliente extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         jLabel2.setText("Nombre Completo");
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
@@ -65,7 +64,6 @@ public class RegisterCliente extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Email2.png"))); // NOI18N
         jLabel3.setText("Correo electrónico");
 
         jTextField2.setBackground(new java.awt.Color(255, 255, 255));
@@ -74,7 +72,6 @@ public class RegisterCliente extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Password2.png"))); // NOI18N
         jLabel4.setText("Contraseña");
 
         jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
@@ -83,7 +80,6 @@ public class RegisterCliente extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Password2.png"))); // NOI18N
         jLabel5.setText("Confirmar contraseña");
 
         jPasswordField2.setBackground(new java.awt.Color(255, 255, 255));
@@ -93,7 +89,6 @@ public class RegisterCliente extends javax.swing.JFrame {
         btnRegresar.setBackground(new java.awt.Color(255, 149, 0));
         btnRegresar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         btnRegresar.setText("Regresar");
         btnRegresar.setBorder(null);
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +99,6 @@ public class RegisterCliente extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Phone.png"))); // NOI18N
         jLabel6.setText("Número de teléfono");
 
         jTextField3.setBackground(new java.awt.Color(255, 255, 255));
@@ -113,7 +107,6 @@ public class RegisterCliente extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Address.png"))); // NOI18N
         jLabel7.setText("Dirección");
 
         jTextField4.setBackground(new java.awt.Color(255, 255, 255));
@@ -123,7 +116,6 @@ public class RegisterCliente extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(255, 149, 0));
         jButton4.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Verified_Account.png"))); // NOI18N
         jButton4.setText("Registrarse");
         jButton4.setBorder(null);
         jButton4.addActionListener(new java.awt.event.ActionListener() {

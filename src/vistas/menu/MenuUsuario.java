@@ -57,7 +57,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         btnColecciones.setBackground(new java.awt.Color(204, 204, 204));
         btnColecciones.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        btnColecciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Collectibles.png"))); // NOI18N
         btnColecciones.setText("Colecciones");
         btnColecciones.setBorder(null);
         btnColecciones.setMaximumSize(new java.awt.Dimension(141, 18));
@@ -70,7 +69,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
         jButton3.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Location.png"))); // NOI18N
         jButton3.setText("Sedes");
         jButton3.setBorder(null);
         jButton3.setMaximumSize(new java.awt.Dimension(141, 18));
@@ -83,7 +81,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         btnSobreNosotros.setBackground(new java.awt.Color(204, 204, 204));
         btnSobreNosotros.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        btnSobreNosotros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Info Squared.png"))); // NOI18N
         btnSobreNosotros.setText("Sobre Nosotros");
         btnSobreNosotros.setBorder(null);
         btnSobreNosotros.setMaximumSize(new java.awt.Dimension(141, 18));
@@ -96,7 +93,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(204, 204, 204));
         jButton5.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Quote.png"))); // NOI18N
         jButton5.setText("Citas");
         jButton5.setBorder(null);
         jButton5.setMaximumSize(new java.awt.Dimension(141, 18));
@@ -109,7 +105,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         btnAbandonar.setBackground(new java.awt.Color(255, 149, 0));
         btnAbandonar.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        btnAbandonar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         btnAbandonar.setText("Abandonar");
         btnAbandonar.setBorder(null);
         btnAbandonar.setMaximumSize(new java.awt.Dimension(141, 18));
@@ -122,7 +117,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jButton7.setBackground(new java.awt.Color(255, 149, 0));
         jButton7.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         jButton7.setText("Iniciar Sesion");
         jButton7.setBorder(null);
         jButton7.setMaximumSize(new java.awt.Dimension(141, 18));

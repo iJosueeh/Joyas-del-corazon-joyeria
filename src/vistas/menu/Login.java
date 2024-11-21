@@ -55,7 +55,6 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(229, 229, 183));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Email.png"))); // NOI18N
         jLabel2.setText("Email");
 
         jTextField1.setText("username@email.com");
@@ -64,7 +63,6 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(229, 229, 183));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Password.png"))); // NOI18N
         jLabel3.setText("Password");
 
         jPasswordField1.setText("jPasswordField1");
@@ -76,7 +74,6 @@ public class Login extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Readex Pro Light", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Back.png"))); // NOI18N
         jButton1.setText("Volver");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +83,6 @@ public class Login extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Readex Pro Light", 1, 10)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Login.png"))); // NOI18N
         jButton2.setText("Iniciar Sesion");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

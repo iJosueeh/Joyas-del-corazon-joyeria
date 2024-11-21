@@ -53,7 +53,6 @@ public class LoginCliente extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Email2.png"))); // NOI18N
         jLabel2.setText("Correo electronico");
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
@@ -62,7 +61,6 @@ public class LoginCliente extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Password2.png"))); // NOI18N
         jLabel3.setText("Contraseña");
 
         jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
@@ -83,7 +81,6 @@ public class LoginCliente extends javax.swing.JFrame {
         btnRegistrarse.setBackground(new java.awt.Color(255, 149, 0));
         btnRegistrarse.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
         btnRegistrarse.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrarse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Register.png"))); // NOI18N
         btnRegistrarse.setText("Registrarse");
         btnRegistrarse.setBorder(null);
         btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +92,6 @@ public class LoginCliente extends javax.swing.JFrame {
         btnRegresar.setBackground(new java.awt.Color(255, 149, 0));
         btnRegresar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         btnRegresar.setText("Regresar");
         btnRegresar.setBorder(null);
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {

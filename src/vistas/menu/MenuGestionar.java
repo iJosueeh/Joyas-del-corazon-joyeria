@@ -58,7 +58,6 @@ public class MenuGestionar extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(229, 229, 183));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ConsumerGoods.png"))); // NOI18N
         jButton1.setText("Gestionar Productos");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +69,6 @@ public class MenuGestionar extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(229, 229, 183));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         jButton2.setText("Gestionar Usuarios");
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +80,6 @@ public class MenuGestionar extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(153, 153, 153));
         jButton3.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(229, 229, 183));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Delivery.png"))); // NOI18N
         jButton3.setText("Gestionar Pedidos");
         jButton3.setToolTipText("");
         jButton3.setBorder(null);
@@ -95,7 +92,6 @@ public class MenuGestionar extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(153, 153, 153));
         jButton4.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(229, 229, 183));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Control Panel.png"))); // NOI18N
         jButton4.setText("Dashboard");
         jButton4.setToolTipText("");
         jButton4.setBorder(null);
@@ -108,7 +104,6 @@ public class MenuGestionar extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(153, 153, 153));
         jButton5.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(229, 229, 183));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Quote.png"))); // NOI18N
         jButton5.setText("Gestionar Citas");
         jButton5.setToolTipText("");
         jButton5.setBorder(null);
@@ -120,7 +115,6 @@ public class MenuGestionar extends javax.swing.JFrame {
 
         BtnCerrarSesion.setBackground(new java.awt.Color(255, 149, 0));
         BtnCerrarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        BtnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         BtnCerrarSesion.setText("Cerrar Sesión");
         BtnCerrarSesion.setToolTipText("");
         BtnCerrarSesion.setBorder(null);
@@ -132,7 +126,6 @@ public class MenuGestionar extends javax.swing.JFrame {
 
         jButton6.setBackground(new java.awt.Color(255, 149, 0));
         jButton6.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Administrator.png"))); // NOI18N
         jButton6.setText("Gestionar Perfil");
         jButton6.setToolTipText("");
         jButton6.setBorder(null);

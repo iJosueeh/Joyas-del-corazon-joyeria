@@ -57,7 +57,6 @@ public class MenuInicial extends javax.swing.JFrame {
 
         btnIniciarSesion.setBackground(new java.awt.Color(204, 204, 204));
         btnIniciarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Administrator.png"))); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesion");
         btnIniciarSesion.setBorder(null);
         btnIniciarSesion.setBorderPainted(false);
@@ -81,7 +80,6 @@ public class MenuInicial extends javax.swing.JFrame {
 
         btnIniciarCliente.setBackground(new java.awt.Color(204, 204, 204));
         btnIniciarCliente.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        btnIniciarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         btnIniciarCliente.setText("Soy un Cliente");
         btnIniciarCliente.setBorder(null);
         btnIniciarCliente.setBorderPainted(false);
