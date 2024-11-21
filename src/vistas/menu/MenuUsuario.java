@@ -5,7 +5,7 @@
 package vistas.menu;
 
 import javax.swing.JOptionPane;
-import vistas.secciones.Catalogo;
+import vistas.secciones.Catalogos.Catalogo;
 import vistas.secciones.Citas;
 import vistas.secciones.Colecciones;
 import vistas.secciones.Sedes;

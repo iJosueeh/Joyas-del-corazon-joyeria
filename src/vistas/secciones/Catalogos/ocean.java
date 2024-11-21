@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vistas.secciones;
+package vistas.secciones.Catalogos;
 
 import vistas.secciones.*;
 import java.awt.Image;
@@ -15,12 +15,12 @@ import vistas.menu.MenuUsuario;
  *
  * @author HOME
  */
-public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
+public class ocean extends javax.swing.JFrame {
 
     /**
      * Creates new form Catalogo
      */
-   public Coleccion_Esencia_Noble() {
+   public ocean() {
     initComponents();
     
     
@@ -91,7 +91,7 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Readex Pro Medium", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Esencia noble ");
+        jLabel1.setText("Ocean");
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
@@ -126,41 +126,40 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             }
         });
 
-        j4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/noble1 (1).jpg"))); // NOI18N
+        j4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ocean/file (10).jpg"))); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Nobleza Eterna");
+        jLabel16.setText("Cantos de Sirena");
 
         javax.swing.GroupLayout Card_ProductLayout = new javax.swing.GroupLayout(Card_Product);
         Card_Product.setLayout(Card_ProductLayout);
         Card_ProductLayout.setHorizontalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_ProductLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Card_ProductLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(j4))
-                    .addGroup(Card_ProductLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Card_ProductLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel16))
-                            .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(Card_ProductLayout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel16))
+                    .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Card_ProductLayout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(j4)
+                .addGap(35, 35, 35))
         );
         Card_ProductLayout.setVerticalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16)
@@ -190,11 +189,11 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             }
         });
 
-        j5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/noble4 (1).jpg"))); // NOI18N
+        j5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ocean/file (7).jpg"))); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Emperatriz");
+        jLabel18.setText("Sol y Mar");
 
         javax.swing.GroupLayout Card_Product1Layout = new javax.swing.GroupLayout(Card_Product1);
         Card_Product1.setLayout(Card_Product1Layout);
@@ -237,7 +236,7 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Magnia");
+        jLabel8.setText("Perla de Mar");
 
         jLabel9.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -255,7 +254,7 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             }
         });
 
-        j6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/noble2 (1).jpg"))); // NOI18N
+        j6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ocean/file (5).jpg"))); // NOI18N
 
         javax.swing.GroupLayout Card_Product3Layout = new javax.swing.GroupLayout(Card_Product3);
         Card_Product3.setLayout(Card_Product3Layout);
@@ -276,14 +275,14 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGap(29, 29, 29))
         );
         Card_Product3Layout.setVerticalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
@@ -312,11 +311,11 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             }
         });
 
-        j7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/noble5 (1).jpg"))); // NOI18N
+        j7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ocean/file (8).jpg"))); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Imperio");
+        jLabel19.setText("Esencia de Atlántida");
 
         javax.swing.GroupLayout Card_Product4Layout = new javax.swing.GroupLayout(Card_Product4);
         Card_Product4.setLayout(Card_Product4Layout);
@@ -372,11 +371,11 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             }
         });
 
-        j3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/noble3 (1).jpg"))); // NOI18N
+        j3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ocean/file (6).jpg"))); // NOI18N
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Linaje");
+        jLabel17.setText("Mística Nereida");
 
         javax.swing.GroupLayout Card_Product5Layout = new javax.swing.GroupLayout(Card_Product5);
         Card_Product5.setLayout(Card_Product5Layout);
@@ -432,11 +431,11 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             }
         });
 
-        j8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/noble6 (1).jpg"))); // NOI18N
+        j8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ocean/file (9).jpg"))); // NOI18N
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Corte Real");
+        jLabel20.setText("Reflejos de Luna");
 
         javax.swing.GroupLayout Card_Product6Layout = new javax.swing.GroupLayout(Card_Product6);
         Card_Product6.setLayout(Card_Product6Layout);
@@ -512,7 +511,7 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
                     .addComponent(Card_Product5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Card_Product6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(Card_Product6, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(Card_Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Card_Product4, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -527,8 +526,8 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(125, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1005, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1026, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(

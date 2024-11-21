@@ -4,9 +4,13 @@
  */
 package vistas.secciones;
 
+import vistas.secciones.Catalogos.ocean;
+import vistas.secciones.Catalogos.Catalogo;
+import vistas.secciones.Catalogos.Coleccion_Esencia_Noble;
 import java.awt.BorderLayout;
 import vistas.menu.Gestionar_productos;
 import vistas.menu.MenuUsuario;
+import vistas.secciones.Catalogos.C_Hojas;
 
 /**
  *
@@ -180,28 +184,27 @@ public class Colecciones extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(102, 102, 102));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Colecion Midas Touch");
+        jButton5.setText("Hojas Eternas");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        j7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/file (3).jpg"))); // NOI18N
+        j7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Hojas/file (18).jpg"))); // NOI18N
 
         javax.swing.GroupLayout Card_Product3Layout = new javax.swing.GroupLayout(Card_Product3);
         Card_Product3.setLayout(Card_Product3Layout);
         Card_Product3Layout.setHorizontalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product3Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jButton5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addGap(61, 61, 61))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                        .addComponent(j7)
-                        .addGap(31, 31, 31))))
+                .addComponent(j7)
+                .addGap(41, 41, 41))
         );
         Card_Product3Layout.setVerticalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,7 +311,10 @@ public class Colecciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+      C_Hojas newframe = new C_Hojas ();
+      newframe.setVisible(true);
+       
+       this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
