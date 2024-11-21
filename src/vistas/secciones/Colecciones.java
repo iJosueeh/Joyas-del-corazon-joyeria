@@ -63,7 +63,7 @@ public class Colecciones extends javax.swing.JFrame {
         j6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/file.jpg"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        jLabel3.setText("Colecion Midas Touch");
+        jLabel3.setText("Colecion Esencia noble ");
 
         jLabel4.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
         jLabel4.setText("Colecion Midas Touch");

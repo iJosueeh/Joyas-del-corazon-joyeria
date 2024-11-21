@@ -45,20 +45,19 @@ public class MenuUsuario extends javax.swing.JFrame {
         btnAbandonar = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         btnPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 186, 161));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 0));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 680));
 
         btnCatalogo.setBackground(new java.awt.Color(255, 149, 0));
         btnCatalogo.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        btnCatalogo.setForeground(new java.awt.Color(0, 0, 0));
         btnCatalogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Shopping-Cart.png"))); // NOI18N
         btnCatalogo.setText("Catalogo Productos");
         btnCatalogo.setBorder(null);
@@ -72,7 +71,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         btnColecciones.setBackground(new java.awt.Color(255, 149, 0));
         btnColecciones.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        btnColecciones.setForeground(new java.awt.Color(0, 0, 0));
         btnColecciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Collectibles.png"))); // NOI18N
         btnColecciones.setText("Colecciones");
         btnColecciones.setBorder(null);
@@ -86,7 +84,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(255, 149, 0));
         jButton3.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Location.png"))); // NOI18N
         jButton3.setText("Sedes");
         jButton3.setBorder(null);
@@ -100,7 +97,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         btnSobreNosotros.setBackground(new java.awt.Color(255, 149, 0));
         btnSobreNosotros.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        btnSobreNosotros.setForeground(new java.awt.Color(0, 0, 0));
         btnSobreNosotros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Info Squared.png"))); // NOI18N
         btnSobreNosotros.setText("Sobre Nosotros");
         btnSobreNosotros.setBorder(null);
@@ -114,7 +110,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(255, 149, 0));
         jButton5.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Quote.png"))); // NOI18N
         jButton5.setText("Citas");
         jButton5.setBorder(null);
@@ -128,7 +123,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         btnAbandonar.setBackground(new java.awt.Color(255, 149, 0));
         btnAbandonar.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        btnAbandonar.setForeground(new java.awt.Color(0, 0, 0));
         btnAbandonar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         btnAbandonar.setText("Abandonar");
         btnAbandonar.setBorder(null);
@@ -142,7 +136,6 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jButton7.setBackground(new java.awt.Color(255, 149, 0));
         jButton7.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         jButton7.setText("Iniciar Sesion");
         jButton7.setBorder(null);
@@ -197,45 +190,43 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         btnPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Readex Pro Light", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(109, 38, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Joyas del Corazón");
-
         jSeparator2.setBackground(new java.awt.Color(255, 138, 138));
-        jSeparator2.setForeground(new java.awt.Color(255, 138, 138));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Readex Pro Light", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("El brillo que hace latir tu corazón");
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setText("Radiant Legacy");
 
         javax.swing.GroupLayout btnPanelLayout = new javax.swing.GroupLayout(btnPanel);
         btnPanel.setLayout(btnPanelLayout);
         btnPanelLayout.setHorizontalGroup(
             btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(265, 265, 265))
             .addGroup(btnPanelLayout.createSequentialGroup()
-                .addGap(212, 212, 212)
                 .addGroup(btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(btnPanelLayout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jLabel1))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPanelLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel2)
-                        .addGap(17, 17, 17)))
+                        .addGap(250, 250, 250)
+                        .addComponent(jLabel2))
+                    .addGroup(btnPanelLayout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(223, Short.MAX_VALUE))
         );
         btnPanelLayout.setVerticalGroup(
             btnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnPanelLayout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(jLabel1)
+                .addGap(269, 269, 269)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(325, Short.MAX_VALUE))
+                .addContainerGap(322, Short.MAX_VALUE))
         );
 
         jPanel1.add(btnPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 760, 680));
@@ -336,8 +327,8 @@ public class MenuUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
