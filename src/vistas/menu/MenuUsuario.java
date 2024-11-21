@@ -52,7 +52,7 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(118, 98, 78));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 680));
 
         btnColecciones.setBackground(new java.awt.Color(204, 204, 204));

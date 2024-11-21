@@ -112,7 +112,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="36" style="0"/>
+              <Font name="Times New Roman" size="36" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Colecciones"/>
           </Properties>
@@ -180,7 +180,7 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Colecion Midas Touch"/>
               </Properties>
@@ -238,7 +238,7 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Colecion Esencia noble "/>
               </Properties>
@@ -296,7 +296,7 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="ocean"/>
               </Properties>
@@ -354,7 +354,7 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Hojas Eternas"/>
               </Properties>

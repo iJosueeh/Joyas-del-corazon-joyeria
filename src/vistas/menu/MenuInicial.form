@@ -42,7 +42,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="4e" green="62" red="76" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -125,7 +125,7 @@
                   <Font name="Times New Roman" size="36" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Radiant Legacy"/>
               </Properties>
@@ -133,7 +133,7 @@
             <Component class="javax.swing.JSeparator" name="jSeparator1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="8a" green="8a" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -142,11 +142,14 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Readex Pro Medium" size="10" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Inicia sesi&#xf3;n para descubrir piezas &#xfa;nicas y exclusivas, o reg&#xed;strate si"/>
               </Properties>
@@ -157,7 +160,7 @@
                   <Font name="Readex Pro Medium" size="10" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="eres un nuevo cliente y &#xfa;nete a nuestra familia de amantes de la joyer&#xed;a."/>
               </Properties>
@@ -190,7 +193,7 @@
                   <Font name="Readex Pro Light" size="10" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Solo pueden ingresar administradores o personas con acceso. *"/>
               </Properties>
@@ -232,7 +235,7 @@
                   <Font name="Readex Pro Light" size="10" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="b7" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Recuerda que deber&#xe1;s registrarte una vez ingresado a la aplicaci&#xf3;n. *"/>
               </Properties>

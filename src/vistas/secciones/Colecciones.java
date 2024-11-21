@@ -58,7 +58,7 @@ public class Colecciones extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(102, 102, 0));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setText("Colecciones");
 
         jButton1.setBackground(new java.awt.Color(255, 149, 0));
@@ -75,7 +75,7 @@ public class Colecciones extends javax.swing.JFrame {
         Card_Product.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(229, 229, 183));
         jButton2.setText("Colecion Midas Touch");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +111,7 @@ public class Colecciones extends javax.swing.JFrame {
         Card_Product1.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setForeground(new java.awt.Color(229, 229, 183));
         jButton3.setText("Colecion Esencia noble ");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +147,7 @@ public class Colecciones extends javax.swing.JFrame {
         Card_Product2.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton4.setBackground(new java.awt.Color(102, 102, 102));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setForeground(new java.awt.Color(229, 229, 183));
         jButton4.setText("ocean");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +183,7 @@ public class Colecciones extends javax.swing.JFrame {
         Card_Product3.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton5.setBackground(new java.awt.Color(102, 102, 102));
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setForeground(new java.awt.Color(229, 229, 183));
         jButton5.setText("Hojas Eternas");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

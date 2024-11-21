@@ -106,7 +106,7 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        Card_Product.setBackground(new java.awt.Color(102, 102, 102));
+        Card_Product.setBackground(new java.awt.Color(118, 98, 78));
 
         jLabel3.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,7 +173,7 @@ public class Catalogo extends javax.swing.JFrame {
                     .addGap(83, 83, 83)))
         );
 
-        Card_Product1.setBackground(new java.awt.Color(102, 102, 102));
+        Card_Product1.setBackground(new java.awt.Color(118, 98, 78));
 
         jLabel5.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -234,7 +234,7 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Card_Product3.setBackground(new java.awt.Color(102, 102, 102));
+        Card_Product3.setBackground(new java.awt.Color(118, 98, 78));
 
         jLabel9.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -294,7 +294,7 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Card_Product4.setBackground(new java.awt.Color(102, 102, 102));
+        Card_Product4.setBackground(new java.awt.Color(118, 98, 78));
 
         jLabel11.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -354,7 +354,7 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Card_Product5.setBackground(new java.awt.Color(102, 102, 102));
+        Card_Product5.setBackground(new java.awt.Color(118, 98, 78));
 
         jLabel13.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -414,7 +414,7 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGap(13, 13, 13))
         );
 
-        Card_Product6.setBackground(new java.awt.Color(102, 102, 102));
+        Card_Product6.setBackground(new java.awt.Color(118, 98, 78));
 
         jLabel15.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));

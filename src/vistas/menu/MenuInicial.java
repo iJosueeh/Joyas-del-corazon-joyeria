@@ -37,21 +37,22 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(118, 98, 78));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("Radiant Legacy");
 
-        jSeparator1.setBackground(new java.awt.Color(255, 138, 138));
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setBackground(new java.awt.Color(229, 229, 183));
         jLabel1.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Inicia sesión para descubrir piezas únicas y exclusivas, o regístrate si");
 
         jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("eres un nuevo cliente y únete a nuestra familia de amantes de la joyería.");
 
         btnIniciarSesion.setBackground(new java.awt.Color(204, 204, 204));
@@ -72,7 +73,7 @@ public class MenuInicial extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Readex Pro Light", 0, 10)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Solo pueden ingresar administradores o personas con acceso. *");
 
         jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
@@ -91,7 +92,7 @@ public class MenuInicial extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Readex Pro Light", 0, 10)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("Recuerda que deberás registrarte una vez ingresado a la aplicación. *");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
