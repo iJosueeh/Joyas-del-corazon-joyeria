@@ -37,22 +37,25 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 186, 161));
+        jPanel2.setBackground(new java.awt.Color(118, 98, 78));
 
-        jLabel2.setFont(new java.awt.Font("Readex Pro Light", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(109, 38, 0));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("Radiant Legacy");
 
-        jSeparator1.setBackground(new java.awt.Color(255, 138, 138));
-        jSeparator1.setForeground(new java.awt.Color(255, 138, 138));
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setBackground(new java.awt.Color(229, 229, 183));
         jLabel1.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Inicia sesión para descubrir piezas únicas y exclusivas, o regístrate si");
 
         jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("eres un nuevo cliente y únete a nuestra familia de amantes de la joyería.");
 
-        btnIniciarSesion.setBackground(new java.awt.Color(255, 149, 0));
+        btnIniciarSesion.setBackground(new java.awt.Color(204, 204, 204));
         btnIniciarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Administrator.png"))); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesion");
@@ -70,12 +73,13 @@ public class MenuInicial extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Readex Pro Light", 0, 10)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Solo pueden ingresar administradores o personas con acceso. *");
 
-        jSeparator2.setBackground(new java.awt.Color(255, 138, 138));
-        jSeparator2.setForeground(new java.awt.Color(255, 138, 138));
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnIniciarCliente.setBackground(new java.awt.Color(255, 149, 0));
+        btnIniciarCliente.setBackground(new java.awt.Color(204, 204, 204));
         btnIniciarCliente.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         btnIniciarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         btnIniciarCliente.setText("Soy un Cliente");
@@ -88,6 +92,7 @@ public class MenuInicial extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Readex Pro Light", 0, 10)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("Recuerda que deberás registrarte una vez ingresado a la aplicación. *");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -116,10 +121,10 @@ public class MenuInicial extends javax.swing.JFrame {
                             .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(84, 84, 84))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,7 +147,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addComponent(btnIniciarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 470));

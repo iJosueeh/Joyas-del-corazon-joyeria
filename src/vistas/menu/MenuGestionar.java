@@ -4,6 +4,7 @@
  */
 package vistas.menu;
 
+import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +18,13 @@ public class MenuGestionar extends javax.swing.JFrame {
      */
     public MenuGestionar() {
         initComponents();
+        Gestionar_productos G1= new Gestionar_productos ();
+        G1.setSize(760, 680);
+        G1.setLocation(0, 0);
+        content.removeAll();
+        content.add(G1,BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
     }
 
     /**
@@ -38,18 +46,18 @@ public class MenuGestionar extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         BtnCerrarSesion = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 186, 161));
+        jPanel2.setBackground(new java.awt.Color(118, 98, 78));
         jPanel2.setRequestFocusEnabled(false);
 
-        jButton1.setBackground(new java.awt.Color(255, 149, 0));
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(229, 229, 183));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ConsumerGoods.png"))); // NOI18N
         jButton1.setText("Gestionar Productos");
         jButton1.setBorder(null);
@@ -59,9 +67,9 @@ public class MenuGestionar extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 149, 0));
+        jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(229, 229, 183));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/User.png"))); // NOI18N
         jButton2.setText("Gestionar Usuarios");
         jButton2.setBorder(null);
@@ -71,9 +79,9 @@ public class MenuGestionar extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 149, 0));
+        jButton3.setBackground(new java.awt.Color(153, 153, 153));
         jButton3.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setForeground(new java.awt.Color(229, 229, 183));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Delivery.png"))); // NOI18N
         jButton3.setText("Gestionar Pedidos");
         jButton3.setToolTipText("");
@@ -84,9 +92,9 @@ public class MenuGestionar extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(255, 149, 0));
+        jButton4.setBackground(new java.awt.Color(153, 153, 153));
         jButton4.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setForeground(new java.awt.Color(229, 229, 183));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Control Panel.png"))); // NOI18N
         jButton4.setText("Dashboard");
         jButton4.setToolTipText("");
@@ -97,9 +105,9 @@ public class MenuGestionar extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 149, 0));
+        jButton5.setBackground(new java.awt.Color(153, 153, 153));
         jButton5.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
+        jButton5.setForeground(new java.awt.Color(229, 229, 183));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Quote.png"))); // NOI18N
         jButton5.setText("Gestionar Citas");
         jButton5.setToolTipText("");
@@ -112,7 +120,6 @@ public class MenuGestionar extends javax.swing.JFrame {
 
         BtnCerrarSesion.setBackground(new java.awt.Color(255, 149, 0));
         BtnCerrarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        BtnCerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
         BtnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         BtnCerrarSesion.setText("Cerrar Sesión");
         BtnCerrarSesion.setToolTipText("");
@@ -125,7 +132,6 @@ public class MenuGestionar extends javax.swing.JFrame {
 
         jButton6.setBackground(new java.awt.Color(255, 149, 0));
         jButton6.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Administrator.png"))); // NOI18N
         jButton6.setText("Gestionar Perfil");
         jButton6.setToolTipText("");
@@ -177,20 +183,20 @@ public class MenuGestionar extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 680));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        content.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 760, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 680, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 760, 680));
+        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 760, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,7 +213,13 @@ public class MenuGestionar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Gestionar_productos G1= new Gestionar_productos ();
+        G1.setSize(760, 680);
+        G1.setLocation(0, 0);
+        content.removeAll();
+        content.add(G1,BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -261,6 +273,7 @@ public class MenuGestionar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCerrarSesion;
+    private javax.swing.JPanel content;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -269,7 +282,6 @@ public class MenuGestionar extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

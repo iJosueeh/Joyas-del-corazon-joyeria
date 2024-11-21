@@ -36,7 +36,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
       </Properties>
 
@@ -58,10 +58,7 @@
                       </Group>
                       <Component id="jLabel6" alignment="0" pref="968" max="32767" attributes="0"/>
                       <Component id="jLabel7" alignment="0" pref="968" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="jLabel8" pref="962" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel8" alignment="0" pref="968" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -90,7 +87,7 @@
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel8" min="-2" pref="13" max="-2" attributes="0"/>
-                  <EmptySpace pref="302" max="32767" attributes="0"/>
+                  <EmptySpace pref="280" max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
@@ -121,10 +118,10 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Readex Pro bold" size="24" style="0"/>
+              <Font name="Times New Roman" size="36" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="26" red="6d" type="rgb"/>
+              <Color blue="b7" green="e5" red="e5" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sobre Nosotros"/>
           </Properties>
@@ -136,6 +133,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Readex Pro Medium" size="10" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="b7" green="e5" red="e5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="En Radiant Legacy, cada joya es una obra de arte dise&#xf1;ada para perdurar.Nos especializamos en crear piezas &#xfa;nicas que capturan la esencia"/>
           </Properties>
         </Component>
@@ -143,6 +143,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Readex Pro Medium" size="10" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="b7" green="e5" red="e5" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="de los momentos m&#xe1;s importantes en la vida de nuestros clientes.Combinamos materiales de alta calidad, como oro y piedras preciosas,"/>
           </Properties>
@@ -152,16 +155,19 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Readex Pro Medium" size="10" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="b7" green="e5" red="e5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value=" con un dise&#xf1;o elegante y atemporal."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Readex Pro bold" size="24" style="0"/>
+              <Font name="Times New Roman" size="36" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="26" red="6d" type="rgb"/>
+              <Color blue="b7" green="e5" red="e5" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sobre Nosotros"/>
           </Properties>
@@ -173,6 +179,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Readex Pro Medium" size="10" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="b7" green="e5" red="e5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nuestros artesanos trabajan con pasi&#xf3;n y atenci&#xf3;n al detalle para ofrecer joyas que no solo destacan por su belleza,"/>
           </Properties>
         </Component>
@@ -181,6 +190,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Readex Pro Medium" size="10" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="b7" green="e5" red="e5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="sino tambi&#xe9;n por el significado que llevan consigo. En Radiant Legacy, creemos que cada pieza debe contar una historia "/>
           </Properties>
         </Component>
@@ -188,6 +200,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Readex Pro Medium" size="10" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="b7" green="e5" red="e5" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="y acompa&#xf1;arte por generaciones."/>
           </Properties>

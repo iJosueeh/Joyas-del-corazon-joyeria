@@ -43,7 +43,7 @@ public class SobreNosotros extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton1.setBackground(new java.awt.Color(255, 149, 0));
         jButton1.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -56,30 +56,36 @@ public class SobreNosotros extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Readex Pro bold", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(109, 38, 0));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Sobre Nosotros");
 
         jLabel2.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("En Radiant Legacy, cada joya es una obra de arte diseñada para perdurar.Nos especializamos en crear piezas únicas que capturan la esencia");
 
         jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("de los momentos más importantes en la vida de nuestros clientes.Combinamos materiales de alta calidad, como oro y piedras preciosas,");
 
         jLabel4.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText(" con un diseño elegante y atemporal.");
 
-        jLabel5.setFont(new java.awt.Font("Readex Pro bold", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(109, 38, 0));
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("Sobre Nosotros");
 
         jLabel6.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(229, 229, 183));
         jLabel6.setText("Nuestros artesanos trabajan con pasión y atención al detalle para ofrecer joyas que no solo destacan por su belleza,");
 
         jLabel7.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(229, 229, 183));
         jLabel7.setText("sino también por el significado que llevan consigo. En Radiant Legacy, creemos que cada pieza debe contar una historia ");
 
         jLabel8.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(229, 229, 183));
         jLabel8.setText("y acompañarte por generaciones.");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -100,9 +106,7 @@ public class SobreNosotros extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 962, Short.MAX_VALUE)))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -128,7 +132,7 @@ public class SobreNosotros extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 302, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
