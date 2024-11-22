@@ -139,9 +139,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="0"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/icons/Visit.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Sede Central"/>
           </Properties>
         </Component>
@@ -158,9 +155,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/icons/Location.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Avenida Central 1243, Local 5B Distrito de San Borja Lima, Per&#xfa;"/>
           </Properties>
         </Component>
@@ -170,9 +164,6 @@
               <Font name="Dialog" size="18" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/icons/Visit.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Sede Chorrillos"/>
           </Properties>
         </Component>
@@ -189,9 +180,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/icons/Location.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Calle Las Gaviotas 567, Piso 2, Local 12 Distrito de Chorrillos Lima, Per&#xfa;"/>
           </Properties>
         </Component>
@@ -203,9 +191,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Readex Pro bold" size="12" style="0"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/icons/Go_Back.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Regresar"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -216,18 +201,8 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="j9">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/icons/tienda.jpg"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="j10">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/recursos/icons/MHAP_Joieria_Prats_foto_luis_diaz_diaz_01 (1).jpg"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

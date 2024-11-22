@@ -4,7 +4,7 @@
  */
 package vistas.secciones;
 
-import vistas.secciones.Catalogos.ocean;
+import vistas.secciones.Catalogos.Ocean;
 import vistas.secciones.Catalogos.Catalogo;
 import vistas.secciones.Catalogos.Coleccion_Esencia_Noble;
 import java.awt.BorderLayout;
@@ -82,29 +82,25 @@ public class Colecciones extends javax.swing.JFrame {
             }
         });
 
-        j4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/file (3).jpg"))); // NOI18N
-
         javax.swing.GroupLayout Card_ProductLayout = new javax.swing.GroupLayout(Card_Product);
         Card_Product.setLayout(Card_ProductLayout);
         Card_ProductLayout.setHorizontalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_ProductLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
                 .addComponent(j4)
                 .addGap(48, 48, 48))
-            .addGroup(Card_ProductLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_ProductLayout.setVerticalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Card_ProductLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2)
+                    .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         Card_Product1.setBackground(new java.awt.Color(0, 0, 0));
@@ -118,28 +114,24 @@ public class Colecciones extends javax.swing.JFrame {
             }
         });
 
-        j5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/file (2).jpg"))); // NOI18N
-
         javax.swing.GroupLayout Card_Product1Layout = new javax.swing.GroupLayout(Card_Product1);
         Card_Product1.setLayout(Card_Product1Layout);
         Card_Product1Layout.setHorizontalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(61, 61, 61))
-            .addGroup(Card_Product1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(j5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         Card_Product1Layout.setVerticalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(Card_Product1Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3)
+                    .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -154,28 +146,24 @@ public class Colecciones extends javax.swing.JFrame {
             }
         });
 
-        j6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/ocean/file (11).jpg"))); // NOI18N
-
         javax.swing.GroupLayout Card_Product2Layout = new javax.swing.GroupLayout(Card_Product2);
         Card_Product2.setLayout(Card_Product2Layout);
         Card_Product2Layout.setHorizontalGroup(
             Card_Product2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Card_Product2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(j6)
                 .addGap(46, 46, 46))
-            .addGroup(Card_Product2Layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(jButton4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_Product2Layout.setVerticalGroup(
             Card_Product2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(Card_Product2Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(Card_Product2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton4)
+                    .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -190,29 +178,25 @@ public class Colecciones extends javax.swing.JFrame {
             }
         });
 
-        j7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Hojas/file (18).jpg"))); // NOI18N
-
         javax.swing.GroupLayout Card_Product3Layout = new javax.swing.GroupLayout(Card_Product3);
         Card_Product3.setLayout(Card_Product3Layout);
         Card_Product3Layout.setHorizontalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Card_Product3Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(jButton5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(j7)
                 .addGap(41, 41, 41))
         );
         Card_Product3Layout.setVerticalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Card_Product3Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton5)
+                    .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -264,7 +248,7 @@ public class Colecciones extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 31, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -302,7 +286,7 @@ public class Colecciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       ocean newframe = new ocean ();
+       Ocean newframe = new Ocean ();
        
        newframe.setVisible(true);
        

@@ -98,7 +98,6 @@ public class C_Hojas extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 149, 0));
         jButton1.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         jButton1.setText("Regresar");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -112,12 +111,10 @@ public class C_Hojas extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Coins.png"))); // NOI18N
         jLabel3.setText("$220");
 
         btnComprar.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Buy.png"))); // NOI18N
         btnComprar.setText("Comprar");
         btnComprar.setBorder(null);
         btnComprar.addActionListener(new java.awt.event.ActionListener() {
@@ -125,8 +122,6 @@ public class C_Hojas extends javax.swing.JFrame {
                 btnComprarActionPerformed(evt);
             }
         });
-
-        j4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Hojas/file (12).jpg"))); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -175,12 +170,10 @@ public class C_Hojas extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Coins.png"))); // NOI18N
         jLabel5.setText("$150");
 
         btnComprar1.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar1.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnComprar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Buy.png"))); // NOI18N
         btnComprar1.setText("Comprar");
         btnComprar1.setBorder(null);
         btnComprar1.addActionListener(new java.awt.event.ActionListener() {
@@ -188,8 +181,6 @@ public class C_Hojas extends javax.swing.JFrame {
                 btnComprar1ActionPerformed(evt);
             }
         });
-
-        j5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Hojas/file (15).jpg"))); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -240,12 +231,10 @@ public class C_Hojas extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Coins.png"))); // NOI18N
         jLabel9.setText("$200");
 
         btnComprar3.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar3.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnComprar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Buy.png"))); // NOI18N
         btnComprar3.setText("Comprar");
         btnComprar3.setBorder(null);
         btnComprar3.addActionListener(new java.awt.event.ActionListener() {
@@ -254,24 +243,25 @@ public class C_Hojas extends javax.swing.JFrame {
             }
         });
 
-        j6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Hojas/file (13).jpg"))); // NOI18N
-
         javax.swing.GroupLayout Card_Product3Layout = new javax.swing.GroupLayout(Card_Product3);
         Card_Product3.setLayout(Card_Product3Layout);
         Card_Product3Layout.setHorizontalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product3Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Card_Product3Layout.createSequentialGroup()
+                        .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Card_Product3Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel8)))
+                        .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(Card_Product3Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnComprar3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Card_Product3Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel8)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnComprar3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,12 +287,10 @@ public class C_Hojas extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Coins.png"))); // NOI18N
         jLabel11.setText("$180");
 
         btnComprar4.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar4.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnComprar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Buy.png"))); // NOI18N
         btnComprar4.setText("Comprar");
         btnComprar4.setBorder(null);
         btnComprar4.addActionListener(new java.awt.event.ActionListener() {
@@ -310,8 +298,6 @@ public class C_Hojas extends javax.swing.JFrame {
                 btnComprar4ActionPerformed(evt);
             }
         });
-
-        j7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Hojas/file (16).jpg"))); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -345,24 +331,23 @@ public class C_Hojas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
-                .addGap(50, 50, 50)
-                .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
+                .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Card_Product4Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel11))
                     .addComponent(btnComprar4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13))
+                .addGap(21, 21, 21))
         );
 
         Card_Product5.setBackground(new java.awt.Color(118, 98, 78));
 
         jLabel13.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Coins.png"))); // NOI18N
         jLabel13.setText("$220");
 
         btnComprar5.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar5.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnComprar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Buy.png"))); // NOI18N
         btnComprar5.setText("Comprar");
         btnComprar5.setBorder(null);
         btnComprar5.addActionListener(new java.awt.event.ActionListener() {
@@ -370,8 +355,6 @@ public class C_Hojas extends javax.swing.JFrame {
                 btnComprar5ActionPerformed(evt);
             }
         });
-
-        j3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Hojas/file (14).jpg"))); // NOI18N
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
@@ -417,12 +400,10 @@ public class C_Hojas extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Coins.png"))); // NOI18N
         jLabel15.setText("$250");
 
         btnComprar6.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar6.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnComprar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Buy.png"))); // NOI18N
         btnComprar6.setText("Comprar");
         btnComprar6.setBorder(null);
         btnComprar6.addActionListener(new java.awt.event.ActionListener() {
@@ -430,8 +411,6 @@ public class C_Hojas extends javax.swing.JFrame {
                 btnComprar6ActionPerformed(evt);
             }
         });
-
-        j8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Hojas/file (17).jpg"))); // NOI18N
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -465,12 +444,13 @@ public class C_Hojas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20)
-                .addGap(50, 50, 50)
-                .addGroup(Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
+                .addGroup(Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Card_Product6Layout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel15))
                     .addComponent(btnComprar6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout panelBackgroundLayout = new javax.swing.GroupLayout(panelBackground);
@@ -555,9 +535,9 @@ public class C_Hojas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        MenuUsuario menuInicial = new MenuUsuario();
-        menuInicial.setVisible(true);
-        menuInicial.setLocationRelativeTo(null);
+        Colecciones colecciones = new Colecciones();
+        colecciones.setVisible(true);
+        colecciones.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

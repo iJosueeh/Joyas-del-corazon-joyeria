@@ -50,31 +50,26 @@ public class Sedes extends javax.swing.JFrame {
         jLabel1.setText("NUESTROS LOCALES");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Visit.png"))); // NOI18N
         jLabel2.setText("Sede Central");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel3.setText("Nuestra sede central se encuentra ubicada en:");
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Location.png"))); // NOI18N
         jLabel4.setText("Avenida Central 1243, Local 5B Distrito de San Borja Lima, Perú");
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Visit.png"))); // NOI18N
         jLabel5.setText("Sede Chorrillos");
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel6.setText("Nuestra sede en Chorrillos se encuentra ubicada en:");
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Location.png"))); // NOI18N
         jLabel7.setText("Calle Las Gaviotas 567, Piso 2, Local 12 Distrito de Chorrillos Lima, Perú");
 
         jButton1.setBackground(new java.awt.Color(255, 149, 0));
         jButton1.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/Go_Back.png"))); // NOI18N
         jButton1.setText("Regresar");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -82,10 +77,6 @@ public class Sedes extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        j9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/tienda.jpg"))); // NOI18N
-
-        j10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/MHAP_Joieria_Prats_foto_luis_diaz_diaz_01 (1).jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
