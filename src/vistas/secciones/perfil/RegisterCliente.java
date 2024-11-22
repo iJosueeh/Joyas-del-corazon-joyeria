@@ -4,6 +4,8 @@
  */
 package vistas.secciones.perfil;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HOME
@@ -30,19 +32,19 @@ public class RegisterCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        inputNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        inputEmail = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        inputPassword = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        inputPasswordConfirm = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         btnRegresar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        inputTelefono = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        inputDireccion = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,33 +60,33 @@ public class RegisterCliente extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre Completo");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("jTextField1");
-        jTextField1.setBorder(null);
+        inputNombre.setBackground(new java.awt.Color(255, 255, 255));
+        inputNombre.setText("Ingresa tu nombre completo");
+        inputNombre.setBorder(null);
 
         jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Correo electrónico");
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setText("jTextField2");
-        jTextField2.setBorder(null);
+        inputEmail.setBackground(new java.awt.Color(255, 255, 255));
+        inputEmail.setText("Ingresa tu correo electronico");
+        inputEmail.setBorder(null);
 
         jLabel4.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Contraseña");
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(null);
+        inputPassword.setBackground(new java.awt.Color(255, 255, 255));
+        inputPassword.setText("*********");
+        inputPassword.setBorder(null);
 
         jLabel5.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Confirmar contraseña");
 
-        jPasswordField2.setBackground(new java.awt.Color(255, 255, 255));
-        jPasswordField2.setText("jPasswordField2");
-        jPasswordField2.setBorder(null);
+        inputPasswordConfirm.setBackground(new java.awt.Color(255, 255, 255));
+        inputPasswordConfirm.setText("*********");
+        inputPasswordConfirm.setBorder(null);
 
         btnRegresar.setBackground(new java.awt.Color(255, 149, 0));
         btnRegresar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -101,17 +103,17 @@ public class RegisterCliente extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Número de teléfono");
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setText("jTextField3");
-        jTextField3.setBorder(null);
+        inputTelefono.setBackground(new java.awt.Color(255, 255, 255));
+        inputTelefono.setText("Ingresa tu numero");
+        inputTelefono.setBorder(null);
 
         jLabel7.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Dirección");
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.setText("jTextField4");
-        jTextField4.setBorder(null);
+        inputDireccion.setBackground(new java.awt.Color(255, 255, 255));
+        inputDireccion.setText("Ingresa tu direccion");
+        inputDireccion.setBorder(null);
 
         jButton4.setBackground(new java.awt.Color(255, 149, 0));
         jButton4.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -142,17 +144,17 @@ public class RegisterCliente extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jSeparator1)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
-                    .addComponent(jPasswordField1)
-                    .addComponent(jPasswordField2)
+                    .addComponent(inputNombre)
+                    .addComponent(inputEmail)
+                    .addComponent(inputPassword)
+                    .addComponent(inputPasswordConfirm)
                     .addComponent(jSeparator2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4))
+                    .addComponent(inputTelefono)
+                    .addComponent(inputDireccion))
                 .addGap(18, 18, 18))
         );
         jPanel1Layout.setVerticalGroup(
@@ -165,27 +167,27 @@ public class RegisterCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(inputDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -213,12 +215,33 @@ public class RegisterCliente extends javax.swing.JFrame {
         LoginCliente loginCliente = new LoginCliente();
         loginCliente.setVisible(true);
         loginCliente.setLocationRelativeTo(null);
-        
+
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        String nombreCompleto = inputNombre.getText();
+        String email = inputEmail.getText();
+        String password = new String(inputPassword.getText());
+        String passwordConfirm = new String(inputPasswordConfirm.getText());
+        String telefono = inputTelefono.getText();
+        String direccion = inputDireccion.getText();
+
+        if (nombreCompleto.isEmpty() || email.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty() || telefono.isEmpty() || direccion.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No puede haber mensajes vacios.", "Error", JOptionPane.ERROR_MESSAGE);
+            inputNombre.setText("Ingresa tu nombre completo");
+            inputPassword.setText("*********");
+            inputPasswordConfirm.setText("*********");
+            inputTelefono.setText("Ingresa tu numero");
+            inputDireccion.setText("Ingresa tu direccion");
+            return;
+        }
+
+        if (nombreCompleto.equals("Ingresa tu nombre completo") || password.equals("*********") || passwordConfirm.equals("*********") || telefono.equals("Ingresa tu numero") || direccion.equals("Ingresa tu direccion")) {
+            JOptionPane.showMessageDialog(this, "Debes poner los datos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -227,6 +250,12 @@ public class RegisterCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JTextField inputDireccion;
+    private javax.swing.JTextField inputEmail;
+    private javax.swing.JTextField inputNombre;
+    private javax.swing.JPasswordField inputPassword;
+    private javax.swing.JPasswordField inputPasswordConfirm;
+    private javax.swing.JTextField inputTelefono;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -236,13 +265,7 @@ public class RegisterCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
