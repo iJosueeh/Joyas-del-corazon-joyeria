@@ -325,19 +325,11 @@ public class Citas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void TextDescripcionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextDescripcionMouseEntered
-        if (TextDescripcion.getText().equals("Escribe el motivo de tu cita")) {
-
-            TextDescripcion.setText("");
-            TextDescripcion.setForeground(Color.black);
-        }
 
     }//GEN-LAST:event_TextDescripcionMouseEntered
 
     private void inputNumeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputNumeroMouseEntered
-        if (inputNumero.getText().equals("Ingresa tu numero")) {
-            inputNumero.setText("");
-            inputNumero.setForeground(Color.black);
-        }
+
     }//GEN-LAST:event_inputNumeroMouseEntered
 
     /**
