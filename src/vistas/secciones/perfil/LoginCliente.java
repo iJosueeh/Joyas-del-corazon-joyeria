@@ -218,6 +218,8 @@ public class LoginCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Debes ingresar tus datos solicitados.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

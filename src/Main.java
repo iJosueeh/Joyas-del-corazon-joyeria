@@ -8,7 +8,6 @@ import vistas.menu.MenuInicial;
 public class Main {
 
     public static void main(String[] args) {
-        // Inicializar el menu inicial
 
         /*
         Proyecto: Joyeria - Tienda Online
