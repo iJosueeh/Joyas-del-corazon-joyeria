@@ -310,6 +310,8 @@ public class Citas extends javax.swing.JFrame {
             return;
         }
 
+        
+        
         JOptionPane.showMessageDialog(
                 this,
                 "La cita ha sido registrada exitosamente.",
