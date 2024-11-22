@@ -1,11 +1,11 @@
-
 package vistas.secciones;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
 import vistas.menu.MenuUsuario;
 
-
 public class Citas extends javax.swing.JFrame {
-    
+
     public Citas() {
         initComponents(); // Inicialización de los componentes
         agregarMotivos(); // Llenamos el JComboBox
@@ -16,44 +16,42 @@ public class Citas extends javax.swing.JFrame {
     /**
      * Creates new form Citas
      */
-
     private void agregarMotivos() {
-    // Limpiamos cualquier elemento existente en el JComboBox
-    jComboBox1.removeAllItems();
+        // Limpiamos cualquier elemento existente en el JComboBox
+        checkMotivo.removeAllItems();
 
-    // Agregamos los motivos
-    String[] motivos = {
-        "Consulta por pedido",
-        "Compra de joyas personalizadas",
-        "Entrega en tienda",
-        "Eventos especiales ",
-        "Otro"
-    };
+        // Agregamos los motivos
+        String[] motivos = {
+            "Consulta por pedido",
+            "Compra de joyas personalizadas",
+            "Entrega en tienda",
+            "Eventos especiales ",
+            "Otro"
+        };
 
-    // Llenamos el JComboBox con los motivos
-    for (String motivo : motivos) {
-        jComboBox1.addItem(motivo);
+        // Llenamos el JComboBox con los motivos
+        for (String motivo : motivos) {
+            checkMotivo.addItem(motivo);
+        }
     }
-}
+
     // Método para agregar los modos de cita
-     private void agregarModosDeCita() {
-    jComboBox2.removeAllItems(); // Limpia los valores actuales
-    String[] modos = {"Presencial", "Virtual", "Telefónica"};
-    for (String modo : modos) {
-        jComboBox2.addItem(modo); // Agrega los valores al JComboBox
+    private void agregarModosDeCita() {
+        jComboBox2.removeAllItems(); // Limpia los valores actuales
+        String[] modos = {"Presencial", "Virtual", "Telefónica"};
+        for (String modo : modos) {
+            jComboBox2.addItem(modo); // Agrega los valores al JComboBox
+        }
     }
-   }
 
     // Método para agregar las preferencias de contacto
     private void agregarPreferenciasDeContacto() {
-    jComboBox3.removeAllItems(); // Limpia los valores actuales
-    String[] preferencias = {"Correo Electrónico", "Llamada Telefónica", "Mensaje de Texto"};
-    for (String preferencia : preferencias) {
-        jComboBox3.addItem(preferencia); // Agrega los valores al JComboBox
+        jComboBox3.removeAllItems(); // Limpia los valores actuales
+        String[] preferencias = {"Correo Electrónico", "Llamada Telefónica", "Mensaje de Texto"};
+        for (String preferencia : preferencias) {
+            jComboBox3.addItem(preferencia); // Agrega los valores al JComboBox
+        }
     }
-   }
-
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,11 +69,11 @@ public class Citas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        checkMotivo = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        inputNumero = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        TextDescripcion = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -112,23 +110,28 @@ public class Citas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
         jLabel4.setText("Motivo *");
 
-        jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setBorder(null);
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        checkMotivo.setForeground(new java.awt.Color(204, 204, 204));
+        checkMotivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        checkMotivo.setBorder(null);
+        checkMotivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                checkMotivoActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
         jLabel5.setText("Información de Contacto *");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        inputNumero.setText("Ingresa tu numero");
+        inputNumero.setBorder(null);
+        inputNumero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                inputNumeroMouseEntered(evt);
+            }
+        });
+        inputNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                inputNumeroActionPerformed(evt);
             }
         });
 
@@ -136,13 +139,18 @@ public class Citas extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Readex Pro bold", 0, 14)); // NOI18N
         jLabel3.setText("Descripción breve");
 
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField2.setText("jTextField2");
-        jTextField2.setBorder(null);
-        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        TextDescripcion.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        TextDescripcion.setText("Escribe el motivo de tu cita");
+        TextDescripcion.setBorder(null);
+        TextDescripcion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TextDescripcion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TextDescripcionMouseEntered(evt);
+            }
+        });
+        TextDescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                TextDescripcionActionPerformed(evt);
             }
         });
 
@@ -163,6 +171,11 @@ public class Citas extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(229, 229, 183));
         jButton2.setText("Solicitar");
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,9 +193,9 @@ public class Citas extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, 0, 400, Short.MAX_VALUE)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
+                    .addComponent(checkMotivo, 0, 400, Short.MAX_VALUE)
+                    .addComponent(inputNumero)
+                    .addComponent(TextDescripcion)
                     .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -196,15 +209,15 @@ public class Citas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(checkMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TextDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -275,26 +288,68 @@ public class Citas extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void checkMotivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkMotivoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_checkMotivoActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void inputNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumeroActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_inputNumeroActionPerformed
+
+    private void TextDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextDescripcionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_TextDescripcionActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        String numeroContacto = inputNumero.getText();
+        String descripcion = TextDescripcion.getText();
+
+        if (numeroContacto.isEmpty() || descripcion.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No puede haber un campo vacío.");
+            return;
+        }
+
+        JOptionPane.showMessageDialog(
+                this,
+                "La cita ha sido registrada exitosamente.",
+                "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+
+        TextDescripcion.setText("Escribe el motivo de tu cita");
+        TextDescripcion.setForeground(Color.gray);
+        inputNumero.setText("Ingresa tu numero");
+        TextDescripcion.setForeground(Color.gray);
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void TextDescripcionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextDescripcionMouseEntered
+        if (TextDescripcion.getText().equals("Escribe el motivo de tu cita")) {
+
+            TextDescripcion.setText("");
+            TextDescripcion.setForeground(Color.black);
+        }
+
+    }//GEN-LAST:event_TextDescripcionMouseEntered
+
+    private void inputNumeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputNumeroMouseEntered
+        if (inputNumero.getText().equals("Ingresa tu numero")) {
+            inputNumero.setText("");
+            inputNumero.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_inputNumeroMouseEntered
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TextDescripcion;
+    private javax.swing.JComboBox<String> checkMotivo;
+    private javax.swing.JTextField inputNumero;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
@@ -307,7 +362,5 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

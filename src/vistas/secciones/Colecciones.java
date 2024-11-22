@@ -22,7 +22,7 @@ public class Colecciones extends javax.swing.JFrame {
      */
     public Colecciones() {
         initComponents();
-       
+
     }
 
     /**
@@ -232,27 +232,27 @@ public class Colecciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       Catalogo newframe = new Catalogo ();
-       
-       newframe.setVisible(true);
-       
-       this.dispose();
-       
+        Catalogo newframe = new Catalogo();
+
+        newframe.setVisible(true);
+
+        this.dispose();
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Coleccion_Esencia_Noble newframe = new Coleccion_Esencia_Noble ();
-       
-       newframe.setVisible(true);
-       
-       this.dispose();
+        Coleccion_Esencia_Noble newframe = new Coleccion_Esencia_Noble();
+
+        newframe.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-      C_Hojas newframe = new C_Hojas ();
-      newframe.setVisible(true);
-       
-       this.dispose();
+        C_Hojas newframe = new C_Hojas();
+        newframe.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
