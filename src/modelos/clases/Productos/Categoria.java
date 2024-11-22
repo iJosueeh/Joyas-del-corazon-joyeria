@@ -6,15 +6,16 @@ import java.util.Set;
 
 
 public class Categoria {
-  private int idCategoria;
-   private String nombre;
-   private Set <Producto> productos;
+
+    private int idCategoria;
+    private String nombre;
+    private Set<Producto> productos;
 
     public Categoria(int idCategoria, String nombre, Set<Producto> productos) {
         this.idCategoria = idCategoria;
         this.nombre = nombre;
         this.productos = new HashSet<>();//almacenar sin duplicados
-        
+
     }
 
     public int getIdCategoria() {
@@ -40,13 +41,13 @@ public class Categoria {
     public void setProductos(Set<Producto> productos) {
         this.productos = productos;
     }
-    
-    
-    public void Agregar_P(Producto producto){
+
+    public void Agregar_P(Producto producto) {
         productos.add(producto);
-        System.out.println("Producto agregado a la categoria "+ nombre+ ":"+ producto.getNombre());
-        
+        System.out.println("Producto agregado a la categoria " + nombre + ":" + producto.getNombre());
+
     }
+
     public void Eliminar_P(Producto producto) {
         if (productos.contains(producto)) {//verifica si existe
             productos.remove(producto);
@@ -55,14 +56,16 @@ public class Categoria {
             System.out.println("El producto no se encuentra en la categoria.");
         }
     }
-   //metodo para obtener un conjunto de productos en la categoria
-     public Set<Producto> obtenerProductos() {
+    //metodo para obtener un conjunto de productos en la categoria
+
+    public Set<Producto> obtenerProductos() {
         return productos;
-     }
-     public void imprimir(){
-         System.out.println("Productos de la categoria"+ nombre+":");
-         for(Producto producto: productos){
-             System.out.println(producto.getNombre());
-         }
-     }  
+    }
+
+    public void imprimir() {
+        System.out.println("Productos de la categoria" + nombre + ":");
+        for (Producto producto : productos) {
+            System.out.println(producto.getNombre());
+        }
+    }
 }

@@ -4,6 +4,8 @@
  */
 package vistas.menu;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HOME
@@ -31,9 +33,9 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        inputCorreo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        passwordInput = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -57,17 +59,32 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("Email");
 
-        jTextField1.setText("username@email.com");
-        jTextField1.setToolTipText("");
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        inputCorreo.setText("username@email.com");
+        inputCorreo.setToolTipText("");
+        inputCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        inputCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputCorreoActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("Password");
 
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setToolTipText("");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        passwordInput.setText("**************");
+        passwordInput.setToolTipText("");
+        passwordInput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        passwordInput.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                passwordInputMouseEntered(evt);
+            }
+        });
+        passwordInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordInputActionPerformed(evt);
+            }
+        });
 
         jSeparator2.setBackground(new java.awt.Color(255, 138, 138));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,9 +130,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel2)
-                                .addComponent(jTextField1)
+                                .addComponent(inputCorreo)
                                 .addComponent(jLabel3)
-                                .addComponent(jPasswordField1)
+                                .addComponent(passwordInput)
                                 .addComponent(jSeparator2)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -133,11 +150,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -188,17 +205,47 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        String email = inputCorreo.getText();
+        String passwordUser = new String(passwordInput.getText());
+        
+        if (email.isEmpty() || passwordUser.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No puede haber un campo vacio.");
+            return;
+        }
+        
+
+        JOptionPane.showMessageDialog(
+                this,
+                "Login exitoso.",
+                "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+
         MenuGestionar menuGestionar = new MenuGestionar();
         menuGestionar.setVisible(true);
         menuGestionar.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void inputCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputCorreoActionPerformed
+
+    private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordInputActionPerformed
+
+    private void passwordInputMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordInputMouseEntered
+
+    }//GEN-LAST:event_passwordInputMouseEntered
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField inputCorreo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -208,9 +255,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField passwordInput;
     // End of variables declaration//GEN-END:variables
 }
