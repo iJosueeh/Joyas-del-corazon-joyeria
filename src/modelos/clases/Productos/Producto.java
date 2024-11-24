@@ -14,7 +14,7 @@ public class Producto {
     private int cantidad;
     private int stock;
     private List<Proveedor> proveedores;
-
+    
     public Producto(int id_Producto, String nombre, String descripcion, double precio, int stock, List<Proveedor> proveedores) {
         this.id_Producto = contador++;
         this.nombre = nombre;
