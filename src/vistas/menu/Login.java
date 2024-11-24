@@ -15,9 +15,9 @@ import modelos.clases.usuarios.Usuario;
  */
 public class Login extends javax.swing.JFrame {
 
-    Usuario usuario = new Usuario(); 
+    Usuario usuario = new Usuario();
     UsuariosDAO usuarioDAO = new UsuariosDAO();
-    
+
     public Login() {
         initComponents();
         LoginAccess usuarios = new LoginAccess(usuario, usuarioDAO, this);
@@ -66,6 +66,14 @@ public class Login extends javax.swing.JFrame {
         txtEmail.setText("ingresa tu correo electronico");
         txtEmail.setToolTipText("");
         txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -79,6 +87,14 @@ public class Login extends javax.swing.JFrame {
         txtPassword.setText("*********");
         txtPassword.setToolTipText("");
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPasswordFocusLost(evt);
+            }
+        });
         txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtPasswordMouseEntered(evt);
@@ -223,6 +239,38 @@ public class Login extends javax.swing.JFrame {
     private void txtPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseEntered
 
     }//GEN-LAST:event_txtPasswordMouseEntered
+
+    private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
+        String defaultEmailText = "ingresa tu correo electronico";
+
+        if (txtEmail.getText().equals(defaultEmailText)) {
+            txtEmail.setText("");
+        }
+    }//GEN-LAST:event_txtEmailFocusGained
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        String defaultEmailText = "ingresa tu correo electronico";
+
+        if (txtEmail.getText().isEmpty()) {
+            txtEmail.setText(defaultEmailText);
+        }
+    }//GEN-LAST:event_txtEmailFocusLost
+
+    private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
+        String defaultPasswordText = "*********";
+
+        if (String.valueOf(txtPassword.getPassword()).equals(defaultPasswordText)) {
+            txtPassword.setText("");
+        }
+    }//GEN-LAST:event_txtPasswordFocusGained
+
+    private void txtPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusLost
+        String defaultPasswordText = "*********";
+
+        if (String.valueOf(txtPassword.getPassword()).isEmpty()) {
+            txtPassword.setText(defaultPasswordText);
+        }
+    }//GEN-LAST:event_txtPasswordFocusLost
 
     /**
      * @param args the command line arguments

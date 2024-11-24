@@ -33,6 +33,8 @@ public class LoginAccess implements ActionListener {
 
             if (email.isEmpty() || password.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Los campos están vacíos.");
+                loginPanel.txtEmail.setText("ingresa tu correo electronico");
+                loginPanel.txtPassword.setText("*********");
                 return;
             }
 
@@ -52,8 +54,11 @@ public class LoginAccess implements ActionListener {
                 menuGestionar.setVisible(true);
                 menuGestionar.setLocationRelativeTo(null);
                 loginPanel.dispose();
+
             } else {
                 JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
+                loginPanel.txtEmail.setText("ingresa tu correo electronico");
+                loginPanel.txtPassword.setText("*********");
             }
         }
     }
