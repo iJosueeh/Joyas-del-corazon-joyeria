@@ -4,22 +4,17 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import modelos.clases.Productos.Producto;
-import modelos.clases.usuarios.Cliente;
 
 
 
 public class Pedido {
     private int contador = 1;
     private int idPedido;
-    private Cliente cliente;
     private Map<Producto, Integer> productos;
     private LocalDate fechaPedido;
     private double total;
 
-    public Pedido(Cliente cliente, LocalDate fechaPedido) {
-        this.idPedido = contador++;
-        this.cliente = cliente;
-        this.productos = new HashMap<>();
+    public Pedido(LocalDate fechaPedido, double total) {
         this.fechaPedido = fechaPedido;
         this.total = 0.0;
     }
@@ -30,14 +25,6 @@ public class Pedido {
 
     public void setIdPedido(int idPedido) {
         this.idPedido = idPedido;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public Map<Producto, Integer> getProductos() {

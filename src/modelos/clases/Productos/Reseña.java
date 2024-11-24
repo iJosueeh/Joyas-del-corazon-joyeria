@@ -1,19 +1,14 @@
 
 package modelos.clases.Productos;
 
-import modelos.clases.usuarios.Cliente;
-
-
 public class Reseña {
     private int idReseña;
-    private Cliente cliente;
     private Producto producto;
     private String comentario;
     private int puntuacion;
 
-    public Reseña(int idReseña, Cliente cliente, Producto producto, String comentario, int puntuacion) {
+    public Reseña(int idReseña, Producto producto, String comentario, int puntuacion) {
         this.idReseña = idReseña;
-        this.cliente = cliente;
         this.producto = producto;
         this.comentario = comentario;
         this.puntuacion = puntuacion;
@@ -44,14 +39,6 @@ public class Reseña {
 
     public void setIdReseña(int idReseña) {
         this.idReseña = idReseña;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public Producto getProducto() {

@@ -34,7 +34,6 @@ public class GestionPedido {
 
         if (pedido != null) {
             System.out.println("ID del Pedido: " + pedido.getIdPedido());
-            System.out.println("Cliente: " + pedido.getCliente());
             System.out.println("Fecha del pedido: " + pedido.getFechaPedido());
             System.out.println("Productos: ");
 

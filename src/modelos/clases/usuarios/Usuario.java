@@ -9,6 +9,7 @@ public class Usuario {
     private String telefono;
     private String estado;
     private String direccion;
+    private String rol;
 
     public Usuario() {
     }
@@ -19,8 +20,9 @@ public class Usuario {
         this.correo_electronico = correo_electronico;
         this.contraseña = contraseña;
         this.telefono = telefono;
-        this.estado = "activo";
+        this.estado = estado;
         this.direccion = direccion;
+        this.rol = rol;
     }
 
     public int getIdUsuario() {
@@ -51,6 +53,10 @@ public class Usuario {
         return direccion;
     }
 
+    public String getRol() {
+        return rol;
+    }
+
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
@@ -79,9 +85,26 @@ public class Usuario {
         this.direccion = direccion;
     }
 
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+    
     @Override
     public String toString() {
-        return "Usuario{" + "idUsuario=" + idUsuario + ", nombre_completo=" + nombre_completo + ", correo_electronico=" + correo_electronico + ", contrase\u00f1a=" + contraseña + ", telefono=" + telefono + ", estado=" + estado + ", direccion=" + direccion + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Usuario{");
+        sb.append("idUsuario=").append(idUsuario);
+        sb.append(", nombre_completo=").append(nombre_completo);
+        sb.append(", correo_electronico=").append(correo_electronico);
+        sb.append(", contrase\u00f1a=").append(contraseña);
+        sb.append(", telefono=").append(telefono);
+        sb.append(", estado=").append(estado);
+        sb.append(", direccion=").append(direccion);
+        sb.append(", rol=").append(rol);
+        sb.append('}');
+        return sb.toString();
     }
+
+
 
 }

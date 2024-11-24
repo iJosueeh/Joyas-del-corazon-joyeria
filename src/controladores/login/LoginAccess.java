@@ -41,7 +41,7 @@ public class LoginAccess implements ActionListener {
                 return;
             }
 
-            Usuario login = usuarioDao.login(email, password);
+            Usuario login = usuarioDao.loginAdmin(email, password);
 
             if (login != null) {
 

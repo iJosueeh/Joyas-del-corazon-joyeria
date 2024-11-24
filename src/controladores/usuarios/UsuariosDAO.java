@@ -23,8 +23,8 @@ public class UsuariosDAO {
     PreparedStatement ps;
     ResultSet rs;
 
-    public Usuario login(String correo_electronico, String contraseña) {
-        String sql = "SELECT * FROM usuarios WHERE correo_electronico = ?";
+    public Usuario loginAdmin(String correo_electronico, String contraseña) {
+        String sql = "SELECT * FROM usuarios WHERE correo_electronico = ? AND rol = 'administrador'";
         Usuario usuario = null;
 
         try {
@@ -43,6 +43,7 @@ public class UsuariosDAO {
                     usuario.setTelefono(rs.getString("telefono"));
                     usuario.setEstado(rs.getString("estado"));
                     usuario.setDireccion(rs.getString("direccion"));
+                    usuario.setRol(rs.getString("rol"));
                 }
             }
 
