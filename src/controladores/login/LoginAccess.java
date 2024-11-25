@@ -32,7 +32,7 @@ public class LoginAccess implements ActionListener {
             String password = String.valueOf(loginPanel.txtPassword.getPassword());
 
             if (email.isEmpty() || password.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Los campos están vacíos.");
+                JOptionPane.showMessageDialog(null, "Los campos están vacíos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 loginPanel.txtEmail.setText("ingresa tu correo electronico");
                 loginPanel.txtPassword.setText("*********");
                 return;
