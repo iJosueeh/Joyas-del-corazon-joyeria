@@ -10,6 +10,8 @@ public class Usuario {
     private String estado;
     private String direccion;
     private String rol;
+    private boolean status;
+    private static boolean loggedIn = false;
 
     public Usuario() {
     }
@@ -23,6 +25,7 @@ public class Usuario {
         this.estado = estado;
         this.direccion = direccion;
         this.rol = rol;
+        this.status = false;
     }
 
     public int getIdUsuario() {
@@ -57,6 +60,14 @@ public class Usuario {
         return rol;
     }
 
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
@@ -88,7 +99,15 @@ public class Usuario {
     public void setRol(String rol) {
         this.rol = rol;
     }
-    
+
+    public static boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public static void setLoggedIn(boolean loggedIn) {
+        Usuario.loggedIn = loggedIn;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -104,7 +123,5 @@ public class Usuario {
         sb.append('}');
         return sb.toString();
     }
-
-
 
 }

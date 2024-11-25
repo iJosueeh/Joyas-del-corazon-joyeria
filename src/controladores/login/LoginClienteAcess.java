@@ -28,7 +28,12 @@ public class LoginClienteAcess implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == loginClientePanel.btnLogin) {
-            
+
+            if (Usuario.isLoggedIn()) {
+                JOptionPane.showMessageDialog(null, "Ya tienes una sesión activa.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
             String email = loginClientePanel.txtEmail.getText();
             String password = String.valueOf(loginClientePanel.txtPassword.getPassword());
 
@@ -50,6 +55,8 @@ public class LoginClienteAcess implements ActionListener {
 
                 String mensajeBienvenida = "Bienvenido, " + loginCliente.getNombre_completo() + "!";
                 JOptionPane.showMessageDialog(null, mensajeBienvenida, "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
+                loginCliente.setStatus(true);
+                Usuario.setLoggedIn(true);
 
                 MenuUsuario menuUsuario = new MenuUsuario();
                 menuUsuario.setVisible(true);
@@ -61,7 +68,7 @@ public class LoginClienteAcess implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
                 loginClientePanel.txtEmail.setText("Ingresa tu correo electronico");
                 loginClientePanel.txtPassword.setText("*********");
-                
+
             }
 
         }

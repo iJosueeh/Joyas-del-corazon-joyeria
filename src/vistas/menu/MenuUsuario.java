@@ -5,6 +5,7 @@
 package vistas.menu;
 
 import javax.swing.JOptionPane;
+import modelos.clases.usuarios.Usuario;
 import vistas.secciones.Catalogos.Catalogo;
 import vistas.secciones.Citas;
 import vistas.secciones.Colecciones;
@@ -23,6 +24,13 @@ public class MenuUsuario extends javax.swing.JFrame {
      */
     public MenuUsuario() {
         initComponents();
+        
+        if (Usuario.isLoggedIn()) {
+            txtStatus.setText("Activo");
+        } else {
+            txtStatus.setText("Desconectado");
+        }
+        
     }
 
     /**
@@ -42,7 +50,11 @@ public class MenuUsuario extends javax.swing.JFrame {
         btnSobreNosotros = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         btnAbandonar = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnIniciarSesion = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtStatus = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JLabel();
         btnPanel = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
@@ -115,17 +127,33 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(255, 149, 0));
-        jButton7.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton7.setText("Iniciar Sesion");
-        jButton7.setBorder(null);
-        jButton7.setMaximumSize(new java.awt.Dimension(141, 18));
-        jButton7.setMinimumSize(new java.awt.Dimension(141, 18));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciarSesion.setBackground(new java.awt.Color(255, 149, 0));
+        btnIniciarSesion.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
+        btnIniciarSesion.setText("Iniciar Sesion");
+        btnIniciarSesion.setBorder(null);
+        btnIniciarSesion.setMaximumSize(new java.awt.Dimension(141, 18));
+        btnIniciarSesion.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnIniciarSesionActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
+        jLabel1.setText("Estado Actual: ");
+
+        txtStatus.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtStatus.setForeground(new java.awt.Color(255, 255, 255));
+        txtStatus.setText("Desconectado");
+
+        jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
+        jLabel4.setText("Nombre Completo: ");
+
+        txtNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombre.setText("Invitado");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -133,20 +161,37 @@ public class MenuUsuario extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator1)
-                    .addComponent(btnColecciones, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                    .addComponent(btnSobreNosotros, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                    .addComponent(btnAbandonar, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNombre))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtStatus))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jSeparator1)
+                        .addComponent(btnColecciones, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                        .addComponent(btnSobreNosotros, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                        .addComponent(btnAbandonar, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(135, 135, 135)
+                .addGap(85, 85, 85)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtNombre))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtStatus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88)
                 .addComponent(btnColecciones, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,8 +201,8 @@ public class MenuUsuario extends javax.swing.JFrame {
                 .addComponent(btnSobreNosotros, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAbandonar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -238,7 +283,8 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         if (seleccion == JOptionPane.YES_OPTION) {
             JOptionPane.showMessageDialog(null, "Gracias por utilizar el programa, ¡vuelve pronto!");
-
+            Usuario.setLoggedIn(false);
+            
             MenuInicial menuInicial = new MenuInicial();
             menuInicial.setVisible(true);
             menuInicial.setLocationRelativeTo(null);
@@ -251,7 +297,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         SobreNosotros sobreNosotros = new SobreNosotros();
         sobreNosotros.setVisible(true);
         sobreNosotros.setLocationRelativeTo(null);
-        
+
         this.dispose();
     }//GEN-LAST:event_btnSobreNosotrosActionPerformed
 
@@ -259,7 +305,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         Sedes sedeLocales = new Sedes();
         sedeLocales.setVisible(true);
         sedeLocales.setLocationRelativeTo(null);
-        
+
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -267,7 +313,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         Citas citas = new Citas();
         citas.setVisible(true);
         citas.setLocationRelativeTo(null);
-        
+
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -275,17 +321,24 @@ public class MenuUsuario extends javax.swing.JFrame {
         Colecciones colecciones = new Colecciones();
         colecciones.setVisible(true);
         colecciones.setLocationRelativeTo(null);
-        
+
         this.dispose();
     }//GEN-LAST:event_btnColeccionesActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        LoginCliente loginCliente = new LoginCliente();
-        loginCliente.setVisible(true);
-        loginCliente.setLocationRelativeTo(null);
-        
-        this.dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+
+        if (Usuario.isLoggedIn()) {
+            JOptionPane.showMessageDialog(null, "Ya tienes una sesión activa.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else {
+            LoginCliente loginCliente = new LoginCliente();
+            loginCliente.setVisible(true);
+            loginCliente.setLocationRelativeTo(null);
+
+            this.dispose();
+        }
+
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,16 +347,20 @@ public class MenuUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbandonar;
     private javax.swing.JButton btnColecciones;
+    private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JPanel btnPanel;
     private javax.swing.JButton btnSobreNosotros;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel txtNombre;
+    private javax.swing.JLabel txtStatus;
     // End of variables declaration//GEN-END:variables
 }

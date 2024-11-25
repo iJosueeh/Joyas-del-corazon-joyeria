@@ -28,6 +28,7 @@ public class LoginAccess implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == loginPanel.btnLogin) {
+
             String email = loginPanel.txtEmail.getText();
             String password = String.valueOf(loginPanel.txtPassword.getPassword());
 
@@ -49,6 +50,8 @@ public class LoginAccess implements ActionListener {
 
                 String mensajeBienvenida = "Bienvenido, " + login.getNombre_completo() + "!";
                 JOptionPane.showMessageDialog(null, mensajeBienvenida, "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
+                login.setStatus(true);
+                Usuario.setLoggedIn(true);
 
                 MenuGestionar menuGestionar = new MenuGestionar();
                 menuGestionar.setVisible(true);

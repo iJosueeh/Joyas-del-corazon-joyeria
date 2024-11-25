@@ -94,33 +94,33 @@ public class LoginCliente extends javax.swing.JFrame {
             }
         });
 
-        btnLogin.setBackground(new java.awt.Color(153, 153, 153));
+        btnLogin.setBackground(new java.awt.Color(69, 73, 74));
         btnLogin.setFont(new java.awt.Font("Readex Pro bold", 1, 14)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(0, 0, 0));
+        btnLogin.setForeground(new java.awt.Color(204, 204, 204));
         btnLogin.setText("Iniciar Sesión");
-        btnLogin.setBorder(null);
+        btnLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
 
-        btnRegistrarse.setBackground(new java.awt.Color(153, 153, 153));
+        btnRegistrarse.setBackground(new java.awt.Color(69, 73, 74));
         btnRegistrarse.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnRegistrarse.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegistrarse.setForeground(new java.awt.Color(204, 204, 204));
         btnRegistrarse.setText("Registrarse");
-        btnRegistrarse.setBorder(null);
+        btnRegistrarse.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarseActionPerformed(evt);
             }
         });
 
-        btnRegresar.setBackground(new java.awt.Color(153, 153, 153));
+        btnRegresar.setBackground(new java.awt.Color(69, 73, 74));
         btnRegresar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresar.setForeground(new java.awt.Color(204, 204, 204));
         btnRegresar.setText("Regresar");
-        btnRegresar.setBorder(null);
+        btnRegresar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);

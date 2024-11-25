@@ -49,77 +49,72 @@ public class RegisterCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 186, 161));
+        jPanel1.setBackground(new java.awt.Color(118, 98, 78));
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setFont(new java.awt.Font("Readex Pro Light", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(109, 38, 0));
-        jLabel1.setText("Registrar");
+        jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
+        jLabel1.setText("Registrarse");
 
-        jLabel2.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("Nombre Completo");
 
-        inputNombre.setBackground(new java.awt.Color(255, 255, 255));
+        inputNombre.setForeground(new java.awt.Color(204, 204, 204));
         inputNombre.setText("Ingresa tu nombre completo");
-        inputNombre.setBorder(null);
+        inputNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel3.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("Correo electrónico");
 
-        inputEmail.setBackground(new java.awt.Color(255, 255, 255));
         inputEmail.setText("Ingresa tu correo electronico");
-        inputEmail.setBorder(null);
+        inputEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Contraseña");
 
-        inputPassword.setBackground(new java.awt.Color(255, 255, 255));
         inputPassword.setText("*********");
-        inputPassword.setBorder(null);
+        inputPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel5.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("Confirmar contraseña");
 
-        inputPasswordConfirm.setBackground(new java.awt.Color(255, 255, 255));
         inputPasswordConfirm.setText("*********");
-        inputPasswordConfirm.setBorder(null);
+        inputPasswordConfirm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnRegresar.setBackground(new java.awt.Color(255, 149, 0));
+        btnRegresar.setBackground(new java.awt.Color(69, 73, 74));
         btnRegresar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresar.setForeground(new java.awt.Color(229, 229, 183));
         btnRegresar.setText("Regresar");
-        btnRegresar.setBorder(null);
+        btnRegresar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 183)));
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(229, 229, 183));
         jLabel6.setText("Número de teléfono");
 
-        inputTelefono.setBackground(new java.awt.Color(255, 255, 255));
         inputTelefono.setText("Ingresa tu numero");
-        inputTelefono.setBorder(null);
+        inputTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel7.setFont(new java.awt.Font("Readex Pro Medium", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(229, 229, 183));
         jLabel7.setText("Dirección");
 
-        inputDireccion.setBackground(new java.awt.Color(255, 255, 255));
         inputDireccion.setText("Ingresa tu direccion");
-        inputDireccion.setBorder(null);
+        inputDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton4.setBackground(new java.awt.Color(255, 149, 0));
+        jButton4.setBackground(new java.awt.Color(69, 73, 74));
         jButton4.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setForeground(new java.awt.Color(229, 229, 183));
         jButton4.setText("Registrarse");
-        jButton4.setBorder(null);
+        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 183)));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -130,10 +125,6 @@ public class RegisterCliente extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -156,13 +147,17 @@ public class RegisterCliente extends javax.swing.JFrame {
                     .addComponent(inputTelefono)
                     .addComponent(inputDireccion))
                 .addGap(18, 18, 18))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
@@ -187,8 +182,8 @@ public class RegisterCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
