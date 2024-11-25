@@ -19,18 +19,19 @@ import vistas.secciones.perfil.LoginCliente;
  */
 public class MenuUsuario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuUsuario
-     */
+    Usuario usuarioLogueado = Usuario.getUsuarioActual();
+
     public MenuUsuario() {
         initComponents();
-        
+
         if (Usuario.isLoggedIn()) {
             txtStatus.setText("Activo");
+            txtNombre.setText(usuarioLogueado.getNombre_completo().toUpperCase());
         } else {
             txtStatus.setText("Desconectado");
+            txtNombre.setText("Invitado");
         }
-        
+
     }
 
     /**
@@ -284,7 +285,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         if (seleccion == JOptionPane.YES_OPTION) {
             JOptionPane.showMessageDialog(null, "Gracias por utilizar el programa, ¡vuelve pronto!");
             Usuario.setLoggedIn(false);
-            
+
             MenuInicial menuInicial = new MenuInicial();
             menuInicial.setVisible(true);
             menuInicial.setLocationRelativeTo(null);

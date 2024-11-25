@@ -6,16 +6,14 @@ package vistas.menu;
 
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
+import modelos.clases.usuarios.Usuario;
 
 /**
  *
  * @author HOME
  */
 public class MenuGestionar extends javax.swing.JFrame {
-
-    /**
-     * Creates new form MenuGestionar
-     */
+    
     public MenuGestionar() {
         initComponents();
         Gestionar_productos G1= new Gestionar_productos ();

@@ -53,6 +53,8 @@ public class LoginClienteAcess implements ActionListener {
 
             if (loginCliente != null) {
 
+                Usuario.setUsuarioActual(loginCliente);
+                
                 String mensajeBienvenida = "Bienvenido, " + loginCliente.getNombre_completo() + "!";
                 JOptionPane.showMessageDialog(null, mensajeBienvenida, "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
                 loginCliente.setStatus(true);

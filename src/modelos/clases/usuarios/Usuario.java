@@ -12,6 +12,7 @@ public class Usuario {
     private String rol;
     private boolean status;
     private static boolean loggedIn = false;
+    private static Usuario usuarioActual;
 
     public Usuario() {
     }
@@ -108,6 +109,15 @@ public class Usuario {
         Usuario.loggedIn = loggedIn;
     }
 
+    public static Usuario getUsuarioActual() {
+        return usuarioActual;
+    }
+
+    public static void setUsuarioActual(Usuario usuario) {
+        Usuario.usuarioActual = usuario;
+    }
+
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
