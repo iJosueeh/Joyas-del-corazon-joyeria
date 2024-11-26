@@ -28,7 +28,7 @@ public class Cita {
         this.descripcion = descripcion;
         this.modoCita = modoCita;
         this.preferenciaContacto = preferenciaContacto;
-        this.estado = estado;
+        this.estado = "pendiente";
     }
 
     public int getId() {

@@ -62,6 +62,11 @@ public class RegistrarCitas implements ActionListener {
 
                 if (citaResultado) {
                     JOptionPane.showMessageDialog(null, "Cita registrada correctamente.", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                    citasPanel.txtContactoInfo.setText("Ingresa tu numero");
+                    citasPanel.txtDescripcion.setText("Escribe el motivo de tu cita");
+                    citasPanel.comboBoxModoCita.setSelectedIndex(0);
+                    citasPanel.comboBoxMotivo.setSelectedIndex(0);
+                    citasPanel.comboBoxPreferencia.setSelectedIndex(0);
                 } else {
                     JOptionPane.showMessageDialog(null, "Error al momento de registrar una cita, intente de nuevo.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 }

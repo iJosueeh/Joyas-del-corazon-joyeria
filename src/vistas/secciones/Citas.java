@@ -86,6 +86,14 @@ public class Citas extends javax.swing.JFrame {
 
         txtContactoInfo.setText("Ingresa tu numero");
         txtContactoInfo.setBorder(null);
+        txtContactoInfo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtContactoInfoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtContactoInfoFocusLost(evt);
+            }
+        });
         txtContactoInfo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtContactoInfoMouseEntered(evt);
@@ -105,6 +113,14 @@ public class Citas extends javax.swing.JFrame {
         txtDescripcion.setText("Escribe el motivo de tu cita");
         txtDescripcion.setBorder(null);
         txtDescripcion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtDescripcion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDescripcionFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDescripcionFocusLost(evt);
+            }
+        });
         txtDescripcion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 txtDescripcionMouseEntered(evt);
@@ -273,6 +289,42 @@ public class Citas extends javax.swing.JFrame {
     private void txtContactoInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtContactoInfoMouseEntered
 
     }//GEN-LAST:event_txtContactoInfoMouseEntered
+
+    private void txtContactoInfoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtContactoInfoFocusGained
+        String defaultMessage = "Ingresa tu numero";
+
+        if (txtContactoInfo.getText().equals(defaultMessage)) {
+            txtContactoInfo.setText("");
+        }
+
+    }//GEN-LAST:event_txtContactoInfoFocusGained
+
+    private void txtContactoInfoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtContactoInfoFocusLost
+        String defaultMessage = "Ingresa tu numero";
+        
+        if (txtContactoInfo.getText().isEmpty()) {
+            txtContactoInfo.setText(defaultMessage);
+        }
+        
+    }//GEN-LAST:event_txtContactoInfoFocusLost
+
+    private void txtDescripcionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescripcionFocusGained
+        String defaultMessage = "Escribe el motivo de tu cita";
+        
+        if (txtDescripcion.getText().equals(defaultMessage)) {
+            txtDescripcion.setText("");
+        }
+        
+    }//GEN-LAST:event_txtDescripcionFocusGained
+
+    private void txtDescripcionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescripcionFocusLost
+         String defaultMessage = "Escribe el motivo de tu cita";
+         
+         if (txtDescripcion.getText().isEmpty()) {
+             txtDescripcion.setText(defaultMessage);
+         }
+         
+    }//GEN-LAST:event_txtDescripcionFocusLost
 
     /**
      * @param args the command line arguments
