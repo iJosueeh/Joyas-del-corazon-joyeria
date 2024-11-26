@@ -16,13 +16,6 @@ public class MenuGestionar extends javax.swing.JFrame {
     
     public MenuGestionar() {
         initComponents();
-        Gestionar_productos G1= new Gestionar_productos ();
-        G1.setSize(760, 680);
-        G1.setLocation(0, 0);
-        content.removeAll();
-        content.add(G1,BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
     }
 
     /**
@@ -204,13 +197,7 @@ public class MenuGestionar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Gestionar_productos G1= new Gestionar_productos ();
-        G1.setSize(760, 680);
-        G1.setLocation(0, 0);
-        content.removeAll();
-        content.add(G1,BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
