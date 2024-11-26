@@ -243,7 +243,7 @@ public class MenuGestionar extends javax.swing.JFrame {
                 "No" // Opción predeterminada seleccionada
         );
 
-        if (seleccion == JOptionPane.YES_OPTION) {
+        if (seleccion == JOptionPane.YES_OPTION ) {
             // Muestra un mensaje de despedida
             JOptionPane.showMessageDialog(null, "Gracias por utilizar el programa, ¡vuelve pronto!");
 
