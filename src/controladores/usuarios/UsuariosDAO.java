@@ -81,4 +81,73 @@ public class UsuariosDAO {
         return usuario;
     }
 
+    public Boolean registrarUsuario(Usuario usuario) {
+        String sql = "INSERT INTO usuarios (nombre_completo, correo_electronico, contraseña, telefono, estado, direccion, rol) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+
+            ps.setString(1, usuario.getNombre_completo());
+            ps.setString(2, usuario.getCorreo_electronico());
+            ps.setString(3, usuario.getContraseña());
+            ps.setString(4, usuario.getTelefono());
+            ps.setString(5, usuario.getEstado());
+            ps.setString(6, usuario.getDireccion());
+            ps.setString(7, usuario.getRol());
+
+            int filasInsertadas = ps.executeUpdate();
+
+            if (filasInsertadas > 0) {
+                try (ResultSet rs = ps.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        int idGenerado = rs.getInt(1);
+                        usuario.setIdUsuario(idGenerado);
+                    }
+                }
+            }
+            return true;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+
+    }
+
+    public Boolean actualizarEstadoInactivo(int idUsuario) {
+        String sql = "UPDATE usuarios SET estado = 'inactivo' WHERE id = ?";
+
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+
+            ps.setInt(1, idUsuario);
+
+            int filasActualizadas = ps.executeUpdate();
+            return filasActualizadas > 0;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    }
+
+    public Boolean actualizarEstadoActivo(int idUsuario) {
+        String sql = "UPDATE usuarios SET estado = 'activo' WHERE id = ?";
+
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+
+            ps.setInt(1, idUsuario);
+
+            int filasActualizadas = ps.executeUpdate();
+            return filasActualizadas > 0;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    }
+
 }

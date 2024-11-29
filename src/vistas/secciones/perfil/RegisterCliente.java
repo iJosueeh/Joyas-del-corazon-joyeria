@@ -4,7 +4,10 @@
  */
 package vistas.secciones.perfil;
 
+import controladores.login.RegisterUsuarios;
+import controladores.usuarios.UsuariosDAO;
 import javax.swing.JOptionPane;
+import modelos.clases.usuarios.Usuario;
 
 /**
  *
@@ -12,11 +15,12 @@ import javax.swing.JOptionPane;
  */
 public class RegisterCliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RegisterCliente
-     */
+    Usuario usuario = new Usuario();
+    UsuariosDAO usuarioDAO = new UsuariosDAO();
+
     public RegisterCliente() {
         initComponents();
+        RegisterUsuarios registrarUsuarios = new RegisterUsuarios(usuario, usuarioDAO, this);
     }
 
     /**
@@ -32,20 +36,20 @@ public class RegisterCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        inputNombre = new javax.swing.JTextField();
+        txtNombreCompleto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        inputEmail = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        inputPassword = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
-        inputPasswordConfirm = new javax.swing.JPasswordField();
+        txtPasswordConfirm = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         btnRegresar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        inputTelefono = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        inputDireccion = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        txtDireccion = new javax.swing.JTextField();
+        btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,30 +64,61 @@ public class RegisterCliente extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("Nombre Completo");
 
-        inputNombre.setForeground(new java.awt.Color(204, 204, 204));
-        inputNombre.setText("Ingresa tu nombre completo");
-        inputNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombreCompleto.setText("Ingresa tu nombre completo");
+        txtNombreCompleto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombreCompleto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNombreCompletoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNombreCompletoFocusLost(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("Correo electrónico");
 
-        inputEmail.setText("Ingresa tu correo electronico");
-        inputEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtEmail.setText("Ingresa tu correo electronico");
+        txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Contraseña");
 
-        inputPassword.setText("*********");
-        inputPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPassword.setText("*********");
+        txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPasswordFocusLost(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("Confirmar contraseña");
 
-        inputPasswordConfirm.setText("*********");
-        inputPasswordConfirm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPasswordConfirm.setText("*********");
+        txtPasswordConfirm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPasswordConfirm.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPasswordConfirmFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPasswordConfirmFocusLost(evt);
+            }
+        });
 
         btnRegresar.setBackground(new java.awt.Color(69, 73, 74));
         btnRegresar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -100,24 +135,40 @@ public class RegisterCliente extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(229, 229, 183));
         jLabel6.setText("Número de teléfono");
 
-        inputTelefono.setText("Ingresa tu numero");
-        inputTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTelefono.setText("Ingresa tu numero telefonico");
+        txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTelefonoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelefonoFocusLost(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(229, 229, 183));
         jLabel7.setText("Dirección");
 
-        inputDireccion.setText("Ingresa tu direccion");
-        inputDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtDireccion.setText("Ingresa tu direccion");
+        txtDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtDireccion.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDireccionFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDireccionFocusLost(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(69, 73, 74));
-        jButton4.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(229, 229, 183));
-        jButton4.setText("Registrarse");
-        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 183)));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrar.setBackground(new java.awt.Color(69, 73, 74));
+        btnRegistrar.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(229, 229, 183));
+        btnRegistrar.setText("Registrarse");
+        btnRegistrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(229, 229, 183)));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRegistrarActionPerformed(evt);
             }
         });
 
@@ -135,17 +186,17 @@ public class RegisterCliente extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jSeparator1)
-                    .addComponent(inputNombre)
-                    .addComponent(inputEmail)
-                    .addComponent(inputPassword)
-                    .addComponent(inputPasswordConfirm)
+                    .addComponent(txtNombreCompleto)
+                    .addComponent(txtEmail)
+                    .addComponent(txtPassword)
+                    .addComponent(txtPasswordConfirm)
                     .addComponent(jSeparator2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inputTelefono)
-                    .addComponent(inputDireccion))
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelefono)
+                    .addComponent(txtDireccion))
                 .addGap(18, 18, 18))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(154, 154, 154)
@@ -162,33 +213,33 @@ public class RegisterCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
 
@@ -214,44 +265,124 @@ public class RegisterCliente extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        String nombreCompleto = inputNombre.getText();
-        String email = inputEmail.getText();
-        String password = new String(inputPassword.getText());
-        String passwordConfirm = new String(inputPasswordConfirm.getText());
-        String telefono = inputTelefono.getText();
-        String direccion = inputDireccion.getText();
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
 
-        if (nombreCompleto.isEmpty() || email.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty() || telefono.isEmpty() || direccion.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No puede haber mensajes vacios.", "Error", JOptionPane.ERROR_MESSAGE);
-            inputNombre.setText("Ingresa tu nombre completo");
-            inputPassword.setText("*********");
-            inputPasswordConfirm.setText("*********");
-            inputTelefono.setText("Ingresa tu numero");
-            inputDireccion.setText("Ingresa tu direccion");
-            return;
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtNombreCompletoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreCompletoFocusGained
+        String defaultMessage = "Ingresa tu nombre completo";
+
+        if (txtNombreCompleto.getText().equals(defaultMessage)) {
+            txtNombreCompleto.setText("");
         }
 
-        if (nombreCompleto.equals("Ingresa tu nombre completo") || password.equals("*********") || passwordConfirm.equals("*********") || telefono.equals("Ingresa tu numero") || direccion.equals("Ingresa tu direccion")) {
-            JOptionPane.showMessageDialog(this, "Debes poner los datos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
+    }//GEN-LAST:event_txtNombreCompletoFocusGained
+
+    private void txtNombreCompletoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreCompletoFocusLost
+        String defaultMessage = "Ingresa tu nombre completo";
+
+        if (txtNombreCompleto.getText().isEmpty()) {
+            txtNombreCompleto.setText(defaultMessage);
         }
 
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_txtNombreCompletoFocusLost
+
+    private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
+        String defaultMessage = "Ingresa tu correo electronico";
+
+        if (txtEmail.getText().equals(defaultMessage)) {
+            txtEmail.setText("");
+        }
+
+    }//GEN-LAST:event_txtEmailFocusGained
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        String defaultMessage = "Ingresa tu correo electronico";
+
+        if (txtEmail.getText().isEmpty()) {
+            txtEmail.setText(defaultMessage);
+        }
+    }//GEN-LAST:event_txtEmailFocusLost
+
+    private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
+        String defaultMessage = "*********";
+
+        if (String.valueOf(txtPassword.getPassword()).equals(defaultMessage)) {
+            txtPassword.setText("");
+        }
+
+    }//GEN-LAST:event_txtPasswordFocusGained
+
+    private void txtPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusLost
+        String defaultMessage = "*********";
+
+        if (String.valueOf(txtPassword.getPassword()).isEmpty()) {
+            txtPassword.setText(defaultMessage);
+        }
+
+    }//GEN-LAST:event_txtPasswordFocusLost
+
+    private void txtPasswordConfirmFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordConfirmFocusGained
+        String defaultMessage = "*********";
+
+        if (String.valueOf(txtPasswordConfirm.getPassword()).equals(defaultMessage)) {
+            txtPasswordConfirm.setText("");
+        }
+
+    }//GEN-LAST:event_txtPasswordConfirmFocusGained
+
+    private void txtPasswordConfirmFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordConfirmFocusLost
+        String defaultMessage = "*********";
+
+        if (String.valueOf(txtPasswordConfirm.getPassword()).isEmpty()) {
+            txtPasswordConfirm.setText(defaultMessage);
+        }
+
+    }//GEN-LAST:event_txtPasswordConfirmFocusLost
+
+    private void txtTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoFocusGained
+        String defaultMessage = "Ingresa tu numero telefonico";
+
+        if (txtTelefono.getText().equals(defaultMessage)) {
+            txtTelefono.setText("");
+        }
+
+    }//GEN-LAST:event_txtTelefonoFocusGained
+
+    private void txtTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoFocusLost
+        String defaultMessage = "Ingresa tu numero telefonico";
+
+        if (txtTelefono.getText().isEmpty()) {
+            txtTelefono.setText(defaultMessage);
+        }
+
+    }//GEN-LAST:event_txtTelefonoFocusLost
+
+    private void txtDireccionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDireccionFocusGained
+        String defaultMessage = "Ingresa tu direccion";
+
+        if (txtDireccion.getText().equals(defaultMessage)) {
+            txtDireccion.setText("");
+        }
+
+    }//GEN-LAST:event_txtDireccionFocusGained
+
+    private void txtDireccionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDireccionFocusLost
+        String defaultMessage = "Ingresa tu direccion";
+
+        if (txtDireccion.getText().isEmpty()) {
+            txtDireccion.setText(defaultMessage);
+        }
+        
+    }//GEN-LAST:event_txtDireccionFocusLost
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegresar;
-    private javax.swing.JTextField inputDireccion;
-    private javax.swing.JTextField inputEmail;
-    private javax.swing.JTextField inputNombre;
-    private javax.swing.JPasswordField inputPassword;
-    private javax.swing.JPasswordField inputPasswordConfirm;
-    private javax.swing.JTextField inputTelefono;
-    private javax.swing.JButton jButton4;
+    public javax.swing.JButton btnRegistrar;
+    public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -262,5 +393,11 @@ public class RegisterCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtNombreCompleto;
+    public javax.swing.JPasswordField txtPassword;
+    public javax.swing.JPasswordField txtPasswordConfirm;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

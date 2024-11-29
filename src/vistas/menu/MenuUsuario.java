@@ -4,6 +4,7 @@
  */
 package vistas.menu;
 
+import controladores.usuarios.UsuariosDAO;
 import javax.swing.JOptionPane;
 import modelos.clases.usuarios.Usuario;
 import vistas.secciones.Catalogos.Catalogo;
@@ -20,7 +21,8 @@ import vistas.secciones.perfil.LoginCliente;
 public class MenuUsuario extends javax.swing.JFrame {
 
     Usuario usuarioLogueado = Usuario.getUsuarioActual();
-
+    UsuariosDAO usuarioDAO = new UsuariosDAO();
+    
     public MenuUsuario() {
         initComponents();
 
@@ -286,6 +288,8 @@ public class MenuUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gracias por utilizar el programa, ¡vuelve pronto!");
             Usuario.setLoggedIn(false);
 
+            usuarioDAO.actualizarEstadoInactivo(usuarioLogueado.getIdUsuario());
+            
             MenuInicial menuInicial = new MenuInicial();
             menuInicial.setVisible(true);
             menuInicial.setLocationRelativeTo(null);

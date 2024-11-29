@@ -17,15 +17,15 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombre_completo, String correo_electronico, String contraseña, String telefono, String direccion) {
+    public Usuario(String nombre_completo, String correo_electronico, String contraseña, String telefono, String direccion) {
         this.idUsuario = idUsuario;
         this.nombre_completo = nombre_completo;
         this.correo_electronico = correo_electronico;
         this.contraseña = contraseña;
         this.telefono = telefono;
-        this.estado = estado;
+        this.estado = "activo";
         this.direccion = direccion;
-        this.rol = rol;
+        this.rol = "usuario";
         this.status = false;
     }
 
@@ -133,5 +133,4 @@ public class Usuario {
         sb.append('}');
         return sb.toString();
     }
-
 }
