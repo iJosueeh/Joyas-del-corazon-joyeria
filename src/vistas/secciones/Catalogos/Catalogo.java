@@ -229,7 +229,7 @@ public class Catalogo extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("$100");
+        jLabel9.setText("$120");
 
         btnComprar3.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar3.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -285,7 +285,7 @@ public class Catalogo extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("$120");
+        jLabel11.setText("$150");
 
         btnComprar4.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar4.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -341,7 +341,7 @@ public class Catalogo extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("$120");
+        jLabel13.setText("$100");
 
         btnComprar5.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar5.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N
@@ -397,7 +397,7 @@ public class Catalogo extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("$120");
+        jLabel15.setText("$180");
 
         btnComprar6.setBackground(new java.awt.Color(255, 149, 0));
         btnComprar6.setFont(new java.awt.Font("Readex Pro bold", 0, 12)); // NOI18N

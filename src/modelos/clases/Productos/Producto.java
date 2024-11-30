@@ -1,35 +1,32 @@
-
 package modelos.clases.Productos;
 
 import java.util.List;
 
-
 public class Producto {
-    //Atributos
-    private int contador;
-    private int id_Producto;
+
+    private int id;
     private String nombre;
     private String descripcion;
     private double precio;
     private int cantidad;
     private int stock;
-    private List<Proveedor> proveedores;
-    
-    public Producto(int id_Producto, String nombre, String descripcion, double precio, int stock, List<Proveedor> proveedores) {
-        this.id_Producto = contador++;
+    private Colecciones coleccion;
+
+    public Producto(String nombre, String descripcion, double precio, int cantidad, int stock, Colecciones coleccion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.cantidad = cantidad;
         this.stock = stock;
-        this.proveedores = proveedores;
+        this.coleccion = coleccion;
     }
 
-    public int getId_Producto() {
-        return id_Producto;
+    public int getId() {
+        return id;
     }
 
-    public void setId_Producto(int id_Producto) {
-        this.id_Producto = id_Producto;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -56,10 +53,6 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
     public int getCantidad() {
         return cantidad;
     }
@@ -68,51 +61,22 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
     public void setStock(int stock) {
         this.stock = stock;
     }
 
-    public List<Proveedor> getProveedores() {
-        return proveedores;
+    public Colecciones getColeccion() {
+        return coleccion;
     }
 
-    public void setProveedores(List<Proveedor> proveedores) {
-        this.proveedores = proveedores;
+    public void setColeccion(Colecciones coleccion) {
+        this.coleccion = coleccion;
     }
 
-    public void actualizarStock(int cantidad) {
-        if (cantidad < 0 && Math.abs(cantidad) > stock) {
-            System.out.println("El Stock no puede estar por debajo de 0");
-
-        } else {
-            this.stock += cantidad;
-            System.out.println("Stock actualizado. Nuevo Stock : " + this.stock);
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "Producto{" + "id_Producto=" + id_Producto + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", stock=" + stock + ", proveedores=" + proveedores + '}';
-    }
-
-   
-    public void agregarProducto() {
-        System.out.println("Producto agregado: " + nombre);
-    }
-
-
-    public void eliminarProducto() {
-        System.out.println("Producto eliminado: " + nombre);
-    }
-
-
-    public void actualizarProducto() {
-        System.out.println("Producto actualizado: " + nombre);
-    }
-
-
-    public void verProducto() {
-        System.out.println("ID: " + id_Producto + ", Nombre: " + nombre + ", Precio: " + precio + ", Stock: " + stock);
-    }
-
+    
+    
 }

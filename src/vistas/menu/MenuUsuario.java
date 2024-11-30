@@ -288,7 +288,9 @@ public class MenuUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gracias por utilizar el programa, ¡vuelve pronto!");
             Usuario.setLoggedIn(false);
 
-            usuarioDAO.actualizarEstadoInactivo(usuarioLogueado.getIdUsuario());
+            if (usuarioLogueado != null) {
+                usuarioDAO.actualizarEstadoInactivo(usuarioLogueado.getIdUsuario());
+            }
             
             MenuInicial menuInicial = new MenuInicial();
             menuInicial.setVisible(true);
