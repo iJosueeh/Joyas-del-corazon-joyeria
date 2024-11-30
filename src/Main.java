@@ -20,10 +20,10 @@ public class Main {
          */
         
         /*
-        - Parte de BD 
-        - Parte de Clases (Modelos)
-        - Parte de Controladore (Logica)
-        - Parte Visual
+        - Parte de BD "Blas"
+        - Parte de Clases (Modelos) "Kathy"
+        - Parte de Controladores (Logica) "Josue"
+        - Parte Visual "Ashley"
         */
               
         MenuInicial menuInicial = new MenuInicial();
