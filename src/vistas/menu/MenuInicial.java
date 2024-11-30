@@ -16,6 +16,11 @@ public class MenuInicial extends javax.swing.JFrame {
             URL imageUrl = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Login.png");
             ImageIcon iconBack = new ImageIcon(imageUrl);
             btnIniciarSesion.setIcon(iconBack);
+
+            URL ImagenUrl2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/WhatsApp%20Image%202024-11-29%20at%2011.28.26%20PM.jpeg");
+            ImageIcon bdInicial = new ImageIcon(ImagenUrl2);
+            bgInicial.setIcon(bdInicial);
+            
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -37,6 +42,7 @@ public class MenuInicial extends javax.swing.JFrame {
         btnIniciarCliente = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        bgInicial = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -162,11 +168,11 @@ public class MenuInicial extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(bgInicial, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addComponent(bgInicial, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 400, 470));
@@ -208,6 +214,7 @@ public class MenuInicial extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgInicial;
     private javax.swing.JButton btnIniciarCliente;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JLabel jLabel1;
