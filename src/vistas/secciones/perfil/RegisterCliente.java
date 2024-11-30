@@ -35,7 +35,7 @@ public class RegisterCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
+        labelNombre = new javax.swing.JLabel();
         txtNombreCompleto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
@@ -60,9 +60,9 @@ public class RegisterCliente extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Registrarse");
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
-        jLabel2.setText("Nombre Completo");
+        labelNombre.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        labelNombre.setForeground(new java.awt.Color(229, 229, 183));
+        labelNombre.setText("Nombre Completo");
 
         txtNombreCompleto.setText("Ingresa tu nombre completo");
         txtNombreCompleto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -184,7 +184,7 @@ public class RegisterCliente extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel2)
+                    .addComponent(labelNombre)
                     .addComponent(jSeparator1)
                     .addComponent(txtNombreCompleto)
                     .addComponent(txtEmail)
@@ -211,7 +211,7 @@ public class RegisterCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(labelNombre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -384,7 +384,6 @@ public class RegisterCliente extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistrar;
     public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -393,6 +392,7 @@ public class RegisterCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel labelNombre;
     public javax.swing.JTextField txtDireccion;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JTextField txtNombreCompleto;

@@ -26,7 +26,7 @@ public class Login extends javax.swing.JFrame {
         LoginAccess usuarios = new LoginAccess(usuario, usuarioDAO, this);
 
         try {
-            URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file.jpg");
+            URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/0d93f0e4-23b6-4298-8892-06f5086da85a.jpg");
             ImageIcon bgSesion = new ImageIcon(imagenURL1);
             bgLogin.setIcon(bgSesion);
 

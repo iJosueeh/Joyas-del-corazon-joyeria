@@ -6,6 +6,9 @@ package vistas.secciones.perfil;
 
 import controladores.login.LoginClienteAcess;
 import controladores.usuarios.UsuariosDAO;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.clases.usuarios.Usuario;
 import vistas.menu.MenuUsuario;
@@ -22,6 +25,27 @@ public class LoginCliente extends javax.swing.JFrame {
     public LoginCliente() {
         initComponents();
         LoginClienteAcess loginClientes = new LoginClienteAcess(usuario, usuarioDAO, this);
+
+        try {
+            URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Email2.png");
+            ImageIcon iconEmail = new ImageIcon(imagenURL1);
+            labelEmail.setIcon(iconEmail);
+
+            URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Password2.png");
+            ImageIcon iconPassword = new ImageIcon(imagenURL2);
+            labelPassword.setIcon(iconPassword);
+            
+            URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Go_Back.png");
+            ImageIcon iconBack = new ImageIcon(imagenURL3);
+            btnRegresar.setIcon(iconBack);
+            
+            URL imagenURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Register.png");
+            ImageIcon iconRegistrar = new ImageIcon(imagenURL4);
+            btnRegistrarse.setIcon(iconRegistrar);
+            
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -36,10 +60,10 @@ public class LoginCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelEmail = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         txtEmail = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        labelPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
@@ -56,9 +80,9 @@ public class LoginCliente extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Iniciar Sesion");
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
-        jLabel2.setText("Correo electronico");
+        labelEmail.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        labelEmail.setForeground(new java.awt.Color(229, 229, 183));
+        labelEmail.setText("Correo electronico");
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,9 +98,9 @@ public class LoginCliente extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
-        jLabel3.setText("Contraseña");
+        labelPassword.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        labelPassword.setForeground(new java.awt.Color(229, 229, 183));
+        labelPassword.setText("Contraseña");
 
         txtPassword.setText("*********");
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -136,9 +160,9 @@ public class LoginCliente extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3)
+                            .addComponent(labelPassword)
                             .addComponent(jSeparator1)
-                            .addComponent(jLabel2)
+                            .addComponent(labelEmail)
                             .addComponent(txtEmail)
                             .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jSeparator2)
@@ -160,11 +184,11 @@ public class LoginCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(jLabel2)
+                .addComponent(labelEmail)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(labelPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
@@ -270,12 +294,12 @@ public class LoginCliente extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistrarse;
     public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelPassword;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
