@@ -18,7 +18,6 @@ public class Main {
         - Katherine Patricia Salas Quiroz
         - Ashley Dhayana Chavez Coz
          */
-        
         MenuInicial menuInicial = new MenuInicial();
         menuInicial.setVisible(true);
         menuInicial.setLocationRelativeTo(null);

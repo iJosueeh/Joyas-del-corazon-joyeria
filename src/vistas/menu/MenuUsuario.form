@@ -73,9 +73,9 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jSeparator1" max="32767" attributes="0"/>
                               <Component id="btnColecciones" pref="221" max="32767" attributes="0"/>
-                              <Component id="jButton3" pref="221" max="32767" attributes="0"/>
+                              <Component id="btnSedes" pref="221" max="32767" attributes="0"/>
                               <Component id="btnSobreNosotros" pref="221" max="32767" attributes="0"/>
-                              <Component id="jButton5" pref="221" max="32767" attributes="0"/>
+                              <Component id="btnCitas" pref="221" max="32767" attributes="0"/>
                               <Component id="btnAbandonar" pref="221" max="32767" attributes="0"/>
                               <Component id="btnIniciarSesion" pref="221" max="32767" attributes="0"/>
                           </Group>
@@ -102,11 +102,11 @@
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="btnColecciones" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnSedes" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnSobreNosotros" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnCitas" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace pref="161" max="32767" attributes="0"/>
                       <Component id="btnIniciarSesion" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -142,7 +142,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnColeccionesActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="btnSedes">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -162,7 +162,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSedesActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSobreNosotros">
@@ -188,7 +188,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobreNosotrosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="btnCitas">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -208,7 +208,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCitasActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnAbandonar">

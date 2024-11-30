@@ -13,13 +13,18 @@ public class MenuInicial extends javax.swing.JFrame {
     public MenuInicial() {
         initComponents();
         try {
-            URL imageUrl = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Login.png");
-            ImageIcon iconBack = new ImageIcon(imageUrl);
-            btnIniciarSesion.setIcon(iconBack);
+            URL imageUrl = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Administrator.png");
+            ImageIcon iconAdmin = new ImageIcon(imageUrl);
+            btnIniciarSesion.setIcon(iconAdmin);
 
             URL ImagenUrl2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/WhatsApp%20Image%202024-11-29%20at%2011.28.26%20PM.jpeg");
-            ImageIcon bdInicial = new ImageIcon(ImagenUrl2);
-            bgInicial.setIcon(bdInicial);
+            ImageIcon bgInicialImg = new ImageIcon(ImagenUrl2);
+            bgInicial.setIcon(bgInicialImg);
+            
+            URL ImagenUrl3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/User.png");
+            ImageIcon iconUser = new ImageIcon(ImagenUrl3);
+            btnIniciarCliente.setIcon(iconUser);
+            
             
         } catch (MalformedURLException e) {
             e.printStackTrace();

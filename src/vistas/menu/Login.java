@@ -6,6 +6,9 @@ package vistas.menu;
 
 import controladores.login.LoginAccess;
 import controladores.usuarios.UsuariosDAO;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.clases.usuarios.Usuario;
 
@@ -21,6 +24,31 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         LoginAccess usuarios = new LoginAccess(usuario, usuarioDAO, this);
+
+        try {
+            URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file.jpg");
+            ImageIcon bgSesion = new ImageIcon(imagenURL1);
+            bgLogin.setIcon(bgSesion);
+
+            URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Email2.png");
+            ImageIcon iconEmail = new ImageIcon(imagenURL2);
+            labelEmail.setIcon(iconEmail);
+
+            URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Password2.png");
+            ImageIcon iconPassword = new ImageIcon(imagenURL3);
+            labelPassword.setIcon(iconPassword);
+
+            URL imagenURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Go_Back.png");
+            ImageIcon iconBack = new ImageIcon(imagenURL4);
+            btnBack.setIcon(iconBack);
+
+            URL imagenURL5 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Verified_Account.png");
+            ImageIcon iconLogin = new ImageIcon(imagenURL5);
+            btnLogin.setIcon(iconLogin);
+            
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -36,15 +64,16 @@ public class Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
+        labelEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        labelPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         btnBack = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        bgLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,9 +88,9 @@ public class Login extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
-        jLabel2.setText("Email");
+        labelEmail.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        labelEmail.setForeground(new java.awt.Color(229, 229, 183));
+        labelEmail.setText("Email");
 
         txtEmail.setText("ingresa tu correo electronico");
         txtEmail.setToolTipText("");
@@ -80,9 +109,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
-        jLabel3.setText("Password");
+        labelPassword.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        labelPassword.setForeground(new java.awt.Color(229, 229, 183));
+        labelPassword.setText("Password");
 
         txtPassword.setText("*********");
         txtPassword.setToolTipText("");
@@ -149,9 +178,9 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2)
+                                .addComponent(labelEmail)
                                 .addComponent(txtEmail)
-                                .addComponent(jLabel3)
+                                .addComponent(labelPassword)
                                 .addComponent(txtPassword)
                                 .addComponent(jSeparator2)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -168,11 +197,11 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(labelEmail)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+                .addComponent(labelPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -194,11 +223,11 @@ public class Login extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(bgLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addComponent(bgLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 400, 470));
@@ -277,17 +306,18 @@ public class Login extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgLogin;
     public javax.swing.JButton btnBack;
     public javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelPassword;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables

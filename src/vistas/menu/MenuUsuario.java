@@ -5,6 +5,9 @@
 package vistas.menu;
 
 import controladores.usuarios.UsuariosDAO;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.clases.usuarios.Usuario;
 import vistas.secciones.Catalogos.Catalogo;
@@ -34,6 +37,35 @@ public class MenuUsuario extends javax.swing.JFrame {
             txtNombre.setText("Invitado");
         }
 
+        try {
+            URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Collectibles.png");
+            ImageIcon iconColecciones = new ImageIcon(imagenURL1);
+            btnColecciones.setIcon(iconColecciones);
+            
+            URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Delivery.png");
+            ImageIcon iconSedes = new ImageIcon(imagenURL2);
+            btnSedes.setIcon(iconSedes);
+            
+            URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Info%20Squared.png");
+            ImageIcon iconSobreNosotros = new ImageIcon(imagenURL3);
+            btnSobreNosotros.setIcon(iconSobreNosotros);
+            
+            URL imagenURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Quote.png");
+            ImageIcon iconCitas = new ImageIcon(imagenURL4);
+            btnCitas.setIcon(iconCitas);
+            
+            URL imagenURL5 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/User.png");
+            ImageIcon iconUser = new ImageIcon(imagenURL5);
+            btnIniciarSesion.setIcon(iconUser);
+            
+            URL imagenURL6 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/Go_Back.png");
+            ImageIcon iconExit = new ImageIcon(imagenURL6);
+            btnAbandonar.setIcon(iconExit);
+            
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        
     }
 
     /**
@@ -49,9 +81,9 @@ public class MenuUsuario extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         btnColecciones = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnSedes = new javax.swing.JButton();
         btnSobreNosotros = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnCitas = new javax.swing.JButton();
         btnAbandonar = new javax.swing.JButton();
         btnIniciarSesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -82,15 +114,15 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton3.setText("Sedes");
-        jButton3.setBorder(null);
-        jButton3.setMaximumSize(new java.awt.Dimension(141, 18));
-        jButton3.setMinimumSize(new java.awt.Dimension(141, 18));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSedes.setBackground(new java.awt.Color(204, 204, 204));
+        btnSedes.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
+        btnSedes.setText("Sedes");
+        btnSedes.setBorder(null);
+        btnSedes.setMaximumSize(new java.awt.Dimension(141, 18));
+        btnSedes.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnSedes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSedesActionPerformed(evt);
             }
         });
 
@@ -106,15 +138,15 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(204, 204, 204));
-        jButton5.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
-        jButton5.setText("Citas");
-        jButton5.setBorder(null);
-        jButton5.setMaximumSize(new java.awt.Dimension(141, 18));
-        jButton5.setMinimumSize(new java.awt.Dimension(141, 18));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnCitas.setBackground(new java.awt.Color(204, 204, 204));
+        btnCitas.setFont(new java.awt.Font("Readex Pro Medium", 0, 12)); // NOI18N
+        btnCitas.setText("Citas");
+        btnCitas.setBorder(null);
+        btnCitas.setMaximumSize(new java.awt.Dimension(141, 18));
+        btnCitas.setMinimumSize(new java.awt.Dimension(141, 18));
+        btnCitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnCitasActionPerformed(evt);
             }
         });
 
@@ -176,9 +208,9 @@ public class MenuUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jSeparator1)
                         .addComponent(btnColecciones, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                        .addComponent(btnSedes, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                         .addComponent(btnSobreNosotros, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                        .addComponent(btnCitas, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                         .addComponent(btnAbandonar, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                         .addComponent(btnIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)))
                 .addContainerGap(14, Short.MAX_VALUE))
@@ -199,11 +231,11 @@ public class MenuUsuario extends javax.swing.JFrame {
                 .addGap(88, 88, 88)
                 .addComponent(btnColecciones, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSedes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSobreNosotros, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                 .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -308,21 +340,21 @@ public class MenuUsuario extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnSobreNosotrosActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnSedesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSedesActionPerformed
         Sedes sedeLocales = new Sedes();
         sedeLocales.setVisible(true);
         sedeLocales.setLocationRelativeTo(null);
 
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnSedesActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCitasActionPerformed
         Citas citas = new Citas();
         citas.setVisible(true);
         citas.setLocationRelativeTo(null);
 
         this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnCitasActionPerformed
 
     private void btnColeccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColeccionesActionPerformed
         Colecciones colecciones = new Colecciones();
@@ -353,12 +385,12 @@ public class MenuUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbandonar;
+    private javax.swing.JButton btnCitas;
     private javax.swing.JButton btnColecciones;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JPanel btnPanel;
+    private javax.swing.JButton btnSedes;
     private javax.swing.JButton btnSobreNosotros;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
