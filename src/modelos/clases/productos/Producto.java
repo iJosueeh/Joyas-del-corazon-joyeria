@@ -5,20 +5,23 @@ import java.util.List;
 public class Producto {
 
     private int id;
+    private int idColeccion;
     private String nombre;
     private String descripcion;
     private double precio;
     private int cantidad;
     private int stock;
-    private Colecciones coleccion;
 
-    public Producto(String nombre, String descripcion, double precio, int cantidad, int stock, Colecciones coleccion) {
+    public Producto(){
+    }
+    
+    public Producto(int idColeccion, String nombre, String descripcion, double precio, int cantidad, int stock) {
+        this.idColeccion = idColeccion;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.cantidad = cantidad;
         this.stock = stock;
-        this.coleccion = coleccion;
     }
 
     public int getId() {
@@ -27,6 +30,14 @@ public class Producto {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdColeccion() {
+        return idColeccion;
+    }
+
+    public void setIdColeccion(int idColeccion) {
+        this.idColeccion = idColeccion;
     }
 
     public String getNombre() {
@@ -69,13 +80,6 @@ public class Producto {
         this.stock = stock;
     }
 
-    public Colecciones getColeccion() {
-        return coleccion;
-    }
-
-    public void setColeccion(Colecciones coleccion) {
-        this.coleccion = coleccion;
-    }
 
     
     

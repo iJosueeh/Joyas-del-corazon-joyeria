@@ -11,7 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Colecciones;
-import vistas.secciones.productos.Aurum;
+import vistas.secciones.productos.Aurora;
+import vistas.secciones.productos.Aurum_1;
+import vistas.secciones.productos.Elemental;
+import vistas.secciones.productos.Eterna;
+import vistas.secciones.productos.Lucentia;
+import vistas.secciones.productos.Magnia;
 
 /**
  *
@@ -539,55 +544,45 @@ public class Catalogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        Aurum aurum = new Aurum();
+        Aurum_1 aurum = new Aurum_1();
         aurum.setVisible(true);
         aurum.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnComprar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar1ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Lucentia lucentia = new Lucentia();
+        lucentia.setVisible(true);
+        lucentia.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar1ActionPerformed
 
     private void btnComprar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar3ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Magnia magnia = new Magnia();
+        magnia.setVisible(true);
+        magnia.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar3ActionPerformed
 
     private void btnComprar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar4ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Aurora aurora = new Aurora();
+        aurora.setVisible(true);
+        aurora.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar4ActionPerformed
 
     private void btnComprar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar5ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Eterna eterna = new Eterna();
+        eterna.setVisible(true);
+        eterna.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar5ActionPerformed
 
     private void btnComprar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar6ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Elemental elemental = new Elemental();
+        elemental.setVisible(true);
+        elemental.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar6ActionPerformed
 
     /**

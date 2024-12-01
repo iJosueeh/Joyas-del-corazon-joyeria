@@ -4,28 +4,46 @@
  */
 package vistas.secciones.productos;
 
+import controladores.productos.ProductoDAO;
+import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
 import java.util.List;
 import javax.swing.JOptionPane;
+import modelos.clases.productos.Producto;
+import modelos.clases.productos.Proveedor;
 import modelos.clases.reseñas.Reseña;
 import modelos.clases.usuarios.Usuario;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Colecciones;
 
-public class Aurum extends javax.swing.JFrame {
+public class Aurum_1 extends javax.swing.JFrame {
 
     private String nombreProducto;
     private AñadirReseña reseñaPanel = new AñadirReseña();
     private int idProducto;
     ReseñasDAO reseñaDAO = new ReseñasDAO();
-
-    public Aurum() {
+    ProveedorDAO proveedorDAO = new ProveedorDAO();
+    
+    private ProductoDAO productoDAO = new ProductoDAO();
+    private int idProveedor;
+    
+    public Aurum_1() {
         initComponents();
         this.nombreProducto = "Aurum";
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         NuevaReseñas nuevaReseña = new NuevaReseñas(reseñaDAO, reseñaPanel, idProducto);
         actualizarPanelReseñas(idProducto);
+        
+        Producto productoAurum = productoDAO.obtenerProductoPorNombre(nombreProducto);
+        Proveedor proveedor = proveedorDAO.obtenerProveedorPorId(2);
+        this.idProveedor = proveedor.getId();
+        
+        labelTitle.setText(productoAurum.getNombre());
+        textAreaDescripcion.setText(productoAurum.getDescripcion());
+        txtProveedor.setText(proveedor.getNombre());
+        txtMoney.setText(String.valueOf(productoAurum.getPrecio()));
+        txtPrecioOnline.setText(String.valueOf(productoAurum.getPrecio() - 30));
     }
 
     public void actualizarPanelReseñas(int idProducto) {
@@ -49,7 +67,7 @@ public class Aurum extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelTitle = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -59,17 +77,18 @@ public class Aurum extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         btnAñadirCarrito = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textAreaDescripcion = new javax.swing.JTextArea();
         ScrollPanelRseñas = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         btnAgregarReseña = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        txtPrecioOnline = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        txtMoney = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
+        txtProveedor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,22 +97,28 @@ public class Aurum extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 36)); // NOI18N
-        jLabel2.setText("Title");
+        labelTitle.setFont(new java.awt.Font("Bodoni MT", 0, 36)); // NOI18N
+        labelTitle.setForeground(new java.awt.Color(229, 229, 183));
+        labelTitle.setText("Title");
 
         jLabel3.setText("Estrellas");
 
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Vendido por: ");
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("Online");
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(229, 229, 183));
         jLabel6.setText("Regular");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10+" }));
 
+        btnAñadirCarrito.setBackground(new java.awt.Color(69, 73, 74));
+        btnAñadirCarrito.setForeground(new java.awt.Color(229, 229, 183));
         btnAñadirCarrito.setText("Agregar al carrito");
         btnAñadirCarrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,12 +126,17 @@ public class Aurum extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
+        textAreaDescripcion.setEditable(false);
+        textAreaDescripcion.setBackground(new java.awt.Color(118, 98, 78));
+        textAreaDescripcion.setColumns(20);
+        textAreaDescripcion.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        textAreaDescripcion.setForeground(new java.awt.Color(229, 229, 183));
+        textAreaDescripcion.setLineWrap(true);
+        textAreaDescripcion.setRows(10);
+        textAreaDescripcion.setWrapStyleWord(true);
+        textAreaDescripcion.setAutoscrolls(false);
+        textAreaDescripcion.setBorder(null);
+        jScrollPane1.setViewportView(textAreaDescripcion);
 
         jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
@@ -117,8 +147,11 @@ public class Aurum extends javax.swing.JFrame {
         ScrollPanelRseñas.setViewportView(jTextArea2);
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(229, 229, 183));
         jLabel7.setText("Reseñas");
 
+        btnAgregarReseña.setBackground(new java.awt.Color(69, 73, 74));
+        btnAgregarReseña.setForeground(new java.awt.Color(229, 229, 183));
         btnAgregarReseña.setText("Agregar reseña");
         btnAgregarReseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,116 +160,132 @@ public class Aurum extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(229, 229, 183));
         jLabel8.setText("S/");
 
-        jLabel9.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
-        jLabel9.setText("0");
+        txtPrecioOnline.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        txtPrecioOnline.setForeground(new java.awt.Color(255, 255, 255));
+        txtPrecioOnline.setText("0");
 
         jLabel10.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(229, 229, 183));
         jLabel10.setText("S/");
 
-        jLabel11.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
-        jLabel11.setText("0");
+        txtMoney.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        txtMoney.setForeground(new java.awt.Color(255, 255, 255));
+        txtMoney.setText("0");
 
+        btnRegresar.setBackground(new java.awt.Color(255, 149, 0));
+        btnRegresar.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
         btnRegresar.setText("Regresar");
+        btnRegresar.setBorder(null);
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
 
+        txtProveedor.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        txtProveedor.setForeground(new java.awt.Color(255, 255, 255));
+        txtProveedor.setText("Desconocido");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel7)
-                            .addGap(618, 618, 618)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnAgregarReseña, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ScrollPanelRseñas)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(61, 61, 61)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
+                        .addComponent(ScrollPanelRseñas, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(124, 124, 124)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(labelTitle)
+                                .addComponent(jLabel3)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
-                                    .addComponent(jSeparator1)
-                                    .addComponent(jSeparator2)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(btnAñadirCarrito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel10))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel8)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel11))
-                                        .addGap(65, 65, 65))))
-                            .addComponent(jSeparator3)))
-                    .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtProveedor))
+                                .addComponent(jSeparator1)
+                                .addComponent(jSeparator2)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(32, 32, 32)
+                                    .addComponent(btnAñadirCarrito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel6)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel10))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel5)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel8)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtPrecioOnline)
+                                        .addComponent(txtMoney))
+                                    .addGap(65, 65, 65))))
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
-                        .addComponent(jLabel2)
+                        .addComponent(labelTitle)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtProveedor))
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jLabel8)
-                            .addComponent(jLabel9))
+                            .addComponent(txtPrecioOnline))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel11))
+                            .addComponent(txtMoney))
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox1)
-                            .addComponent(btnAñadirCarrito, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnAñadirCarrito, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(btnAgregarReseña))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(ScrollPanelRseñas, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(ScrollPanelRseñas, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -284,21 +333,22 @@ public class Aurum extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextArea jTextArea1;
     public javax.swing.JTextArea jTextArea2;
+    private javax.swing.JLabel labelTitle;
+    private javax.swing.JTextArea textAreaDescripcion;
+    private javax.swing.JLabel txtMoney;
+    private javax.swing.JLabel txtPrecioOnline;
+    private javax.swing.JLabel txtProveedor;
     // End of variables declaration//GEN-END:variables
 }
