@@ -11,14 +11,16 @@ import java.sql.ResultSet;
 import modelos.clases.servicio.Cita;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import modelos.interfaces.ICitas;
 
-public class CitasDAO {
+public class CitasDAO implements ICitas {
 
     ConexionBD cn = new ConexionBD();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
 
+    @Override
     public Boolean registrarCitas(Cita cita) {
         String sql = "INSERT INTO citas (idUsuario, motivo, telefono, descripcion, tipo_cita, preferencia, estado) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -43,6 +45,11 @@ public class CitasDAO {
             JOptionPane.showMessageDialog(null, e.toString());
             return false;
         }
+    }
+
+    @Override
+    public Boolean eliminarCita() {
+        return true;
     }
 
 }

@@ -11,14 +11,16 @@ import java.sql.ResultSet;
 import modelos.clases.usuarios.Usuario;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import modelos.interfaces.IUsuario;
 
-public class UsuariosDAO {
+public class UsuariosDAO implements IUsuario {
 
     ConexionBD cn = new ConexionBD();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
 
+    @Override
     public Usuario loginAdmin(String correo_electronico, String contraseña) {
         String sql = "SELECT * FROM usuarios WHERE correo_electronico = ? AND rol = 'administrador'";
         Usuario usuario = null;
@@ -49,6 +51,7 @@ public class UsuariosDAO {
         return usuario;
     }
 
+    @Override
     public Usuario loginUsuario(String correo_electronico, String password) {
         String sql = "SELECT * FROM usuarios WHERE correo_electronico = ?";
         Usuario usuario = null;
@@ -81,6 +84,7 @@ public class UsuariosDAO {
         return usuario;
     }
 
+    @Override
     public Boolean registrarUsuario(Usuario usuario) {
         String sql = "INSERT INTO usuarios (nombre_completo, correo_electronico, contraseña, telefono, estado, direccion, rol) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -116,6 +120,7 @@ public class UsuariosDAO {
 
     }
 
+    @Override
     public Boolean actualizarEstadoInactivo(int idUsuario) {
         String sql = "UPDATE usuarios SET estado = 'inactivo' WHERE id = ?";
 
@@ -133,6 +138,7 @@ public class UsuariosDAO {
         }
     }
 
+    @Override
     public Boolean actualizarEstadoActivo(int idUsuario) {
         String sql = "UPDATE usuarios SET estado = 'activo' WHERE id = ?";
 

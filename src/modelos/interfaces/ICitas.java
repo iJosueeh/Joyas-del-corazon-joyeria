@@ -4,10 +4,13 @@
  */
 package modelos.interfaces;
 
+import modelos.clases.servicio.Cita;
+
 /**
  *
  * @author hp
  */
 public interface ICitas {
-    
+    public Boolean registrarCitas(Cita cita);
+    public Boolean eliminarCita();
 }

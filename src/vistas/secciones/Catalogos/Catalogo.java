@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Colecciones;
+import vistas.secciones.productos.Aurum;
 
 /**
  *
@@ -538,12 +539,10 @@ public class Catalogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Aurum aurum = new Aurum();
+        aurum.setVisible(true);
+        aurum.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnComprar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar1ActionPerformed

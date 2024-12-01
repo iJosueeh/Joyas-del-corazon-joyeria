@@ -1,14 +1,13 @@
-
 package modelos.interfaces;
 
-import java.util.List;
 import modelos.clases.usuarios.Usuario;
 
-
 public interface IUsuario {
-   public void registrarUsuario(Usuario usuario);
-    public void modificarPerfil();
-    public Boolean verificarUsuario(String correo, String contraseña);
-    public void eliminarUsuario(Usuario usuario);
 
+    public Usuario loginAdmin(String correo_electronico, String contraseña);
+    public Usuario loginUsuario(String correo_electronico, String password);
+    public Boolean registrarUsuario(Usuario usuario);
+    public Boolean actualizarEstadoInactivo(int idUsuario);
+    public Boolean actualizarEstadoActivo(int idUsuario);
+    
 }

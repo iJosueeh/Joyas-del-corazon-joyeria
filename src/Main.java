@@ -18,14 +18,12 @@ public class Main {
         - Katherine Patricia Salas Quiroz
         - Ashley Dhayana Chavez Coz
          */
-        
-        /*
+ /*
         - Parte de BD "Blas"
         - Parte de Clases (Modelos) "Kathy"
         - Parte de Controladores (Logica) "Josue"
         - Parte Visual "Ashley"
-        */
-              
+         */
         MenuInicial menuInicial = new MenuInicial();
         menuInicial.setVisible(true);
         menuInicial.setLocationRelativeTo(null);
