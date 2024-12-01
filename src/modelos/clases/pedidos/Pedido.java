@@ -3,9 +3,7 @@ package modelos.clases.pedidos;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
-import modelos.clases.Productos.Producto;
-
-
+import modelos.clases.productos.Producto;
 
 public class Pedido {
     private int contador = 1;
