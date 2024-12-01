@@ -3,7 +3,7 @@ package modelos.clases.pedidos;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
-import modelos.clases.productos.Producto;
+import modelos.clases.Productos.Producto;
 
 
 

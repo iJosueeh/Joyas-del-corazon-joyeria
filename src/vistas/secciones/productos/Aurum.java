@@ -6,7 +6,6 @@ package vistas.secciones.productos;
 
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import modelos.clases.reseñas.Reseña;
