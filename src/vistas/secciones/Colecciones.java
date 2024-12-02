@@ -7,7 +7,7 @@ package vistas.secciones;
 import vistas.secciones.Catalogos.Catalogo;
 import vistas.secciones.Catalogos.Coleccion_Esencia_Noble;
 import java.awt.BorderLayout;
-import vistas.menu.Gestionar_productos;
+import vistas.menu.Gestionar_Productos;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Catalogos.C_Hojas;
 
