@@ -283,7 +283,7 @@ public class Aurum_1 extends javax.swing.JFrame {
                     .addComponent(btnAgregarReseña))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(ScrollPanelRseñas, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
