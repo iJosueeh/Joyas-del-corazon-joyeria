@@ -5,6 +5,8 @@
 package vistas.secciones.Catalogos;
 
 import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -29,7 +31,36 @@ public class Catalogo extends javax.swing.JFrame {
      */
     public Catalogo() {
         initComponents();
-
+        
+        try {
+            URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(9).jpg");
+            ImageIcon aurum = new ImageIcon(imagenURL1);
+            labelAurum.setIcon(aurum);
+            
+            URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/descarga%20(2)%20(1).jpg");
+            ImageIcon magnia = new ImageIcon(imagenURL2);
+            labelMagnia.setIcon(magnia);
+            
+            URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file.jpg");
+            ImageIcon eterna = new ImageIcon(imagenURL3);
+            labelEterna.setIcon(eterna);
+            
+            URL imagenURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(8).jpg");
+            ImageIcon lucentia = new ImageIcon(imagenURL4);
+            labelLucentia.setIcon(lucentia);
+            
+            URL imagenURL5 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/mmm.jpg");
+            ImageIcon aurora = new ImageIcon(imagenURL5);
+            labelAurora.setIcon(aurora);
+            
+            URL imagenURL6 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/trian.jpg");
+            ImageIcon elemental = new ImageIcon(imagenURL6);
+            labelElemental.setIcon(elemental);
+            
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        
     }
 
 
@@ -53,37 +84,37 @@ public class Catalogo extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         btnComprar = new javax.swing.JButton();
-        j4 = new javax.swing.JLabel();
+        labelAurum = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         Card_Product1 = new javax.swing.JPanel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         btnComprar1 = new javax.swing.JButton();
-        j5 = new javax.swing.JLabel();
+        labelLucentia = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         Card_Product3 = new javax.swing.JPanel();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         btnComprar3 = new javax.swing.JButton();
-        j6 = new javax.swing.JLabel();
+        labelMagnia = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         Card_Product4 = new javax.swing.JPanel();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         btnComprar4 = new javax.swing.JButton();
-        j7 = new javax.swing.JLabel();
+        labelAurora = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         Card_Product5 = new javax.swing.JPanel();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         btnComprar5 = new javax.swing.JButton();
-        j3 = new javax.swing.JLabel();
+        labelEterna = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         Card_Product6 = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
         btnComprar6 = new javax.swing.JButton();
-        j8 = new javax.swing.JLabel();
+        labelElemental = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,19 +167,15 @@ public class Catalogo extends javax.swing.JFrame {
         Card_ProductLayout.setHorizontalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_ProductLayout.createSequentialGroup()
-                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(12, 12, 12)
+                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Card_ProductLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(j4))
-                    .addGroup(Card_ProductLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(Card_ProductLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(labelAurum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Card_ProductLayout.createSequentialGroup()
                     .addGap(22, 22, 22)
@@ -159,7 +186,7 @@ public class Catalogo extends javax.swing.JFrame {
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
                 .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelAurum, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67)
@@ -199,27 +226,23 @@ public class Catalogo extends javax.swing.JFrame {
         Card_Product1Layout.setHorizontalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Card_Product1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(j5))
-                    .addGroup(Card_Product1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(Card_Product1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnComprar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(labelLucentia, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16)
+                    .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(Card_Product1Layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnComprar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         Card_Product1Layout.setVerticalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product1Layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelLucentia, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -255,27 +278,23 @@ public class Catalogo extends javax.swing.JFrame {
         Card_Product3.setLayout(Card_Product3Layout);
         Card_Product3Layout.setHorizontalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
             .addGroup(Card_Product3Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelMagnia, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
-                    .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(Card_Product3Layout.createSequentialGroup()
-                            .addComponent(jLabel9)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnComprar3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Card_Product3Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(90, 90, 90)
+                        .addComponent(btnComprar3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_Product3Layout.setVerticalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
                 .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelMagnia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -311,13 +330,10 @@ public class Catalogo extends javax.swing.JFrame {
         Card_Product4.setLayout(Card_Product4Layout);
         Card_Product4Layout.setHorizontalGroup(
             Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
             .addGroup(Card_Product4Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelAurora, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
                     .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(Card_Product4Layout.createSequentialGroup()
@@ -330,8 +346,8 @@ public class Catalogo extends javax.swing.JFrame {
         Card_Product4Layout.setVerticalGroup(
             Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product4Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelAurora, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -367,13 +383,10 @@ public class Catalogo extends javax.swing.JFrame {
         Card_Product5.setLayout(Card_Product5Layout);
         Card_Product5Layout.setHorizontalGroup(
             Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product5Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
             .addGroup(Card_Product5Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelEterna, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
                     .addGroup(Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -381,13 +394,13 @@ public class Catalogo extends javax.swing.JFrame {
                             .addComponent(jLabel13)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnComprar5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         Card_Product5Layout.setVerticalGroup(
             Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product5Layout.createSequentialGroup()
                 .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelEterna, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -423,10 +436,6 @@ public class Catalogo extends javax.swing.JFrame {
         Card_Product6.setLayout(Card_Product6Layout);
         Card_Product6Layout.setHorizontalGroup(
             Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j8, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
             .addGroup(Card_Product6Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -438,12 +447,16 @@ public class Catalogo extends javax.swing.JFrame {
                             .addComponent(btnComprar6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelElemental, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         Card_Product6Layout.setVerticalGroup(
             Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product6Layout.createSequentialGroup()
                 .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(j8, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelElemental, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -603,12 +616,6 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JButton btnComprar4;
     private javax.swing.JButton btnComprar5;
     private javax.swing.JButton btnComprar6;
-    private javax.swing.JLabel j3;
-    private javax.swing.JLabel j4;
-    private javax.swing.JLabel j5;
-    private javax.swing.JLabel j6;
-    private javax.swing.JLabel j7;
-    private javax.swing.JLabel j8;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -632,5 +639,11 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel labelAurora;
+    private javax.swing.JLabel labelAurum;
+    private javax.swing.JLabel labelElemental;
+    private javax.swing.JLabel labelEterna;
+    private javax.swing.JLabel labelLucentia;
+    private javax.swing.JLabel labelMagnia;
     // End of variables declaration//GEN-END:variables
 }

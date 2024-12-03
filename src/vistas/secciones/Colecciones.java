@@ -7,6 +7,9 @@ package vistas.secciones;
 import vistas.secciones.Catalogos.Catalogo;
 import vistas.secciones.Catalogos.Coleccion_Esencia_Noble;
 import java.awt.BorderLayout;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import vistas.menu.Gestionar_Productos;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Catalogos.C_Hojas;
@@ -22,7 +25,22 @@ public class Colecciones extends javax.swing.JFrame {
      */
     public Colecciones() {
         initComponents();
-
+        try {
+            URL imageURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(3).jpg");
+            ImageIcon coleccionMidasTouch = new ImageIcon(imageURL1);
+            labelMidasTouch.setIcon(coleccionMidasTouch);
+            
+            URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(2).jpg");
+            ImageIcon coleccionEsenciaNobel = new ImageIcon(imagenURL2);
+            labelEsenciaNoble.setIcon(coleccionEsenciaNobel);
+            
+            URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(18).jpg");
+            ImageIcon coleccionEternas = new ImageIcon(imagenURL3);
+            labelEternas.setIcon(coleccionEternas);
+            
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -40,13 +58,13 @@ public class Colecciones extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         Card_Product = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        j4 = new javax.swing.JLabel();
+        labelMidasTouch = new javax.swing.JLabel();
         Card_Product1 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
-        j5 = new javax.swing.JLabel();
+        labelEsenciaNoble = new javax.swing.JLabel();
         Card_Product3 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
-        j7 = new javax.swing.JLabel();
+        labelEternas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,18 +102,21 @@ public class Colecciones extends javax.swing.JFrame {
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_ProductLayout.createSequentialGroup()
                 .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(j4)
-                .addGap(48, 48, 48))
+                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
+                        .addComponent(labelMidasTouch, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(38, 38, 38))))
         );
         Card_ProductLayout.setVerticalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_ProductLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
-                    .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addComponent(labelMidasTouch, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -115,20 +136,23 @@ public class Colecciones extends javax.swing.JFrame {
         Card_Product1Layout.setHorizontalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(j5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product1Layout.createSequentialGroup()
+                        .addComponent(labelEsenciaNoble, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product1Layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addGap(45, 45, 45))))
         );
         Card_Product1Layout.setVerticalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
-                    .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(labelEsenciaNoble, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         Card_Product3.setBackground(new java.awt.Color(0, 0, 0));
@@ -146,21 +170,24 @@ public class Colecciones extends javax.swing.JFrame {
         Card_Product3.setLayout(Card_Product3Layout);
         Card_Product3Layout.setHorizontalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(j7)
-                .addGap(41, 41, 41))
+            .addGroup(Card_Product3Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
+                        .addComponent(jButton5)
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
+                        .addComponent(labelEternas, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))))
         );
         Card_Product3Layout.setVerticalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product3Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5)
-                    .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addComponent(labelEternas, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton5)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -183,7 +210,7 @@ public class Colecciones extends javax.swing.JFrame {
                                 .addComponent(Card_Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(36, 36, 36)
                         .addComponent(Card_Product3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39))))
+                        .addGap(29, 29, 29))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,9 +290,6 @@ public class Colecciones extends javax.swing.JFrame {
     private javax.swing.JPanel Card_Product;
     private javax.swing.JPanel Card_Product1;
     private javax.swing.JPanel Card_Product3;
-    private javax.swing.JLabel j4;
-    private javax.swing.JLabel j5;
-    private javax.swing.JLabel j7;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -273,5 +297,8 @@ public class Colecciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelEsenciaNoble;
+    private javax.swing.JLabel labelEternas;
+    private javax.swing.JLabel labelMidasTouch;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,11 +6,19 @@ package vistas.secciones.Catalogos;
 
 import vistas.secciones.*;
 import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import vistas.menu.MenuUsuario;
+import vistas.secciones.productos.CorteReal;
+import vistas.secciones.productos.Emperatriz;
+import vistas.secciones.productos.Imperio;
+import vistas.secciones.productos.Linaje;
+import vistas.secciones.productos.NoblezaEterna;
+import vistas.secciones.productos.Zircón;
 
 /**
  *
@@ -18,12 +26,38 @@ import vistas.menu.MenuUsuario;
  */
 public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Catalogo
-     */
     public Coleccion_Esencia_Noble() {
         initComponents();
 
+        try {
+            URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble1%20(1).jpg");
+            ImageIcon noblezaEterna = new ImageIcon(imagenURL1);
+            labelNoblezaEterna.setIcon(noblezaEterna);
+            
+            URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble2%20(1).jpg");
+            ImageIcon zircon = new ImageIcon(imagenURL2);
+            labelZircon.setIcon(zircon);
+            
+            URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble3%20(1).jpg");
+            ImageIcon linaje = new ImageIcon(imagenURL3);
+            labelLinaje.setIcon(linaje);
+            
+            URL imagenURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble4%20(1).jpg");
+            ImageIcon emperatriz = new ImageIcon(imagenURL4);
+            labelEmperatriz.setIcon(emperatriz);
+            
+            URL imagenURL5 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble5%20(1).jpg");
+            ImageIcon imperio = new ImageIcon(imagenURL5);
+            labelImperio.setIcon(imperio);
+            
+            URL imagenURL6 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble6%20(1).jpg");
+            ImageIcon corteReal = new ImageIcon(imagenURL6);
+            labelCorteReal.setIcon(corteReal);
+            
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        
     }
 
 
@@ -47,37 +81,37 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         btnComprar = new javax.swing.JButton();
-        j4 = new javax.swing.JLabel();
+        labelNoblezaEterna = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         Card_Product1 = new javax.swing.JPanel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         btnComprar1 = new javax.swing.JButton();
-        j5 = new javax.swing.JLabel();
+        labelEmperatriz = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         Card_Product3 = new javax.swing.JPanel();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btnComprar3 = new javax.swing.JButton();
-        j6 = new javax.swing.JLabel();
+        labelZircon = new javax.swing.JLabel();
         Card_Product4 = new javax.swing.JPanel();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         btnComprar4 = new javax.swing.JButton();
-        j7 = new javax.swing.JLabel();
+        labelImperio = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         Card_Product5 = new javax.swing.JPanel();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         btnComprar5 = new javax.swing.JButton();
-        j3 = new javax.swing.JLabel();
+        labelLinaje = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         Card_Product6 = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
         btnComprar6 = new javax.swing.JButton();
-        j8 = new javax.swing.JLabel();
+        labelCorteReal = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -131,29 +165,24 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
         Card_ProductLayout.setHorizontalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_ProductLayout.createSequentialGroup()
-                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(12, 12, 12)
+                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Card_ProductLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(j4))
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel16))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                     .addGroup(Card_ProductLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Card_ProductLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel16))
-                            .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(Card_ProductLayout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelNoblezaEterna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_ProductLayout.setVerticalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(labelNoblezaEterna, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -191,27 +220,22 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
         Card_Product1Layout.setHorizontalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product1Layout.createSequentialGroup()
-                .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(12, 12, 12)
+                .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel18)
                     .addGroup(Card_Product1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(j5))
-                    .addGroup(Card_Product1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(Card_Product1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnComprar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnComprar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(labelEmperatriz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         Card_Product1Layout.setVerticalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelEmperatriz, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -227,7 +251,7 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Magnia");
+        jLabel8.setText("Zircón");
 
         jLabel9.setFont(new java.awt.Font("Readex Pro bold", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -251,28 +275,25 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Card_Product3Layout.createSequentialGroup()
-                        .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Card_Product3Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel8)))
-                        .addContainerGap(12, Short.MAX_VALUE))
-                    .addGroup(Card_Product3Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnComprar3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                        .addGap(18, 18, 18))
+                    .addGroup(Card_Product3Layout.createSequentialGroup()
+                        .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(labelZircon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Card_Product3Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel8)))
+                        .addContainerGap(12, Short.MAX_VALUE))))
         );
         Card_Product3Layout.setVerticalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(labelZircon, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
@@ -307,13 +328,10 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
         Card_Product4.setLayout(Card_Product4Layout);
         Card_Product4Layout.setHorizontalGroup(
             Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
             .addGroup(Card_Product4Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelImperio, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
                     .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(Card_Product4Layout.createSequentialGroup()
@@ -326,8 +344,8 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
         Card_Product4Layout.setVerticalGroup(
             Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(labelImperio, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -365,27 +383,24 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
         Card_Product5.setLayout(Card_Product5Layout);
         Card_Product5Layout.setHorizontalGroup(
             Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product5Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
             .addGroup(Card_Product5Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
-                    .addGroup(Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(Card_Product5Layout.createSequentialGroup()
-                            .addComponent(jLabel13)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnComprar5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Card_Product5Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(90, 90, 90)
+                        .addComponent(btnComprar5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                        .addComponent(labelLinaje, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_Product5Layout.setVerticalGroup(
             Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(labelLinaje, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -421,13 +436,10 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
         Card_Product6.setLayout(Card_Product6Layout);
         Card_Product6Layout.setHorizontalGroup(
             Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j8, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
             .addGroup(Card_Product6Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelCorteReal, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
                     .addGroup(Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(Card_Product6Layout.createSequentialGroup()
@@ -441,7 +453,7 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j8, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelCorteReal, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -495,7 +507,7 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
                 .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Card_Product6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(Card_Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Card_Product4, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Card_Product4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
@@ -544,58 +556,46 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        NoblezaEterna noblezaEterna = new NoblezaEterna();
+        noblezaEterna.setVisible(true);
+        noblezaEterna.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnComprar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar1ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Emperatriz emperatriz = new Emperatriz();
+        emperatriz.setVisible(true);
+        emperatriz.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar1ActionPerformed
 
     private void btnComprar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar3ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Zircón zircon = new Zircón();
+        zircon.setVisible(true);
+        zircon.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar3ActionPerformed
 
     private void btnComprar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar5ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Linaje linaje = new Linaje();
+        linaje.setVisible(true);
+        linaje.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar5ActionPerformed
 
     private void btnComprar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar6ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        CorteReal corteaReal = new CorteReal();
+        corteaReal.setVisible(true);
+        corteaReal.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar6ActionPerformed
 
 
     private void btnComprar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar4ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Imperio imperio = new Imperio();
+        imperio.setVisible(true);
+        imperio.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar4ActionPerformed
 
     /**
@@ -615,12 +615,6 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
     private javax.swing.JButton btnComprar4;
     private javax.swing.JButton btnComprar5;
     private javax.swing.JButton btnComprar6;
-    private javax.swing.JLabel j3;
-    private javax.swing.JLabel j4;
-    private javax.swing.JLabel j5;
-    private javax.swing.JLabel j6;
-    private javax.swing.JLabel j7;
-    private javax.swing.JLabel j8;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -644,6 +638,12 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel labelCorteReal;
+    private javax.swing.JLabel labelEmperatriz;
+    private javax.swing.JLabel labelImperio;
+    private javax.swing.JLabel labelLinaje;
+    private javax.swing.JLabel labelNoblezaEterna;
+    private javax.swing.JLabel labelZircon;
     private javax.swing.JPanel panelBackground;
     // End of variables declaration//GEN-END:variables
 }

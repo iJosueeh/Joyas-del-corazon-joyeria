@@ -6,11 +6,19 @@ package vistas.secciones.Catalogos;
 
 import vistas.secciones.*;
 import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import vistas.menu.MenuUsuario;
+import vistas.secciones.productos.AlmaTerrenal;
+import vistas.secciones.productos.CantoGaia;
+import vistas.secciones.productos.EsenciaSalvaje;
+import vistas.secciones.productos.FlorAlba;
+import vistas.secciones.productos.FlorVida;
+import vistas.secciones.productos.SusurroHojas;
 
 /**
  *
@@ -24,6 +32,34 @@ public class C_Hojas extends javax.swing.JFrame {
     public C_Hojas() {
         initComponents();
 
+        try {
+            URL imageURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(12).jpg");
+            ImageIcon imageSusurroHoja = new ImageIcon(imageURL1);
+            labelSusurroHoja.setIcon(imageSusurroHoja);
+        
+            URL imageURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(13).jpg");
+            ImageIcon cantoCaia = new ImageIcon(imageURL2);
+            labelCantoGaia.setIcon(cantoCaia);
+            
+            URL imageURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(14).jpg");
+            ImageIcon almaTerrenal = new ImageIcon(imageURL3);
+            labelAlmaTerrenal.setIcon(almaTerrenal);
+            
+            URL imageURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(15).jpg");
+            ImageIcon florVida = new ImageIcon(imageURL4);
+            labelFlorVida.setIcon(florVida);
+            
+            URL imageURL5 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(16).jpg");
+            ImageIcon florAlba = new ImageIcon(imageURL5);
+            labelFlorAlba.setIcon(florAlba);
+            
+            URL imageURL6 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(17).jpg");
+            ImageIcon esencialSalvaje = new ImageIcon(imageURL6);
+            labelEsencia.setIcon(esencialSalvaje);
+            
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -47,37 +83,37 @@ public class C_Hojas extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         btnComprar = new javax.swing.JButton();
-        j4 = new javax.swing.JLabel();
+        labelSusurroHoja = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         Card_Product1 = new javax.swing.JPanel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         btnComprar1 = new javax.swing.JButton();
-        j5 = new javax.swing.JLabel();
+        labelFlorVida = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         Card_Product3 = new javax.swing.JPanel();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btnComprar3 = new javax.swing.JButton();
-        j6 = new javax.swing.JLabel();
+        labelCantoGaia = new javax.swing.JLabel();
         Card_Product4 = new javax.swing.JPanel();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         btnComprar4 = new javax.swing.JButton();
-        j7 = new javax.swing.JLabel();
+        labelFlorAlba = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         Card_Product5 = new javax.swing.JPanel();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         btnComprar5 = new javax.swing.JButton();
-        j3 = new javax.swing.JLabel();
+        labelAlmaTerrenal = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         Card_Product6 = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
         btnComprar6 = new javax.swing.JButton();
-        j8 = new javax.swing.JLabel();
+        labelEsencia = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -132,27 +168,24 @@ public class C_Hojas extends javax.swing.JFrame {
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_ProductLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelSusurroHoja, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                     .addGroup(Card_ProductLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel16))
                     .addGroup(Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                         .addGroup(Card_ProductLayout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(14, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j4)
-                .addGap(35, 35, 35))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_ProductLayout.setVerticalGroup(
             Card_ProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_ProductLayout.createSequentialGroup()
                 .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelSusurroHoja, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -190,27 +223,23 @@ public class C_Hojas extends javax.swing.JFrame {
         Card_Product1Layout.setHorizontalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_Product1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
                     .addGroup(Card_Product1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(j5))
-                    .addGroup(Card_Product1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(Card_Product1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnComprar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jLabel5)
+                        .addGap(89, 89, 89)
+                        .addComponent(btnComprar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                        .addComponent(labelFlorVida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_Product1Layout.setVerticalGroup(
             Card_Product1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelFlorVida, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -250,27 +279,24 @@ public class C_Hojas extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Card_Product3Layout.createSequentialGroup()
-                        .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Card_Product3Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel8)))
-                        .addContainerGap(12, Short.MAX_VALUE))
-                    .addGroup(Card_Product3Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnComprar3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                        .addGap(16, 16, 16))
+                    .addGroup(Card_Product3Layout.createSequentialGroup()
+                        .addGroup(Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(labelCantoGaia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Card_Product3Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel8)))
+                        .addContainerGap(12, Short.MAX_VALUE))))
         );
         Card_Product3Layout.setVerticalGroup(
             Card_Product3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product3Layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelCantoGaia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -306,27 +332,24 @@ public class C_Hojas extends javax.swing.JFrame {
         Card_Product4.setLayout(Card_Product4Layout);
         Card_Product4Layout.setHorizontalGroup(
             Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
             .addGroup(Card_Product4Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19)
-                    .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(Card_Product4Layout.createSequentialGroup()
-                            .addComponent(jLabel11)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnComprar4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addGroup(Card_Product4Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(89, 89, 89)
+                        .addComponent(btnComprar4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                        .addComponent(labelFlorAlba, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_Product4Layout.setVerticalGroup(
             Card_Product4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addComponent(labelFlorAlba, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -363,28 +386,25 @@ public class C_Hojas extends javax.swing.JFrame {
         Card_Product5.setLayout(Card_Product5Layout);
         Card_Product5Layout.setHorizontalGroup(
             Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product5Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
             .addGroup(Card_Product5Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
-                    .addGroup(Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(Card_Product5Layout.createSequentialGroup()
-                            .addComponent(jLabel13)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnComprar5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Card_Product5Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(90, 90, 90)
+                        .addComponent(btnComprar5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                        .addComponent(labelAlmaTerrenal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_Product5Layout.setVerticalGroup(
             Card_Product5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(labelAlmaTerrenal, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
@@ -419,27 +439,24 @@ public class C_Hojas extends javax.swing.JFrame {
         Card_Product6.setLayout(Card_Product6Layout);
         Card_Product6Layout.setHorizontalGroup(
             Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j8, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
             .addGroup(Card_Product6Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
-                    .addGroup(Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(Card_Product6Layout.createSequentialGroup()
-                            .addComponent(jLabel15)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnComprar6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addGroup(Card_Product6Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(89, 89, 89)
+                        .addComponent(btnComprar6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                        .addComponent(labelEsencia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Card_Product6Layout.setVerticalGroup(
             Card_Product6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Card_Product6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(j8, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelEsencia, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -492,7 +509,7 @@ public class C_Hojas extends javax.swing.JFrame {
                 .addGroup(panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Card_Product6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(Card_Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Card_Product4, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Card_Product4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
@@ -541,58 +558,46 @@ public class C_Hojas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        SusurroHojas susurroHojas = new SusurroHojas();
+        susurroHojas.setVisible(true);
+        susurroHojas.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnComprar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar1ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        FlorVida florVida = new FlorVida();
+        florVida.setVisible(true);
+        florVida.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar1ActionPerformed
 
     private void btnComprar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar3ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        CantoGaia cantoGaia = new CantoGaia();
+        cantoGaia.setVisible(true);
+        cantoGaia.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar3ActionPerformed
 
     private void btnComprar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar5ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        AlmaTerrenal almaTerrenal = new AlmaTerrenal();
+        almaTerrenal.setVisible(true);
+        almaTerrenal.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar5ActionPerformed
 
     private void btnComprar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar6ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        EsenciaSalvaje esenciaSalvaje = new EsenciaSalvaje();
+        esenciaSalvaje.setVisible(true);
+        esenciaSalvaje.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar6ActionPerformed
 
 
     private void btnComprar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar4ActionPerformed
-        JOptionPane.showMessageDialog(
-                this,
-                "El producto ha sido añadido al carrito.",
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        FlorAlba florAlba = new FlorAlba();
+        florAlba.setVisible(true);
+        florAlba.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btnComprar4ActionPerformed
 
     /**
@@ -612,12 +617,6 @@ public class C_Hojas extends javax.swing.JFrame {
     private javax.swing.JButton btnComprar4;
     private javax.swing.JButton btnComprar5;
     private javax.swing.JButton btnComprar6;
-    private javax.swing.JLabel j3;
-    private javax.swing.JLabel j4;
-    private javax.swing.JLabel j5;
-    private javax.swing.JLabel j6;
-    private javax.swing.JLabel j7;
-    private javax.swing.JLabel j8;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -641,6 +640,12 @@ public class C_Hojas extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel labelAlmaTerrenal;
+    private javax.swing.JLabel labelCantoGaia;
+    private javax.swing.JLabel labelEsencia;
+    private javax.swing.JLabel labelFlorAlba;
+    private javax.swing.JLabel labelFlorVida;
+    private javax.swing.JLabel labelSusurroHoja;
     private javax.swing.JPanel panelBackground;
     // End of variables declaration//GEN-END:variables
 }
