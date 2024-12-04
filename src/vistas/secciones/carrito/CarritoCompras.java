@@ -4,10 +4,13 @@
  */
 package vistas.secciones.carrito;
 
+import controladores.productos.ProductoDAO;
 import java.time.LocalDate;
+import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelos.clases.usuarios.Usuario;
+import vistas.secciones.Colecciones;
 
 /**
  *
@@ -15,17 +18,16 @@ import modelos.clases.usuarios.Usuario;
  */
 public class CarritoCompras extends javax.swing.JFrame {
 
-    Usuario usuarioLogueado = Usuario.getUsuarioActual();
-    private DefaultTableModel tablaCarritoProductos;
+    private Usuario usuarioLogueado = Usuario.getUsuarioActual();
+    private DefaultTableModel tblModel;
+    private String[] columnas = {"Producto ID", "Nombre Producto", "Colección", "Cantidad", "Precio", "Subtotal"};
+    private ProductoDAO productoDAO;
 
     public CarritoCompras() {
         initComponents();
+        initTable();
 
-        tablaCarritoProductos = new DefaultTableModel(new Object[][]{},
-                new String[]{"Producto ID", "Producto Nombre", "Colección", "Cantidad", "Precio", "SubTotal"});
-
-        tablaCarrito = new JTable(tablaCarritoProductos);
-        tablaCarrito.setFillsViewportHeight(true);
+        productoDAO = new ProductoDAO();
 
         if (Usuario.isLoggedIn()) {
             txtIdCliente.setText(String.valueOf(usuarioLogueado.getIdUsuario()));
@@ -34,16 +36,21 @@ public class CarritoCompras extends javax.swing.JFrame {
             txtTelefono.setText(usuarioLogueado.getTelefono());
         }
         txtFechaCompra.setText(String.valueOf(LocalDate.now()));
-        
-        jScrollPane1.revalidate();
-        jScrollPane1.repaint();
-        tablaCarrito.revalidate();
-        tablaCarrito.repaint();
-        
     }
 
-    public DefaultTableModel getTablaCarrito() {
-        return tablaCarritoProductos;
+    private void initTable() {
+        tblModel = new DefaultTableModel(columnas, 0);
+        tablaCarrito.setModel(tblModel);
+    }
+
+    public void agregarFila(int productoID, String nombreProducto, String coleccion, int cantidad, double precio) {
+        double subtotal = cantidad * precio; // Calcula el subtotal
+        Object[] nuevaFila = {productoID, nombreProducto, coleccion, cantidad, precio, subtotal};
+        tblModel.addRow(nuevaFila);
+    }
+
+    public DefaultTableModel getTblModel() {
+        return tblModel;
     }
 
     /**
@@ -385,6 +392,11 @@ public class CarritoCompras extends javax.swing.JFrame {
         );
 
         btnRegresar.setText("Seguir Comprando");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(229, 229, 183));
@@ -450,6 +462,13 @@ public class CarritoCompras extends javax.swing.JFrame {
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        Colecciones coleccion = new Colecciones();
+        coleccion.setVisible(true);
+        coleccion.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
