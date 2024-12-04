@@ -53,4 +53,25 @@ public class ProductoDAO implements IProductos {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    @Override
+    public int obtenerStockPorNombre(String nombreProducto) {
+        String sql = "SELECT stock FROM Productos WHERE nombre = ?";
+        int stockProducto = 0;
+
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nombreProducto);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                stockProducto = rs.getInt("stock");
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return stockProducto;
+    }
+
 }

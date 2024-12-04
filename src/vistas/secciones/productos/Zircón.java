@@ -312,7 +312,7 @@ public class Zircón extends javax.swing.JFrame {
             reseñaPanel.setVisible(true);
             reseñaPanel.setLocationRelativeTo(null);
         } else {
-            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para comprar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para dejar una reseña.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_btnAgregarReseñaActionPerformed

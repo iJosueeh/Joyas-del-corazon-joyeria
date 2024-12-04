@@ -1,44 +1,60 @@
 
 package modelos.clases.pedidos;
-import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
-import modelos.clases.productos.Producto;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class Pedido {
-    private int contador = 1;
-    private int idPedido;
-    private Map<Producto, Integer> productos;
-    private LocalDate fechaPedido;
+    private int id;
+    private int idCliente;
+    private Date fecha;
+    private String direccion;
     private double total;
+    private String estado;
+    private List<DetallePedido> detalles;
 
-    public Pedido(LocalDate fechaPedido, double total) {
-        this.fechaPedido = fechaPedido;
-        this.total = 0.0;
+    public Pedido(){
+    }
+    
+    public Pedido(int idCliente, Date fecha, String direccion, double total, String estado) {
+        this.idCliente = idCliente;
+        this.fecha = fecha;
+        this.direccion = direccion;
+        this.total = total;
+        this.estado = estado;
+        this.detalles = new ArrayList<>();
     }
 
-    public int getIdPedido() {
-        return idPedido;
+    public int getId() {
+        return id;
     }
 
-    public void setIdPedido(int idPedido) {
-        this.idPedido = idPedido;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Map<Producto, Integer> getProductos() {
-        return productos;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setProductos(Map<Producto, Integer> productos) {
-        this.productos = productos;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public LocalDate getFechaPedido() {
-        return fechaPedido;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setFechaPedido(LocalDate fechaPedido) {
-        this.fechaPedido = fechaPedido;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public double getTotal() {
@@ -49,33 +65,22 @@ public class Pedido {
         this.total = total;
     }
 
-    public void agregarPedido(Producto producto, int cantidad) {
-        //  Si el producto se encuentra en el pedido, sumamos la cantidad
-        if (productos.containsKey(producto)) {
-            productos.put(producto, productos.get(producto) * cantidad);
-        } else {
-            productos.put(producto, cantidad);
-        }
-        calcularTotal();
+    public String getEstado() {
+        return estado;
     }
 
-    public void eliminarPedido(Producto producto) {
-        if (productos.containsKey(producto)) {
-            productos.remove(producto);
-            calcularTotal();
-        }
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public void calcularTotal() {
-        double totalCompra = 0;
-
-        // Calculando el total iterando cada producto almacenado
-        for (Map.Entry<Producto, Integer> producto : productos.entrySet()) {
-            Producto productos = producto.getKey();
-            double cantidad = producto.getValue();
-            totalCompra += productos.getPrecio() * cantidad;
-        }
-
-        this.total = totalCompra;
+    public List<DetallePedido> getDetalles() {
+        return detalles;
     }
+
+    public void setDetalles(List<DetallePedido> detalles) {
+        this.detalles = detalles;
+    }
+
+    
+
 }

@@ -4,18 +4,22 @@
  */
 package vistas.secciones.productos;
 
+import controladores.pedidos.NuevoPedido;
 import controladores.productos.ProductoDAO;
 import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import modelos.clases.productos.Producto;
 import modelos.clases.productos.Proveedor;
 import modelos.clases.reseñas.Reseña;
 import modelos.clases.usuarios.Usuario;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Colecciones;
+import vistas.secciones.carrito.CarritoCompras;
 
 public class AlmaTerrenal extends javax.swing.JFrame {
 
@@ -24,26 +28,30 @@ public class AlmaTerrenal extends javax.swing.JFrame {
     private int idProducto;
     ReseñasDAO reseñaDAO = new ReseñasDAO();
     ProveedorDAO proveedorDAO = new ProveedorDAO();
-    
-    private ProductoDAO productoDAO = new ProductoDAO();
+    ProductoDAO productoDAO = new ProductoDAO();
+    CarritoCompras nuevaCompra = new CarritoCompras();
+
     private int idProveedor;
-    
+
     public AlmaTerrenal() {
         initComponents();
         this.nombreProducto = "Alma Terrenal";
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         NuevaReseñas nuevaReseña = new NuevaReseñas(reseñaDAO, reseñaPanel, idProducto);
         actualizarPanelReseñas(idProducto);
-        
+
         Producto productoAurum = productoDAO.obtenerProductoPorNombre(nombreProducto);
         Proveedor proveedor = proveedorDAO.obtenerProveedorPorId(1);
         this.idProveedor = proveedor.getId();
-        
+
         labelTitle.setText(productoAurum.getNombre());
         textAreaDescripcion.setText(productoAurum.getDescripcion());
         txtProveedor.setText(proveedor.getNombre());
         txtMoney.setText(String.valueOf(productoAurum.getPrecio()));
         txtPrecioOnline.setText(String.valueOf(productoAurum.getPrecio() - 30));
+
+        NuevoPedido nuevoPedido = new NuevoPedido(nuevaCompra.getTablaCarrito(), productoDAO, nombreProducto, btnNuevaCompra);
+        
     }
 
     public void actualizarPanelReseñas(int idProducto) {
@@ -75,7 +83,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jComboBox1 = new javax.swing.JComboBox<>();
-        btnAñadirCarrito = new javax.swing.JButton();
+        btnNuevaCompra = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textAreaDescripcion = new javax.swing.JTextArea();
         ScrollPanelRseñas = new javax.swing.JScrollPane();
@@ -117,12 +125,12 @@ public class AlmaTerrenal extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10+" }));
 
-        btnAñadirCarrito.setBackground(new java.awt.Color(69, 73, 74));
-        btnAñadirCarrito.setForeground(new java.awt.Color(229, 229, 183));
-        btnAñadirCarrito.setText("Agregar al carrito");
-        btnAñadirCarrito.addActionListener(new java.awt.event.ActionListener() {
+        btnNuevaCompra.setBackground(new java.awt.Color(69, 73, 74));
+        btnNuevaCompra.setForeground(new java.awt.Color(229, 229, 183));
+        btnNuevaCompra.setText("Agregar al carrito");
+        btnNuevaCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAñadirCarritoActionPerformed(evt);
+                btnNuevaCompraActionPerformed(evt);
             }
         });
 
@@ -219,7 +227,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(32, 32, 32)
-                                    .addComponent(btnAñadirCarrito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(btnNuevaCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -271,7 +279,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox1)
-                            .addComponent(btnAñadirCarrito, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnNuevaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(80, 80, 80)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -302,9 +310,17 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAñadirCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirCarritoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAñadirCarritoActionPerformed
+    private void btnNuevaCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaCompraActionPerformed
+        if (Usuario.isLoggedIn()) {
+            CarritoCompras nuevaCompra = new CarritoCompras();
+            nuevaCompra.setVisible(true);
+            nuevaCompra.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para comprar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+    }//GEN-LAST:event_btnNuevaCompraActionPerformed
 
     private void btnAgregarReseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarReseñaActionPerformed
 
@@ -312,7 +328,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
             reseñaPanel.setVisible(true);
             reseñaPanel.setLocationRelativeTo(null);
         } else {
-            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para comprar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para dejar una reseña.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_btnAgregarReseñaActionPerformed
@@ -328,7 +344,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JScrollPane ScrollPanelRseñas;
     private javax.swing.JButton btnAgregarReseña;
-    private javax.swing.JButton btnAñadirCarrito;
+    public javax.swing.JButton btnNuevaCompra;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

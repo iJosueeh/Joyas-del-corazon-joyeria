@@ -10,7 +10,7 @@ import java.awt.BorderLayout;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.ImageIcon;
-import vistas.menu.Gestionar_Productos;
+import vistas.menu.Gestionar_productos;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Catalogos.C_Hojas;
 
