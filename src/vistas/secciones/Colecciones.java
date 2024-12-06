@@ -72,7 +72,7 @@ public class Colecciones extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(118, 98, 78));
         jPanel1.setForeground(new java.awt.Color(102, 102, 0));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));

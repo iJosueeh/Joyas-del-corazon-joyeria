@@ -106,6 +106,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(118, 98, 78));
         jPanel1.setForeground(new java.awt.Color(118, 98, 78));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/file (22).jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         labelTitle.setFont(new java.awt.Font("Bodoni MT", 0, 36)); // NOI18N
@@ -186,7 +187,6 @@ public class AlmaTerrenal extends javax.swing.JFrame {
 
         btnRegresar.setBackground(new java.awt.Color(255, 149, 0));
         btnRegresar.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
         btnRegresar.setText("Regresar");
         btnRegresar.setBorder(null);
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
