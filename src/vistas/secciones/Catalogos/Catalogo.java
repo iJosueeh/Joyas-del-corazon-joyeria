@@ -616,25 +616,29 @@ public class Catalogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnComprar4ActionPerformed
 
     private void btnComprar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar5ActionPerformed
-        
+
         if (Usuario.isLoggedIn()) {
             Eterna eterna = new Eterna();
             eterna.setVisible(true);
             eterna.setLocationRelativeTo(null);
             this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
         }
-        
+
     }//GEN-LAST:event_btnComprar5ActionPerformed
 
     private void btnComprar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar6ActionPerformed
-        
+
         if (Usuario.isLoggedIn()) {
             Elemental elemental = new Elemental();
             elemental.setVisible(true);
             elemental.setLocationRelativeTo(null);
-            this.dispose();            
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
         }
-        
+
     }//GEN-LAST:event_btnComprar6ActionPerformed
 
     /**

@@ -9,6 +9,7 @@ import controladores.productos.ProductoDAO;
 import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
+import java.net.URL;
 import java.util.List;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
@@ -33,6 +34,7 @@ public class Aurum_1 extends javax.swing.JFrame {
 
     public Aurum_1() {
         initComponents();
+        
         this.nombreProducto = "Aurum";
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         this.carritoCompras = new CarritoCompras();
@@ -102,8 +104,6 @@ public class Aurum_1 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(118, 98, 78));
         jPanel1.setForeground(new java.awt.Color(118, 98, 78));
-
-        jLabel1.setText("jLabel1");
 
         labelTitle.setFont(new java.awt.Font("Bodoni MT", 0, 36)); // NOI18N
         labelTitle.setForeground(new java.awt.Color(229, 229, 183));
@@ -249,7 +249,7 @@ public class Aurum_1 extends javax.swing.JFrame {
                                     .addComponent(txtMoney))
                                 .addGap(69, 69, 69))
                             .addComponent(jSeparator2))))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,7 +301,7 @@ public class Aurum_1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 871, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 96, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

@@ -9,7 +9,10 @@ import controladores.productos.ProductoDAO;
 import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
 import modelos.clases.productos.Proveedor;
@@ -34,6 +37,15 @@ public class Imperio extends javax.swing.JFrame {
     public Imperio() {
         initComponents();
         this.nombreProducto = "Imperio";
+
+        try {
+            URL imagenURL = new URL("https://i.ibb.co/2N81cQ6/noble5.jpg");
+            ImageIcon imagen = new ImageIcon(imagenURL);
+            jLabel1.setIcon(imagen);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         this.carritoCompras = new CarritoCompras();
 
@@ -102,8 +114,6 @@ public class Imperio extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(118, 98, 78));
         jPanel1.setForeground(new java.awt.Color(118, 98, 78));
-
-        jLabel1.setText("jLabel1");
 
         labelTitle.setFont(new java.awt.Font("Bodoni MT", 0, 36)); // NOI18N
         labelTitle.setForeground(new java.awt.Color(229, 229, 183));

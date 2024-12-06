@@ -12,7 +12,6 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.clases.usuarios.Usuario;
-import vistas.menu.Gestionar_productos;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Catalogos.C_Hojas;
 import vistas.secciones.carrito.CarritoCompras;

@@ -10,6 +10,7 @@ import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
 import java.awt.event.ActionEvent;
+import java.net.URL;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -36,6 +37,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
 
     public AlmaTerrenal() {
         initComponents();
+           
         this.nombreProducto = "Alma Terrenal";
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         this.carritoCompras = new CarritoCompras();
@@ -56,6 +58,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         int cantidadNumerica = Integer.parseInt(cantidad);
 
         nuevoPedido = new NuevoPedido(productoDAO, nombreProducto, btnNuevaCompra, cantidadNumerica);
+        
     }
 
     public void actualizarPanelReseñas(int idProducto) {
@@ -105,9 +108,6 @@ public class AlmaTerrenal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(118, 98, 78));
         jPanel1.setForeground(new java.awt.Color(118, 98, 78));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icons/file (22).jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
 
         labelTitle.setFont(new java.awt.Font("Bodoni MT", 0, 36)); // NOI18N
         labelTitle.setForeground(new java.awt.Color(229, 229, 183));
