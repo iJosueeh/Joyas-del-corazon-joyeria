@@ -51,7 +51,8 @@ public class LoginAccess implements ActionListener {
                 JOptionPane.showMessageDialog(null, mensajeBienvenida, "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
                 login.setStatus(true);
                 Usuario.setLoggedIn(true);
-
+                Usuario.setUsuarioActual(login);
+                
                 // Pasa el usuario logueado a MenuGestionar
                 MenuGestionar menuGestionar = new MenuGestionar(login);
                 menuGestionar.setVisible(true);

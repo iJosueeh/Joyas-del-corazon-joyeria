@@ -1,10 +1,11 @@
-
 package modelos.clases.pedidos;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Pedido {
+
     private int id;
     private int idCliente;
     private Date fecha;
@@ -12,10 +13,11 @@ public class Pedido {
     private double total;
     private String estado;
     private List<DetallePedido> detalles;
+    private String nombreCliente;
 
-    public Pedido(){
+    public Pedido() {
     }
-    
+
     public Pedido(int idCliente, Date fecha, String direccion, double total, String estado) {
         this.idCliente = idCliente;
         this.fecha = fecha;
@@ -81,6 +83,14 @@ public class Pedido {
         this.detalles = detalles;
     }
 
-    
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
 
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    
+    
 }

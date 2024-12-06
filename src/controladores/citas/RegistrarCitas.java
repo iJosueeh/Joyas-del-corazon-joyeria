@@ -35,7 +35,7 @@ public class RegistrarCitas implements ActionListener {
             if (Usuario.isLoggedIn()) {
 
                 Usuario usuarioLogueado = Usuario.getUsuarioActual();
-                int idUsuario = usuarioLogueado.getIdUsuario();
+                int idUsuario = usuarioLogueado.getId();
                 String motivo = (String) citasPanel.comboBoxMotivo.getSelectedItem();
                 String informacionContacto = citasPanel.txtContactoInfo.getText();
                 String descripcion = citasPanel.txtDescripcion.getText();

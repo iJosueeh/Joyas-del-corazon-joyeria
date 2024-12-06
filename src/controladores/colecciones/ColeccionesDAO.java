@@ -50,4 +50,29 @@ public class ColeccionesDAO implements IColecciones {
         return coleccion;
     }
 
+    public Coleccion obtenerColeccionPorNombre(String nombre) {
+        String sql = "SELECT * FROM Colecciones WHERE nombre = ?";
+        Coleccion coleccion = null;
+        try {
+
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nombre);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                coleccion = new Coleccion();
+                coleccion.setId(rs.getInt("id"));
+                coleccion.setNombre(rs.getString("nombre"));
+                coleccion.setDescripcion(rs.getString("descripcion"));
+                coleccion.setFecha_lanzamiento(rs.getTimestamp("fecha_lanzamiento"));
+                coleccion.setEstado(rs.getString("estado"));
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return coleccion;
+    }
+
 }

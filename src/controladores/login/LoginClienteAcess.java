@@ -60,7 +60,7 @@ public class LoginClienteAcess implements ActionListener {
                 loginCliente.setStatus(true);
                 Usuario.setLoggedIn(true);
 
-                usuarioDAO.actualizarEstadoActivo(loginCliente.getIdUsuario());
+                usuarioDAO.actualizarEstadoActivo(loginCliente.getId());
                 
                 MenuUsuario menuUsuario = new MenuUsuario();
                 menuUsuario.setVisible(true);

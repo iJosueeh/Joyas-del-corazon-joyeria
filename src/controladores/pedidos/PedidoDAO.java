@@ -5,6 +5,7 @@
 package controladores.pedidos;
 
 import com.mysql.cj.xdevapi.Statement;
+import controladores.usuarios.UsuariosDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -43,7 +44,7 @@ public class PedidoDAO implements IPedido {
         try {
             con = cn.getConexion();
             con.setAutoCommit(false);
-            
+
             psPedido = con.prepareStatement(sqlPedido, PreparedStatement.RETURN_GENERATED_KEYS);
             psPedido.setInt(1, pedido.getIdCliente());
             psPedido.setTimestamp(2, new Timestamp(pedido.getFecha().getTime()));
@@ -80,7 +81,7 @@ public class PedidoDAO implements IPedido {
                     Logger.getLogger(PedidoDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        } 
+        }
         return false;
     }
 
@@ -138,4 +139,66 @@ public class PedidoDAO implements IPedido {
         return pedido;
     }
 
+    public List<Pedido> obtenerPedidos() {
+        List<Pedido> pedidos = new ArrayList<>();
+        String sql = "SELECT p.id, p.idCliente, p.fecha, p.direccion, p.total, p.estado "
+                + "FROM Pedido p";
+        String sqlDetalle = "SELECT * FROM DetallesPedidos WHERE id_pedido = ?";
+
+        UsuariosDAO usuarioDAO = new UsuariosDAO();
+
+        try {
+            con = cn.getConexion();
+            psPedido = con.prepareStatement(sql);
+            rs = psPedido.executeQuery();
+
+            while (rs.next()) {
+                Pedido pedido = new Pedido();
+                pedido.setId(rs.getInt("id"));
+                int idCliente = rs.getInt("idCliente");
+                pedido.setIdCliente(idCliente);
+
+                String nombreCliente = usuarioDAO.obtenerNombreClientePorId(idCliente); // Método para obtener el nombre por ID
+                pedido.setNombreCliente(nombreCliente);
+
+                pedido.setFecha(rs.getDate("fecha"));
+                pedido.setDireccion(rs.getString("direccion"));
+                pedido.setTotal(rs.getDouble("total"));
+                pedido.setEstado(rs.getString("estado"));
+
+                List<DetallePedido> detalles = new ArrayList<>();
+                try {
+                    psDetalle = con.prepareStatement(sqlDetalle);
+
+                    psDetalle.setInt(1, pedido.getId()); // Pasar el ID del pedido
+                    try (ResultSet rsDetalle = psDetalle.executeQuery()) {
+                        while (rsDetalle.next()) {
+                            DetallePedido detalle = new DetallePedido();
+                            detalle.setId(rsDetalle.getInt("id"));
+                            detalle.setIdPedido(rsDetalle.getInt("id_pedido"));
+                            detalle.setCantidad(rsDetalle.getInt("cantidad"));
+                            detalle.setPrecioUnitario(rsDetalle.getDouble("precio_unitario"));
+                            detalle.setSubtotal(rsDetalle.getDouble("subtotal"));
+
+                            Producto producto = new Producto();
+                            producto.setId(rsDetalle.getInt("id_pedido"));
+                            detalle.setProducto(producto);
+
+                            detalles.add(detalle);
+                        }
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                pedido.setDetalles(detalles);
+
+                pedidos.add(pedido);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return pedidos;
+    }
 }

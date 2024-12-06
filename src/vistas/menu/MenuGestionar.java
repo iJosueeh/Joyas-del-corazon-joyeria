@@ -7,7 +7,9 @@ package vistas.menu;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import modelos.clases.usuarios.Usuario;
-import vistas.menu.admin.GestionarProductos;
+import vistas.menu.admin.pedidos.GestionarPedidos;
+import vistas.menu.admin.productos.GestionarProductos;
+import vistas.menu.admin.usuarios.GestionarUsuarios;
 
 /**
  *
@@ -17,9 +19,12 @@ public class MenuGestionar extends javax.swing.JFrame {
 
     private Usuario usuarioLogueado;
 
+    public MenuGestionar(){
+    }
+    
     public MenuGestionar(Usuario usuario) {
         initComponents();
-        this.usuarioLogueado = usuario;
+        this.usuarioLogueado = Usuario.getUsuarioActual();
 
         if (usuarioLogueado != null) {
             txtStatus.setText("Activo");
@@ -243,24 +248,17 @@ public class MenuGestionar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        content.removeAll();
-        content.repaint();
-        content.revalidate();
-
-        // Crea una instancia de Gestionar_productos
-        Gestionar_Usuarios gestionarUsuarios = new Gestionar_Usuarios();
-
-        // Agrega el panel al contenedor principal
-        content.setLayout(new BorderLayout());
-        content.add(gestionarUsuarios, BorderLayout.CENTER);
-
-        // Refresca el contenedor para mostrar el nuevo contenido
-        content.repaint();
-        content.revalidate();
+        GestionarUsuarios gestionarUsuarios = new GestionarUsuarios();
+        gestionarUsuarios.setVisible(true);
+        gestionarUsuarios.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       GestionarPedidos gestionarPedido = new GestionarPedidos();
+       gestionarPedido.setVisible(true);
+       gestionarPedido.setLocationRelativeTo(null);
+       this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

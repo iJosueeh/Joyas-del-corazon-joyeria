@@ -345,7 +345,7 @@ public class MenuUsuario extends javax.swing.JFrame {
             Usuario.setLoggedIn(false);
 
             if (usuarioLogueado != null) {
-                usuarioDAO.actualizarEstadoInactivo(usuarioLogueado.getIdUsuario());
+                usuarioDAO.actualizarEstadoInactivo(usuarioLogueado.getId());
             }
             
             MenuInicial menuInicial = new MenuInicial();
