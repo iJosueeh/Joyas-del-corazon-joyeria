@@ -11,7 +11,12 @@ import modelos.clases.productos.Producto;
 import modelos.dao.ConexionBD;
 import modelos.interfaces.IProductos;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class ProductoDAO implements IProductos {
 
@@ -72,6 +77,57 @@ public class ProductoDAO implements IProductos {
             JOptionPane.showMessageDialog(null, e.toString());
         }
         return stockProducto;
+    }
+
+    public List<Producto> obtenerTodosLosProductos() {
+        String sql = "SELECT * FROM Productos";
+        List<Producto> listaProductos = new ArrayList<>();
+
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Producto producto = new Producto();
+                producto.setId(rs.getInt("id"));
+                producto.setIdColeccion(rs.getInt("id_coleccion"));
+                producto.setNombre(rs.getString("nombre"));
+                producto.setDescripcion(rs.getString("descripcion"));
+                producto.setPrecio(rs.getDouble("precio"));
+                producto.setCantidad(rs.getInt("cantidad"));
+                producto.setStock(rs.getInt("stock"));
+
+                listaProductos.add(producto);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return listaProductos;
+    }
+
+    public void cargarProductosEnTabla(JTable tabla) {
+        ProductoDAO productoDAO = new ProductoDAO();
+        List<Producto> listaProductos = productoDAO.obtenerTodosLosProductos();
+
+        Iterator<Producto> iterator = listaProductos.iterator();
+
+        DefaultTableModel modeloTabla = (DefaultTableModel) tabla.getModel();
+        modeloTabla.setRowCount(0);
+
+        while (iterator.hasNext()) {
+            Producto producto = iterator.next();
+            Object[] fila = {
+                producto.getId(),
+                producto.getIdColeccion(),
+                producto.getNombre(),
+                producto.getDescripcion(),
+                producto.getPrecio(),
+                producto.getCantidad(),
+                producto.getStock()
+            };
+            modeloTabla.addRow(fila);
+        }
     }
 
 }

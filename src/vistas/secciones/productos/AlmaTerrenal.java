@@ -52,7 +52,10 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         txtMoney.setText(String.valueOf(producto.getPrecio()));
         txtPrecioOnline.setText(String.valueOf(producto.getPrecio() - 30));
 
-        nuevoPedido = new NuevoPedido(productoDAO, nombreProducto, btnNuevaCompra);
+        String cantidad = (String) comboBoxCantidad.getSelectedItem();
+        int cantidadNumerica = Integer.parseInt(cantidad);
+
+        nuevoPedido = new NuevoPedido(productoDAO, nombreProducto, btnNuevaCompra, cantidadNumerica);
     }
 
     public void actualizarPanelReseñas(int idProducto) {
@@ -77,13 +80,12 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         labelTitle = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboBoxCantidad = new javax.swing.JComboBox<>();
         btnNuevaCompra = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textAreaDescripcion = new javax.swing.JTextArea();
@@ -110,8 +112,6 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         labelTitle.setForeground(new java.awt.Color(229, 229, 183));
         labelTitle.setText("Title");
 
-        jLabel3.setText("Estrellas");
-
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Vendido por: ");
@@ -124,7 +124,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(229, 229, 183));
         jLabel6.setText("Regular");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10+" }));
+        comboBoxCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
         btnNuevaCompra.setBackground(new java.awt.Color(69, 73, 74));
         btnNuevaCompra.setForeground(new java.awt.Color(229, 229, 183));
@@ -218,7 +218,6 @@ public class AlmaTerrenal extends javax.swing.JFrame {
                             .addGap(124, 124, 124)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(labelTitle)
-                                .addComponent(jLabel3)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -226,7 +225,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
                                 .addComponent(jSeparator1)
                                 .addComponent(jSeparator2)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(32, 32, 32)
                                     .addComponent(btnNuevaCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
@@ -257,9 +256,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
                         .addComponent(labelTitle)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(99, 99, 99)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtProveedor))
@@ -279,7 +276,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1)
+                            .addComponent(comboBoxCantidad)
                             .addComponent(btnNuevaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(80, 80, 80)
@@ -346,10 +343,9 @@ public class AlmaTerrenal extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarReseña;
     public javax.swing.JButton btnNuevaCompra;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> comboBoxCantidad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

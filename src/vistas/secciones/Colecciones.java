@@ -32,15 +32,15 @@ public class Colecciones extends javax.swing.JFrame {
             URL imageURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(3).jpg");
             ImageIcon coleccionMidasTouch = new ImageIcon(imageURL1);
             labelMidasTouch.setIcon(coleccionMidasTouch);
-
+            
             URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(2).jpg");
             ImageIcon coleccionEsenciaNobel = new ImageIcon(imagenURL2);
             labelEsenciaNoble.setIcon(coleccionEsenciaNobel);
-
+            
             URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(18).jpg");
             ImageIcon coleccionEternas = new ImageIcon(imagenURL3);
             labelEternas.setIcon(coleccionEternas);
-
+            
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -258,14 +258,14 @@ public class Colecciones extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 92, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -280,30 +280,31 @@ public class Colecciones extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Catalogo newframe = new Catalogo();
-
+        
         newframe.setVisible(true);
-
+        newframe.setLocationRelativeTo(null);
         this.dispose();
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Coleccion_Esencia_Noble newframe = new Coleccion_Esencia_Noble();
-
+        
         newframe.setVisible(true);
-
+        newframe.setLocationRelativeTo(null);
+        
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         C_Hojas newframe = new C_Hojas();
         newframe.setVisible(true);
-
+        newframe.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnVerCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerCarritoActionPerformed
-
+        
         if (Usuario.isLoggedIn()) {
             CarritoCompras verCarrito = new CarritoCompras();
             verCarrito.setVisible(true);

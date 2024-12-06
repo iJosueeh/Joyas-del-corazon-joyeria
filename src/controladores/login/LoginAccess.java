@@ -47,17 +47,16 @@ public class LoginAccess implements ActionListener {
             Usuario login = usuarioDao.loginAdmin(email, password);
 
             if (login != null) {
-
                 String mensajeBienvenida = "Bienvenido, " + login.getNombre_completo() + "!";
                 JOptionPane.showMessageDialog(null, mensajeBienvenida, "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
                 login.setStatus(true);
                 Usuario.setLoggedIn(true);
 
-                MenuGestionar menuGestionar = new MenuGestionar();
+                // Pasa el usuario logueado a MenuGestionar
+                MenuGestionar menuGestionar = new MenuGestionar(login);
                 menuGestionar.setVisible(true);
                 menuGestionar.setLocationRelativeTo(null);
                 loginPanel.dispose();
-
             } else {
                 JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
                 loginPanel.txtEmail.setText("ingresa tu correo electronico");

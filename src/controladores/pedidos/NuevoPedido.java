@@ -24,12 +24,14 @@ public class NuevoPedido implements ActionListener {
     private String nombreProducto;
     private JButton btnNuevaCompra;
     private CarritoDAO carritoDAO;
+    private int cantidad;
 
-    public NuevoPedido(ProductoDAO productoDAO, String nombreProducto, JButton btnNuevaCompra) {
+    public NuevoPedido(ProductoDAO productoDAO, String nombreProducto, JButton btnNuevaCompra, int cantidad) {
         this.productoDAO = productoDAO;
         this.nombreProducto = nombreProducto;
         this.carritoDAO = new CarritoDAO();
         this.btnNuevaCompra = btnNuevaCompra;
+        this.cantidad = cantidad;
         this.btnNuevaCompra.addActionListener(this);
     }
 
@@ -38,6 +40,8 @@ public class NuevoPedido implements ActionListener {
         if (e.getSource() == btnNuevaCompra) {
             try {
                 Producto producto = productoDAO.obtenerProductoPorNombre(nombreProducto);
+                producto.setCantidad(cantidad);
+                
                 if (producto == null) {
                     JOptionPane.showMessageDialog(null, "Producto no encontrado.");
                     return;
