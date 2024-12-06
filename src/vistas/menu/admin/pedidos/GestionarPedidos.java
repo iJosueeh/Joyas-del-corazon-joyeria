@@ -6,15 +6,13 @@ package vistas.menu.admin.pedidos;
 
 import controladores.pedidos.PedidoDAO;
 import vistas.menu.admin.usuarios.*;
-import vistas.menu.admin.productos.EliminarProducto;
-import vistas.menu.admin.productos.EditarProducto;
-import vistas.menu.admin.productos.AgregarProducto;
 import controladores.usuarios.UsuariosDAO;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import modelos.clases.pedidos.Pedido;
 import modelos.clases.usuarios.Usuario;
 import vistas.menu.MenuGestionar;
+import vistas.menu.admin.pedidos.AgregarPedidos;
 
 /**
  *
@@ -67,9 +65,9 @@ public class GestionarPedidos extends javax.swing.JFrame {
         tablaPedidos = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btnAgregarProducto = new javax.swing.JButton();
-        btnEditarProducto = new javax.swing.JButton();
-        btnEliminarProducto = new javax.swing.JButton();
+        btnAgregarPedido = new javax.swing.JButton();
+        btnEditarPedido = new javax.swing.JButton();
+        btnEliminarPedido = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,24 +89,24 @@ public class GestionarPedidos extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Gestionar Pedidos");
 
-        btnAgregarProducto.setText("Agregar Pedido");
-        btnAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarPedido.setText("Agregar Pedido");
+        btnAgregarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarProductoActionPerformed(evt);
+                btnAgregarPedidoActionPerformed(evt);
             }
         });
 
-        btnEditarProducto.setText("Editar Pedido");
-        btnEditarProducto.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarPedido.setText("Editar Pedido");
+        btnEditarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarProductoActionPerformed(evt);
+                btnEditarPedidoActionPerformed(evt);
             }
         });
 
-        btnEliminarProducto.setText("Eliminar Pedido");
-        btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarPedido.setText("Eliminar Pedido");
+        btnEliminarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarProductoActionPerformed(evt);
+                btnEliminarPedidoActionPerformed(evt);
             }
         });
 
@@ -131,9 +129,9 @@ public class GestionarPedidos extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnAgregarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEditarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEliminarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                            .addComponent(btnAgregarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEditarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEliminarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                             .addComponent(btnRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -148,11 +146,11 @@ public class GestionarPedidos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnEditarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEditarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEliminarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(270, 270, 270)
                         .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -180,35 +178,35 @@ public class GestionarPedidos extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProductoActionPerformed
-        EditarUsuarios editarUsuarios = new EditarUsuarios();
-        editarUsuarios.setVisible(true);
-        editarUsuarios.setLocationRelativeTo(null);
+    private void btnEditarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPedidoActionPerformed
+        EditarPedido editarPedido = new EditarPedido();
+        editarPedido.setVisible(true);
+        editarPedido.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_btnEditarProductoActionPerformed
+    }//GEN-LAST:event_btnEditarPedidoActionPerformed
 
-    private void btnAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoActionPerformed
-        AgregarUsuarios agregarUsuarios = new AgregarUsuarios();
-        agregarUsuarios.setVisible(true);
-        agregarUsuarios.setLocationRelativeTo(null);
+    private void btnAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPedidoActionPerformed
+        AgregarPedidos agregarPedido = new AgregarPedidos();
+        agregarPedido.setVisible(true);
+        agregarPedido.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_btnAgregarProductoActionPerformed
+    }//GEN-LAST:event_btnAgregarPedidoActionPerformed
 
-    private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
+    private void btnEliminarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPedidoActionPerformed
         EliminarUsuarios eliminarUsuarios = new EliminarUsuarios();
         eliminarUsuarios.setVisible(true);
         eliminarUsuarios.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_btnEliminarProductoActionPerformed
+    }//GEN-LAST:event_btnEliminarPedidoActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarProducto;
-    private javax.swing.JButton btnEditarProducto;
-    private javax.swing.JButton btnEliminarProducto;
+    private javax.swing.JButton btnAgregarPedido;
+    private javax.swing.JButton btnEditarPedido;
+    private javax.swing.JButton btnEliminarPedido;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
