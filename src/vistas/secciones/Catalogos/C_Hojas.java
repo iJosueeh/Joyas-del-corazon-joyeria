@@ -12,6 +12,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import modelos.clases.usuarios.Usuario;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.productos.AlmaTerrenal;
 import vistas.secciones.productos.CantoGaia;
@@ -36,27 +37,27 @@ public class C_Hojas extends javax.swing.JFrame {
             URL imageURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(12).jpg");
             ImageIcon imageSusurroHoja = new ImageIcon(imageURL1);
             labelSusurroHoja.setIcon(imageSusurroHoja);
-        
+
             URL imageURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(13).jpg");
             ImageIcon cantoCaia = new ImageIcon(imageURL2);
             labelCantoGaia.setIcon(cantoCaia);
-            
+
             URL imageURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(14).jpg");
             ImageIcon almaTerrenal = new ImageIcon(imageURL3);
             labelAlmaTerrenal.setIcon(almaTerrenal);
-            
+
             URL imageURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(15).jpg");
             ImageIcon florVida = new ImageIcon(imageURL4);
             labelFlorVida.setIcon(florVida);
-            
+
             URL imageURL5 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(16).jpg");
             ImageIcon florAlba = new ImageIcon(imageURL5);
             labelFlorAlba.setIcon(florAlba);
-            
+
             URL imageURL6 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(17).jpg");
             ImageIcon esencialSalvaje = new ImageIcon(imageURL6);
             labelEsencia.setIcon(esencialSalvaje);
-            
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -558,46 +559,76 @@ public class C_Hojas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        SusurroHojas susurroHojas = new SusurroHojas();
-        susurroHojas.setVisible(true);
-        susurroHojas.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            SusurroHojas susurroHojas = new SusurroHojas();
+            susurroHojas.setVisible(true);
+            susurroHojas.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnComprar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar1ActionPerformed
-        FlorVida florVida = new FlorVida();
-        florVida.setVisible(true);
-        florVida.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            FlorVida florVida = new FlorVida();
+            florVida.setVisible(true);
+            florVida.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
     }//GEN-LAST:event_btnComprar1ActionPerformed
 
     private void btnComprar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar3ActionPerformed
-        CantoGaia cantoGaia = new CantoGaia();
-        cantoGaia.setVisible(true);
-        cantoGaia.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            CantoGaia cantoGaia = new CantoGaia();
+            cantoGaia.setVisible(true);
+            cantoGaia.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
     }//GEN-LAST:event_btnComprar3ActionPerformed
 
     private void btnComprar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar5ActionPerformed
-        AlmaTerrenal almaTerrenal = new AlmaTerrenal();
-        almaTerrenal.setVisible(true);
-        almaTerrenal.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            AlmaTerrenal almaTerrenal = new AlmaTerrenal();
+            almaTerrenal.setVisible(true);
+            almaTerrenal.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
     }//GEN-LAST:event_btnComprar5ActionPerformed
 
     private void btnComprar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar6ActionPerformed
-        EsenciaSalvaje esenciaSalvaje = new EsenciaSalvaje();
-        esenciaSalvaje.setVisible(true);
-        esenciaSalvaje.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            EsenciaSalvaje esenciaSalvaje = new EsenciaSalvaje();
+            esenciaSalvaje.setVisible(true);
+            esenciaSalvaje.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
     }//GEN-LAST:event_btnComprar6ActionPerformed
 
 
     private void btnComprar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar4ActionPerformed
-        FlorAlba florAlba = new FlorAlba();
-        florAlba.setVisible(true);
-        florAlba.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            FlorAlba florAlba = new FlorAlba();
+            florAlba.setVisible(true);
+            florAlba.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
     }//GEN-LAST:event_btnComprar4ActionPerformed
 
     /**

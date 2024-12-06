@@ -4,6 +4,9 @@
  */
 package vistas.secciones.carrito;
 
+import controladores.carrito.CarritoDAO;
+import controladores.cupones.CuponesDAO;
+import controladores.pedidos.PedidoDAO;
 import controladores.productos.ProductoDAO;
 import java.time.LocalDate;
 import javax.swing.JButton;
@@ -11,6 +14,15 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelos.clases.usuarios.Usuario;
 import vistas.secciones.Colecciones;
+import java.util.List;
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import modelos.clases.pedidos.Cupon;
+import modelos.clases.pedidos.DetallePedido;
+import modelos.clases.pedidos.Pedido;
+import modelos.clases.productos.Producto;
 
 /**
  *
@@ -18,16 +30,19 @@ import vistas.secciones.Colecciones;
  */
 public class CarritoCompras extends javax.swing.JFrame {
 
+    private DefaultTableModel tablaCarritoProductos;
     private Usuario usuarioLogueado = Usuario.getUsuarioActual();
-    private DefaultTableModel tblModel;
-    private String[] columnas = {"Producto ID", "Nombre Producto", "Colección", "Cantidad", "Precio", "Subtotal"};
-    private ProductoDAO productoDAO;
+    private CarritoDAO carritoDAO;
+    private CuponesDAO cuponDAO;
 
     public CarritoCompras() {
         initComponents();
-        initTable();
+        tablaCarritoProductos = new DefaultTableModel(new Object[][]{},
+                new String[]{"Producto ID", "Nombre Producto", "Colección", "Cantidad", "Precio", "Subtotal"});
+        tablaCarrito.setModel(tablaCarritoProductos);
 
-        productoDAO = new ProductoDAO();
+        carritoDAO = new CarritoDAO();
+        cuponDAO = new CuponesDAO();
 
         if (Usuario.isLoggedIn()) {
             txtIdCliente.setText(String.valueOf(usuarioLogueado.getIdUsuario()));
@@ -36,21 +51,33 @@ public class CarritoCompras extends javax.swing.JFrame {
             txtTelefono.setText(usuarioLogueado.getTelefono());
         }
         txtFechaCompra.setText(String.valueOf(LocalDate.now()));
+
+        cargarCarrito();
+
+        double subtotalTotal = carritoDAO.calcularSubtotalTotal(usuarioLogueado.getIdUsuario());
+        txtSubTotal.setText(String.valueOf(subtotalTotal));
+        double costoEnvio = carritoDAO.calcularCostoEnvio();
+        txtCostoEnvio.setText(String.valueOf(costoEnvio));
+        txtDescuento.setText(String.valueOf("0"));
+        txtSubTotalFinal.setText(String.valueOf(subtotalTotal + costoEnvio));
+        double montoTotal = carritoDAO.calcularTotal(usuarioLogueado.getIdUsuario(), 0.0);
+        txtMontoTotal.setText(String.valueOf(montoTotal));
     }
 
-    private void initTable() {
-        tblModel = new DefaultTableModel(columnas, 0);
-        tablaCarrito.setModel(tblModel);
-    }
+    public void cargarCarrito() {
+        DefaultTableModel modelo = (DefaultTableModel) tablaCarrito.getModel();
+        modelo.setRowCount(0); // Limpiar la tabla
+        int usuarioId = usuarioLogueado.getIdUsuario();
+        List<Object[]> carrito = carritoDAO.obtenerCarrito(usuarioId);
 
-    public void agregarFila(int productoID, String nombreProducto, String coleccion, int cantidad, double precio) {
-        double subtotal = cantidad * precio; // Calcula el subtotal
-        Object[] nuevaFila = {productoID, nombreProducto, coleccion, cantidad, precio, subtotal};
-        tblModel.addRow(nuevaFila);
+        for (Object[] fila : carrito) {
+            modelo.addRow(fila);
+        }
+
     }
 
     public DefaultTableModel getTblModel() {
-        return tblModel;
+        return tablaCarritoProductos;
     }
 
     /**
@@ -73,27 +100,30 @@ public class CarritoCompras extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtCanjearCupon = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtFechaCompra = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        btnCanjear = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaCarrito = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtSubTotal = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtCostoEnvio = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtDescuento = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnComprar = new javax.swing.JButton();
+        btnCancelarOrden = new javax.swing.JButton();
+        txtSubTotalFinal = new javax.swing.JTextField();
+        txtMontoTotal = new javax.swing.JTextField();
         btnRegresar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
 
@@ -190,9 +220,9 @@ public class CarritoCompras extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Canjear Cupon:");
 
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField5.setToolTipText("");
-        jTextField5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtCanjearCupon.setBackground(new java.awt.Color(255, 255, 255));
+        txtCanjearCupon.setToolTipText("");
+        txtCanjearCupon.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -210,6 +240,13 @@ public class CarritoCompras extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boleta Electronica", "Boleta" }));
         jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        btnCanjear.setText("Canjear");
+        btnCanjear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCanjearActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -221,16 +258,17 @@ public class CarritoCompras extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
                         .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtFechaCompra))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(64, 64, 64))
+                        .addComponent(txtCanjearCupon, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCanjear, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtFechaCompra)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,7 +276,8 @@ public class CarritoCompras extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCanjearCupon, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCanjear))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -284,9 +323,9 @@ public class CarritoCompras extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Subtotal:");
 
-        jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtSubTotal.setEditable(false);
+        txtSubTotal.setBackground(new java.awt.Color(255, 255, 255));
+        txtSubTotal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -296,18 +335,18 @@ public class CarritoCompras extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Costo de Envio:");
 
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtCostoEnvio.setEditable(false);
+        txtCostoEnvio.setBackground(new java.awt.Color(255, 255, 255));
+        txtCostoEnvio.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel10.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Descuento:");
 
-        jTextField9.setEditable(false);
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField9.setToolTipText("");
-        jTextField9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtDescuento.setEditable(false);
+        txtDescuento.setBackground(new java.awt.Color(255, 255, 255));
+        txtDescuento.setToolTipText("");
+        txtDescuento.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel11.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
@@ -317,9 +356,27 @@ public class CarritoCompras extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Subtotal:");
 
-        jButton1.setText("Comprar");
+        btnComprar.setText("Comprar");
+        btnComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Cancelar Orden");
+        btnCancelarOrden.setText("Cancelar Orden");
+        btnCancelarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarOrdenActionPerformed(evt);
+            }
+        });
+
+        txtSubTotalFinal.setEditable(false);
+        txtSubTotalFinal.setBackground(new java.awt.Color(255, 255, 255));
+        txtSubTotalFinal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtMontoTotal.setEditable(false);
+        txtMontoTotal.setBackground(new java.awt.Color(255, 255, 255));
+        txtMontoTotal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -328,16 +385,17 @@ public class CarritoCompras extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(jLabel8))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))))
-                        .addGap(0, 65, Short.MAX_VALUE))
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel11))
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSubTotalFinal)
+                            .addComponent(txtMontoTotal)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,18 +403,18 @@ public class CarritoCompras extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField7))
+                                .addComponent(txtSubTotal))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField8))
+                                .addComponent(txtCostoEnvio, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField9))
+                                .addComponent(txtDescuento))
                             .addComponent(jSeparator2)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnComprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCancelarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -369,25 +427,29 @@ public class CarritoCompras extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCostoEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel12)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel11)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(txtSubTotalFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txtMontoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCancelarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
@@ -412,9 +474,12 @@ public class CarritoCompras extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(136, 136, 136)))
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -470,14 +535,132 @@ public class CarritoCompras extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void btnCancelarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarOrdenActionPerformed
+        int respuesta = JOptionPane.showConfirmDialog(
+                null,
+                "¿Estás seguro de que deseas cancelar tu orden?",
+                "Confirmar cancelación",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (respuesta == JOptionPane.YES_OPTION) {
+
+            int usuarioId = Usuario.getUsuarioActual().getIdUsuario();
+            carritoDAO.vaciarCarrito(usuarioId);
+            tablaCarritoProductos.setRowCount(0);
+
+            JOptionPane.showMessageDialog(null, "Tu orden ha sido cancelada y el carrito vacío.");
+        } else {
+            JOptionPane.showMessageDialog(null, "La orden no ha sido cancelada.");
+        }
+    }//GEN-LAST:event_btnCancelarOrdenActionPerformed
+
+    private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
+
+        int usuarioId = usuarioLogueado.getIdUsuario();
+        List<Object[]> carrito = carritoDAO.obtenerCarrito(usuarioId);
+
+        if (carrito.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "El carrito está vacío. Agrega productos antes de realizar la compra.");
+            return;
+        }
+
+        String direccion = txtDireccion.getText().trim();
+        if (direccion.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese una dirección válida.");
+            return;
+        }
+
+        double subtotalTotal = carritoDAO.calcularSubtotalTotal(usuarioId);
+        double costoEnvio = carritoDAO.calcularCostoEnvio();
+        double montoTotal = subtotalTotal + costoEnvio;
+        String cuponCodigo = txtCanjearCupon.getText().trim();
+
+        if (!cuponCodigo.isEmpty() && cuponDAO.existeCupon(cuponCodigo) && cuponDAO.esCuponValido(cuponCodigo)) {
+            if (cuponDAO.tieneUsoDisponible(cuponCodigo)) {
+                montoTotal = cuponDAO.aplicarCuponDescuento(montoTotal, cuponCodigo);
+                cuponDAO.usarCupon(cuponCodigo); // Reducir el uso disponible del cupón
+            } else {
+                JOptionPane.showMessageDialog(null, "El cupón no tiene usos disponibles.");
+                return;
+            }
+        }
+
+        Pedido pedido = new Pedido();
+        pedido.setIdCliente(usuarioId);
+        pedido.setFecha(new Date());
+        pedido.setDireccion(direccion);
+        pedido.setTotal(montoTotal);
+        pedido.setEstado("Pendiente");
+
+        List<DetallePedido> detalles = new ArrayList<>();
+        for (Object[] fila : carrito) {
+            DetallePedido detalle = new DetallePedido();
+            detalle.setProducto(new Producto((int) fila[0]));
+            detalle.setCantidad((int) fila[3]);
+            detalle.setPrecioUnitario((double) fila[4]);
+            detalle.setSubtotal((double) fila[5]);
+            detalles.add(detalle);
+        }
+        pedido.setDetalles(detalles);
+
+        PedidoDAO pedidoDAO = new PedidoDAO();
+        if (pedidoDAO.agregarPedido(pedido)) {
+            JOptionPane.showMessageDialog(null, "Compra realizada con éxito. Gracias por tu pedido.");
+
+            carritoDAO.vaciarCarrito(usuarioId);
+            cargarCarrito();
+
+            txtSubTotal.setText("0.00");
+            txtCostoEnvio.setText("0.00");
+            txtDescuento.setText("0%");
+            txtSubTotalFinal.setText("0.00");
+            txtMontoTotal.setText("0.00");
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al procesar la compra. Inténtelo nuevamente.");
+        }
+    }//GEN-LAST:event_btnComprarActionPerformed
+
+    private void btnCanjearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanjearActionPerformed
+        String cuponCodigo = txtCanjearCupon.getText().trim();
+
+        if (cuponDAO.existeCupon(cuponCodigo) && cuponDAO.esCuponValido(cuponCodigo)) {
+            if (cuponDAO.tieneUsoDisponible(cuponCodigo)) {
+                Cupon cupon = cuponDAO.obtenerCuponPorCodigo(cuponCodigo);
+
+                if (cupon != null) {
+                    JOptionPane.showMessageDialog(null, "Cupón válido. Máximo de usos: " + cupon.getUso_maximo());
+                    txtDescuento.setText(cupon.getValor_descuento() + "%"); // Mostramos el descuento como porcentaje
+
+                    double subtotalTotal = carritoDAO.calcularSubtotalTotal(usuarioLogueado.getIdUsuario());
+                    double costoEnvio = carritoDAO.calcularCostoEnvio();
+                    double montoTotal = subtotalTotal + costoEnvio;
+
+                    double montoConDescuento = cuponDAO.aplicarCuponDescuento(montoTotal, cuponCodigo);
+
+                    txtMontoTotal.setText(String.format("%.2f", montoConDescuento)); // Formato con dos decimales
+                } else {
+                    JOptionPane.showMessageDialog(null, "El cupón no es válido o ha expirado.");
+                    txtDescuento.setText("0%");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Este cupón no cuenta con usos disponibles.");
+            }
+
+        }
+
+    }//GEN-LAST:event_btnCanjearActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelarOrden;
+    private javax.swing.JButton btnCanjear;
+    private javax.swing.JButton btnComprar;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -499,15 +682,17 @@ public class CarritoCompras extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     public javax.swing.JTable tablaCarrito;
+    private javax.swing.JTextField txtCanjearCupon;
+    private javax.swing.JTextField txtCostoEnvio;
+    private javax.swing.JTextField txtDescuento;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtFechaCompra;
     private javax.swing.JTextField txtIdCliente;
+    private javax.swing.JTextField txtMontoTotal;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtSubTotal;
+    private javax.swing.JTextField txtSubTotalFinal;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

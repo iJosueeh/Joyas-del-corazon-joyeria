@@ -12,6 +12,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import modelos.clases.usuarios.Usuario;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.productos.CorteReal;
 import vistas.secciones.productos.Emperatriz;
@@ -33,31 +34,31 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
             URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble1%20(1).jpg");
             ImageIcon noblezaEterna = new ImageIcon(imagenURL1);
             labelNoblezaEterna.setIcon(noblezaEterna);
-            
+
             URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble2%20(1).jpg");
             ImageIcon zircon = new ImageIcon(imagenURL2);
             labelZircon.setIcon(zircon);
-            
+
             URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble3%20(1).jpg");
             ImageIcon linaje = new ImageIcon(imagenURL3);
             labelLinaje.setIcon(linaje);
-            
+
             URL imagenURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble4%20(1).jpg");
             ImageIcon emperatriz = new ImageIcon(imagenURL4);
             labelEmperatriz.setIcon(emperatriz);
-            
+
             URL imagenURL5 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble5%20(1).jpg");
             ImageIcon imperio = new ImageIcon(imagenURL5);
             labelImperio.setIcon(imperio);
-            
+
             URL imagenURL6 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/noble6%20(1).jpg");
             ImageIcon corteReal = new ImageIcon(imagenURL6);
             labelCorteReal.setIcon(corteReal);
-            
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        
+
     }
 
 
@@ -556,46 +557,83 @@ public class Coleccion_Esencia_Noble extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        NoblezaEterna noblezaEterna = new NoblezaEterna();
-        noblezaEterna.setVisible(true);
-        noblezaEterna.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            NoblezaEterna noblezaEterna = new NoblezaEterna();
+            noblezaEterna.setVisible(true);
+            noblezaEterna.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnComprar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar1ActionPerformed
-        Emperatriz emperatriz = new Emperatriz();
-        emperatriz.setVisible(true);
-        emperatriz.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            Emperatriz emperatriz = new Emperatriz();
+            emperatriz.setVisible(true);
+            emperatriz.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
     }//GEN-LAST:event_btnComprar1ActionPerformed
 
     private void btnComprar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar3ActionPerformed
-        Zircón zircon = new Zircón();
-        zircon.setVisible(true);
-        zircon.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            Zircón zircon = new Zircón();
+            zircon.setVisible(true);
+            zircon.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
+
     }//GEN-LAST:event_btnComprar3ActionPerformed
 
     private void btnComprar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar5ActionPerformed
-        Linaje linaje = new Linaje();
-        linaje.setVisible(true);
-        linaje.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            Linaje linaje = new Linaje();
+            linaje.setVisible(true);
+            linaje.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
     }//GEN-LAST:event_btnComprar5ActionPerformed
 
     private void btnComprar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar6ActionPerformed
-        CorteReal corteaReal = new CorteReal();
-        corteaReal.setVisible(true);
-        corteaReal.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            CorteReal corteaReal = new CorteReal();
+            corteaReal.setVisible(true);
+            corteaReal.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
     }//GEN-LAST:event_btnComprar6ActionPerformed
 
 
     private void btnComprar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar4ActionPerformed
-        Imperio imperio = new Imperio();
-        imperio.setVisible(true);
-        imperio.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            Imperio imperio = new Imperio();
+            imperio.setVisible(true);
+            imperio.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
     }//GEN-LAST:event_btnComprar4ActionPerformed
 
     /**

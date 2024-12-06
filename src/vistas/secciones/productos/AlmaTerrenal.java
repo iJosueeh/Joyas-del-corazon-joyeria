@@ -24,36 +24,35 @@ import vistas.secciones.carrito.CarritoCompras;
 
 public class AlmaTerrenal extends javax.swing.JFrame {
 
-    private String nombreProducto;
+    private String nombreProducto; // Nombre del producto específico
     private AñadirReseña reseñaPanel = new AñadirReseña();
     private int idProducto;
-    private CarritoCompras carritoCompras;
-    private NuevoPedido nuevoPedido;
+    private CarritoCompras carritoCompras; // Ventana del carrito
+    private NuevoPedido nuevoPedido;      // Manejo de la lógica de pedidos
 
-    ReseñasDAO reseñaDAO = new ReseñasDAO();
-    ProveedorDAO proveedorDAO = new ProveedorDAO();
-    ProductoDAO productoDAO = new ProductoDAO();
-    
+    private ReseñasDAO reseñaDAO = new ReseñasDAO();
+    private ProveedorDAO proveedorDAO = new ProveedorDAO();
+    private ProductoDAO productoDAO = new ProductoDAO();
+
     public AlmaTerrenal() {
         initComponents();
         this.nombreProducto = "Alma Terrenal";
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         this.carritoCompras = new CarritoCompras();
 
-        
         NuevaReseñas nuevaReseña = new NuevaReseñas(reseñaDAO, reseñaPanel, idProducto);
         actualizarPanelReseñas(idProducto);
 
-        Producto productoAurum = productoDAO.obtenerProductoPorNombre(nombreProducto);
+        Producto producto = productoDAO.obtenerProductoPorNombre(nombreProducto);
         Proveedor proveedor = proveedorDAO.obtenerProveedorPorId(1);
 
-        labelTitle.setText(productoAurum.getNombre());
-        textAreaDescripcion.setText(productoAurum.getDescripcion());
+        labelTitle.setText(producto.getNombre());
+        textAreaDescripcion.setText(producto.getDescripcion());
         txtProveedor.setText(proveedor.getNombre());
-        txtMoney.setText(String.valueOf(productoAurum.getPrecio()));
-        txtPrecioOnline.setText(String.valueOf(productoAurum.getPrecio() - 30));
+        txtMoney.setText(String.valueOf(producto.getPrecio()));
+        txtPrecioOnline.setText(String.valueOf(producto.getPrecio() - 30));
 
-        nuevoPedido = new NuevoPedido(carritoCompras.getTblModel(), productoDAO, nombreProducto, btnNuevaCompra);
+        nuevoPedido = new NuevoPedido(productoDAO, nombreProducto, btnNuevaCompra);
     }
 
     public void actualizarPanelReseñas(int idProducto) {
@@ -314,9 +313,10 @@ public class AlmaTerrenal extends javax.swing.JFrame {
 
     private void btnNuevaCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaCompraActionPerformed
         if (Usuario.isLoggedIn()) {
+            carritoCompras.cargarCarrito();
             carritoCompras.setVisible(true);
             carritoCompras.setLocationRelativeTo(null);
-
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Debes iniciar sesión para comprar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }

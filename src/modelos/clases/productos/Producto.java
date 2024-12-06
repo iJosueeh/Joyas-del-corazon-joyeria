@@ -12,9 +12,9 @@ public class Producto {
     private int cantidad;
     private int stock;
 
-    public Producto(){
+    public Producto() {
     }
-    
+
     public Producto(int idColeccion, String nombre, String descripcion, double precio, int cantidad, int stock) {
         this.idColeccion = idColeccion;
         this.nombre = nombre;
@@ -22,6 +22,10 @@ public class Producto {
         this.precio = precio;
         this.cantidad = cantidad;
         this.stock = stock;
+    }
+
+    public Producto(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -80,7 +84,4 @@ public class Producto {
         this.stock = stock;
     }
 
-
-    
-    
 }

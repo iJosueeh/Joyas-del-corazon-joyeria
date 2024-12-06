@@ -10,9 +10,12 @@ import java.awt.BorderLayout;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import modelos.clases.usuarios.Usuario;
 import vistas.menu.Gestionar_productos;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Catalogos.C_Hojas;
+import vistas.secciones.carrito.CarritoCompras;
 
 /**
  *
@@ -29,15 +32,15 @@ public class Colecciones extends javax.swing.JFrame {
             URL imageURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(3).jpg");
             ImageIcon coleccionMidasTouch = new ImageIcon(imageURL1);
             labelMidasTouch.setIcon(coleccionMidasTouch);
-            
+
             URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(2).jpg");
             ImageIcon coleccionEsenciaNobel = new ImageIcon(imagenURL2);
             labelEsenciaNoble.setIcon(coleccionEsenciaNobel);
-            
+
             URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(18).jpg");
             ImageIcon coleccionEternas = new ImageIcon(imagenURL3);
             labelEternas.setIcon(coleccionEternas);
-            
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -65,6 +68,7 @@ public class Colecciones extends javax.swing.JFrame {
         Card_Product3 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         labelEternas = new javax.swing.JLabel();
+        btnVerCarrito = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -190,6 +194,15 @@ public class Colecciones extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
+        btnVerCarrito.setBackground(new java.awt.Color(255, 149, 0));
+        btnVerCarrito.setText("Ver Carrito de Compras");
+        btnVerCarrito.setBorder(null);
+        btnVerCarrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerCarritoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -202,21 +215,28 @@ public class Colecciones extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(Card_Product, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
-                                .addComponent(Card_Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(Card_Product1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(36, 36, 36)
-                        .addComponent(Card_Product3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Card_Product3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnVerCarrito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(29, 29, 29))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnVerCarrito, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,7 +265,7 @@ public class Colecciones extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 32, Short.MAX_VALUE))
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,6 +302,18 @@ public class Colecciones extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void btnVerCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerCarritoActionPerformed
+
+        if (Usuario.isLoggedIn()) {
+            CarritoCompras verCarrito = new CarritoCompras();
+            verCarrito.setVisible(true);
+            verCarrito.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver tu carrito de compras.");
+        }
+    }//GEN-LAST:event_btnVerCarritoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,6 +322,7 @@ public class Colecciones extends javax.swing.JFrame {
     private javax.swing.JPanel Card_Product;
     private javax.swing.JPanel Card_Product1;
     private javax.swing.JPanel Card_Product3;
+    private javax.swing.JButton btnVerCarrito;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

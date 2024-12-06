@@ -13,7 +13,7 @@ import modelos.clases.usuarios.Usuario;
  * @author HOME
  */
 public class MenuGestionar extends javax.swing.JFrame {
-    
+
     public MenuGestionar() {
         initComponents();
     }
@@ -197,24 +197,24 @@ public class MenuGestionar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      content.removeAll();
-    content.repaint();
-    content.revalidate();
+        content.removeAll();
+        content.repaint();
+        content.revalidate();
 
-    // Crea una instancia de Gestionar_productos
-    Gestionar_Usuarios gestionarUsuarios = new Gestionar_Usuarios();
+        // Crea una instancia de Gestionar_productos
+        Gestionar_Usuarios gestionarUsuarios = new Gestionar_Usuarios();
 
-    // Agrega el panel al contenedor principal
-    content.setLayout(new BorderLayout());
-    content.add(gestionarUsuarios, BorderLayout.CENTER);
+        // Agrega el panel al contenedor principal
+        content.setLayout(new BorderLayout());
+        content.add(gestionarUsuarios, BorderLayout.CENTER);
 
-    // Refresca el contenedor para mostrar el nuevo contenido
-    content.repaint();
-    content.revalidate();
+        // Refresca el contenedor para mostrar el nuevo contenido
+        content.repaint();
+        content.revalidate();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -243,7 +243,7 @@ public class MenuGestionar extends javax.swing.JFrame {
                 "No" // Opción predeterminada seleccionada
         );
 
-        if (seleccion == JOptionPane.YES_OPTION ) {
+        if (seleccion == JOptionPane.YES_OPTION) {
             // Muestra un mensaje de despedida
             JOptionPane.showMessageDialog(null, "Gracias por utilizar el programa, ¡vuelve pronto!");
 

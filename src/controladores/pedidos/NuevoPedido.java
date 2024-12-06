@@ -4,6 +4,7 @@
  */
 package controladores.pedidos;
 
+import controladores.carrito.CarritoDAO;
 import controladores.colecciones.ColeccionesDAO;
 import controladores.productos.ProductoDAO;
 import java.awt.event.ActionEvent;
@@ -15,20 +16,19 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelos.clases.productos.Coleccion;
 import modelos.clases.productos.Producto;
+import modelos.clases.usuarios.Usuario;
 
 public class NuevoPedido implements ActionListener {
 
-    private DefaultTableModel modeloCarrito;
     private ProductoDAO productoDAO;
     private String nombreProducto;
     private JButton btnNuevaCompra;
-    private ColeccionesDAO coleccionDAO;
+    private CarritoDAO carritoDAO;
 
-    public NuevoPedido(DefaultTableModel modeloCarrito, ProductoDAO productoDAO, String nombreProducto, JButton btnNuevaCompra) {
-        this.modeloCarrito = modeloCarrito;
+    public NuevoPedido(ProductoDAO productoDAO, String nombreProducto, JButton btnNuevaCompra) {
         this.productoDAO = productoDAO;
         this.nombreProducto = nombreProducto;
-        this.coleccionDAO = new ColeccionesDAO();
+        this.carritoDAO = new CarritoDAO();
         this.btnNuevaCompra = btnNuevaCompra;
         this.btnNuevaCompra.addActionListener(this);
     }
@@ -38,36 +38,27 @@ public class NuevoPedido implements ActionListener {
         if (e.getSource() == btnNuevaCompra) {
             try {
                 Producto producto = productoDAO.obtenerProductoPorNombre(nombreProducto);
-                int stock = productoDAO.obtenerStockPorNombre(nombreProducto);
+                if (producto == null) {
+                    JOptionPane.showMessageDialog(null, "Producto no encontrado.");
+                    return;
+                }
 
+                int stock = productoDAO.obtenerStockPorNombre(nombreProducto);
                 if (stock <= 0) {
                     JOptionPane.showMessageDialog(null, "Se agotaron los stocks de este producto.");
                     return;
                 }
 
-                if (producto != null) {
-                    Coleccion nombreColeccion = coleccionDAO.obtenerColeccionPorId(producto.getIdColeccion());
-                    double precio = producto.getPrecio();
-                    int cantidad = 1; // Supongamos que el usuario siempre agrega 1 producto
-                    double subtotal = precio * cantidad;
+                int usuarioId = Usuario.getUsuarioActual().getIdUsuario();
+                int cantidad = 1;
 
-                    Object[] nuevaFila = {
-                        producto.getId(),
-                        producto.getNombre(),
-                        nombreColeccion != null ? nombreColeccion.toString() : "N/A",
-                        cantidad,
-                        precio,
-                        subtotal
-                    };
+                carritoDAO.agregarProducto(usuarioId, producto, cantidad);
 
-                    modeloCarrito.addRow(nuevaFila);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Producto no encontrado.");
-                }
+                JOptionPane.showMessageDialog(null, "Producto añadido al carrito correctamente.");
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al añadir el producto: " + ex.getMessage());
+                ex.printStackTrace();
             }
         }
     }
-
 }

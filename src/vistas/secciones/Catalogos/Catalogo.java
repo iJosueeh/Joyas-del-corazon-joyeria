@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import modelos.clases.usuarios.Usuario;
 import vistas.menu.MenuUsuario;
 import vistas.secciones.Colecciones;
 import vistas.secciones.productos.Aurora;
@@ -31,36 +32,36 @@ public class Catalogo extends javax.swing.JFrame {
      */
     public Catalogo() {
         initComponents();
-        
+
         try {
             URL imagenURL1 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(9).jpg");
             ImageIcon aurum = new ImageIcon(imagenURL1);
             labelAurum.setIcon(aurum);
-            
+
             URL imagenURL2 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/descarga%20(2)%20(1).jpg");
             ImageIcon magnia = new ImageIcon(imagenURL2);
             labelMagnia.setIcon(magnia);
-            
+
             URL imagenURL3 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file.jpg");
             ImageIcon eterna = new ImageIcon(imagenURL3);
             labelEterna.setIcon(eterna);
-            
+
             URL imagenURL4 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/file%20(8).jpg");
             ImageIcon lucentia = new ImageIcon(imagenURL4);
             labelLucentia.setIcon(lucentia);
-            
+
             URL imagenURL5 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/mmm.jpg");
             ImageIcon aurora = new ImageIcon(imagenURL5);
             labelAurora.setIcon(aurora);
-            
+
             URL imagenURL6 = new URL("https://raw.githubusercontent.com/iJosueeh/imagenes-poo-proyecto/refs/heads/main/trian.jpg");
             ImageIcon elemental = new ImageIcon(imagenURL6);
             labelElemental.setIcon(elemental);
-            
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        
+
     }
 
 
@@ -557,45 +558,75 @@ public class Catalogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
-        Aurum_1 aurum = new Aurum_1();
-        aurum.setVisible(true);
-        aurum.setLocationRelativeTo(null);
-        this.dispose();
+        if (Usuario.isLoggedIn()) {
+            Aurum_1 aurum = new Aurum_1();
+            aurum.setVisible(true);
+            aurum.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnComprar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar1ActionPerformed
-        Lucentia lucentia = new Lucentia();
-        lucentia.setVisible(true);
-        lucentia.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            Lucentia lucentia = new Lucentia();
+            lucentia.setVisible(true);
+            lucentia.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
     }//GEN-LAST:event_btnComprar1ActionPerformed
 
     private void btnComprar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar3ActionPerformed
-        Magnia magnia = new Magnia();
-        magnia.setVisible(true);
-        magnia.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            Magnia magnia = new Magnia();
+            magnia.setVisible(true);
+            magnia.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
     }//GEN-LAST:event_btnComprar3ActionPerformed
 
     private void btnComprar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar4ActionPerformed
-        Aurora aurora = new Aurora();
-        aurora.setVisible(true);
-        aurora.setLocationRelativeTo(null);
-        this.dispose();
+
+        if (Usuario.isLoggedIn()) {
+            Aurora aurora = new Aurora();
+            aurora.setVisible(true);
+            aurora.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes iniciar sesion para ver a detalle el producto.");
+        }
+
     }//GEN-LAST:event_btnComprar4ActionPerformed
 
     private void btnComprar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar5ActionPerformed
-        Eterna eterna = new Eterna();
-        eterna.setVisible(true);
-        eterna.setLocationRelativeTo(null);
-        this.dispose();
+        
+        if (Usuario.isLoggedIn()) {
+            Eterna eterna = new Eterna();
+            eterna.setVisible(true);
+            eterna.setLocationRelativeTo(null);
+            this.dispose();
+        }
+        
     }//GEN-LAST:event_btnComprar5ActionPerformed
 
     private void btnComprar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprar6ActionPerformed
-        Elemental elemental = new Elemental();
-        elemental.setVisible(true);
-        elemental.setLocationRelativeTo(null);
-        this.dispose();
+        
+        if (Usuario.isLoggedIn()) {
+            Elemental elemental = new Elemental();
+            elemental.setVisible(true);
+            elemental.setLocationRelativeTo(null);
+            this.dispose();            
+        }
+        
     }//GEN-LAST:event_btnComprar6ActionPerformed
 
     /**
