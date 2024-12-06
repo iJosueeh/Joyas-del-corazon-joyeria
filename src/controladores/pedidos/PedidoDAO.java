@@ -87,17 +87,20 @@ public class PedidoDAO implements IPedido {
 
     @Override
     public Pedido obtenerPedidoPorId(int idPedido) {
-        String sqlPedido = "SELECT * FROM Pedido WHERE id = ?";
-        String sqlDetalles = "SELECT * FROM DetallesPedidos WHERE id_pedido = ?";
+        String sqlPedido = "SELECT * FROM Pedido WHERE id = ?";  // Consulta para obtener el pedido
+        String sqlDetalles = "SELECT * FROM DetallesPedidos WHERE id_pedido = ?";  // Consulta para obtener los detalles del pedido
 
         Pedido pedido = null;
         ResultSet rsPedido = null;
         ResultSet rsDetalles = null;
 
         try {
+
             con = cn.getConexion();
+
             psPedido = con.prepareStatement(sqlPedido);
-            rsPedido = psPedido.executeQuery();
+            psPedido.setInt(1, idPedido); 
+            rsPedido = psPedido.executeQuery();  
 
             if (rsPedido.next()) {
                 pedido = new Pedido();
@@ -111,7 +114,7 @@ public class PedidoDAO implements IPedido {
 
             psDetalle = con.prepareStatement(sqlDetalles);
             psDetalle.setInt(1, idPedido);
-            rsDetalles = psDetalle.executeQuery();
+            rsDetalles = psDetalle.executeQuery(); 
 
             List<DetallePedido> detalles = new ArrayList<>();
             while (rsDetalles.next()) {
@@ -134,8 +137,10 @@ public class PedidoDAO implements IPedido {
             }
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
+            JOptionPane.showMessageDialog(null, "Error al obtener el pedido: " + e.getMessage());
+            e.printStackTrace();
         }
+
         return pedido;
     }
 
@@ -206,6 +211,10 @@ public class PedidoDAO implements IPedido {
         String sqlPedido = "UPDATE Pedido SET idCliente = ?, fecha = ?, direccion = ?, total = ?, estado = ? WHERE id = ?";
 
         try {
+            if (pedido.getId() <= 0) {
+                JOptionPane.showMessageDialog(null, "El ID del pedido no es válido.");
+                return false;
+            }
 
             con = cn.getConexion();
             psPedido = con.prepareStatement(sqlPedido);
@@ -218,6 +227,7 @@ public class PedidoDAO implements IPedido {
             psPedido.setInt(6, pedido.getId());
 
             int filasActualizadas = psPedido.executeUpdate();
+
             return filasActualizadas > 0;
 
         } catch (SQLException e) {
