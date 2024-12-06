@@ -8,6 +8,7 @@ import vistas.menu.admin.productos.*;
 import controladores.colecciones.ColeccionesDAO;
 import controladores.pedidos.PedidoDAO;
 import controladores.productos.ProductoDAO;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,11 +22,11 @@ import modelos.clases.productos.Producto;
  *
  * @author HOME
  */
-public class AgregarPedidos extends javax.swing.JFrame {
+public class EditarPedido extends javax.swing.JFrame {
 
     private List<DetallePedido> listaDetallesPedido = new ArrayList<>();
 
-    public AgregarPedidos() {
+    public EditarPedido() {
         initComponents();
 
     }
@@ -53,13 +54,17 @@ public class AgregarPedidos extends javax.swing.JFrame {
         txtDireccion = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        txtBuscarIdPedido = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
-        jLabel1.setText("Agregar un nuevo Pedido");
+        jLabel1.setText("Editar un nuevo Pedido");
 
-        jButton1.setText("Agregar Pedido");
+        jButton1.setText("Editar Pedido");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -85,6 +90,21 @@ public class AgregarPedidos extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel4.setText("Total:");
 
+        jLabel5.setText("ID del Pedido:");
+
+        txtBuscarIdPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarIdPedidoActionPerformed(evt);
+            }
+        });
+
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -98,25 +118,32 @@ public class AgregarPedidos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtBuscarIdPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jSeparator1)
+                            .addComponent(jSeparator2)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtTotal))
+                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtDireccion))
+                                .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtFecha))
+                                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtIdCliente))
-                            .addComponent(jSeparator1)
-                            .addComponent(jSeparator2)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator3))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -126,7 +153,14 @@ public class AgregarPedidos extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtBuscarIdPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -134,15 +168,15 @@ public class AgregarPedidos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(37, 37, 37)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -257,21 +291,67 @@ public class AgregarPedidos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void txtBuscarIdPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarIdPedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarIdPedidoActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        String idPedido = txtBuscarIdPedido.getText();
+
+        if (idPedido.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingresa un ID válido.", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            int id = Integer.parseInt(idPedido);
+
+            PedidoDAO pedidoDAO = new PedidoDAO();
+            Pedido pedido = pedidoDAO.obtenerPedidoPorId(id);
+
+            if (pedido == null) {
+                JOptionPane.showMessageDialog(null, "No se encontró el pedido con el ID ingresado.", "Error", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            
+            txtIdCliente.setEditable(true);
+            txtFecha.setEditable(true);
+            txtDireccion.setEditable(true);
+            txtTotal.setEditable(true);
+
+            txtIdCliente.setText(String.valueOf(pedido.getIdCliente()));
+            txtFecha.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(pedido.getFecha()));
+            txtDireccion.setText(pedido.getDireccion());
+            txtTotal.setText(String.valueOf(pedido.getTotal()));
+
+            JOptionPane.showMessageDialog(null, "Recuerda que los detalles del pedido deben gestionarse por separado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingresa un ID numérico válido.", "Error", JOptionPane.WARNING_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextField txtBuscarIdPedido;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtIdCliente;

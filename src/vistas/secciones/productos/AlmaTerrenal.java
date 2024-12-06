@@ -10,8 +10,10 @@ import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
 import java.awt.event.ActionEvent;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -37,8 +39,17 @@ public class AlmaTerrenal extends javax.swing.JFrame {
 
     public AlmaTerrenal() {
         initComponents();
-           
+
         this.nombreProducto = "Alma Terrenal";
+
+        try {
+            URL urlmagenxd = new URL("https://i.ibb.co/378xXF3/file-22.jpg");
+            ImageIcon imagenxd = new ImageIcon(urlmagenxd);
+            jLabel1.setIcon(imagenxd);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         this.carritoCompras = new CarritoCompras();
 
@@ -58,7 +69,7 @@ public class AlmaTerrenal extends javax.swing.JFrame {
         int cantidadNumerica = Integer.parseInt(cantidad);
 
         nuevoPedido = new NuevoPedido(productoDAO, nombreProducto, btnNuevaCompra, cantidadNumerica);
-        
+
     }
 
     public void actualizarPanelReseñas(int idProducto) {

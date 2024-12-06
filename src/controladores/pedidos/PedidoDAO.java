@@ -201,4 +201,30 @@ public class PedidoDAO implements IPedido {
 
         return pedidos;
     }
+
+    public boolean actualizarPedido(Pedido pedido) {
+        String sqlPedido = "UPDATE Pedido SET idCliente = ?, fecha = ?, direccion = ?, total = ?, estado = ? WHERE id = ?";
+
+        try {
+
+            con = cn.getConexion();
+            psPedido = con.prepareStatement(sqlPedido);
+
+            psPedido.setInt(1, pedido.getIdCliente());
+            psPedido.setTimestamp(2, new Timestamp(pedido.getFecha().getTime()));
+            psPedido.setString(3, pedido.getDireccion());
+            psPedido.setDouble(4, pedido.getTotal());
+            psPedido.setString(5, pedido.getEstado());
+            psPedido.setInt(6, pedido.getId());
+
+            int filasActualizadas = psPedido.executeUpdate();
+            return filasActualizadas > 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar el pedido: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
