@@ -17,6 +17,9 @@ public class Main {
         - Luis Angel Blas Caja
         - Katherine Patricia Salas Quiroz
         - Ashley Dhayana Chavez Coz
+        
+        
+        xd
          */
         
         MenuInicial menuInicial = new MenuInicial();
