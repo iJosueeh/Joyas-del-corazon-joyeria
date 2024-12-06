@@ -46,9 +46,8 @@
                           <Component id="jScrollPane1" min="-2" pref="564" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnAgregarPedido" max="32767" attributes="0"/>
+                              <Component id="btnAgregarPedido" pref="205" max="32767" attributes="0"/>
                               <Component id="btnEditarPedido" max="32767" attributes="0"/>
-                              <Component id="btnEliminarPedido" alignment="0" pref="205" max="32767" attributes="0"/>
                               <Component id="btnRegresar" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -71,9 +70,7 @@
                           <Component id="btnAgregarPedido" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnEditarPedido" min="-2" pref="35" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnEliminarPedido" min="-2" pref="37" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="325" max="-2" attributes="0"/>
                           <Component id="btnRegresar" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" min="-2" pref="450" max="-2" attributes="0"/>
@@ -156,14 +153,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPedidoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnEliminarPedido">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Eliminar Pedido"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarPedidoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnRegresar">

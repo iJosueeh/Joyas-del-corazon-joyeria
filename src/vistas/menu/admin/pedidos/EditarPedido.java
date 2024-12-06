@@ -296,34 +296,40 @@ public class EditarPedido extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBuscarIdPedidoActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String idPedido = txtBuscarIdPedido.getText();
+        String idPedidoTexto = txtBuscarIdPedido.getText().trim();
 
-        if (idPedido.isEmpty()) {
+        if (idPedidoTexto.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Por favor, ingresa un ID válido.", "Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         try {
-            int id = Integer.parseInt(idPedido);
+            // Convertir el texto del ID a un entero
+            int idPedido = Integer.parseInt(idPedidoTexto);
 
+            // Crear una instancia de PedidoDAO y obtener el pedido
             PedidoDAO pedidoDAO = new PedidoDAO();
-            Pedido pedido = pedidoDAO.obtenerPedidoPorId(id);
+            Pedido pedido = pedidoDAO.obtenerPedidoPorId(idPedido);
 
+            // Verificar si el pedido fue encontrado
             if (pedido == null) {
                 JOptionPane.showMessageDialog(null, "No se encontró el pedido con el ID ingresado.", "Error", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            
+
+            // Habilitar los campos para edición
             txtIdCliente.setEditable(true);
             txtFecha.setEditable(true);
             txtDireccion.setEditable(true);
             txtTotal.setEditable(true);
 
+            // Establecer los valores del pedido en los campos
             txtIdCliente.setText(String.valueOf(pedido.getIdCliente()));
             txtFecha.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(pedido.getFecha()));
             txtDireccion.setText(pedido.getDireccion());
             txtTotal.setText(String.valueOf(pedido.getTotal()));
 
+            // Mostrar mensaje de advertencia sobre la gestión de detalles
             JOptionPane.showMessageDialog(null, "Recuerda que los detalles del pedido deben gestionarse por separado.", "Información", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (NumberFormatException e) {
