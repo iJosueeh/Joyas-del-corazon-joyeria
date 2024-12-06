@@ -9,7 +9,10 @@ import controladores.productos.ProductoDAO;
 import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
 import modelos.clases.productos.Proveedor;
@@ -35,6 +38,15 @@ public class Aurora extends javax.swing.JFrame {
 
         initComponents();
         this.nombreProducto = "Aurora";
+
+        try {
+            URL imagenURL = new URL("https://i.ibb.co/zndcqB4/midas3.jpg");
+            ImageIcon imagen = new ImageIcon(imagenURL);
+            jLabel1.setIcon(imagen);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         this.carritoCompras = new CarritoCompras();
 
@@ -103,8 +115,6 @@ public class Aurora extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(118, 98, 78));
         jPanel1.setForeground(new java.awt.Color(118, 98, 78));
-
-        jLabel1.setText("jLabel1");
 
         labelTitle.setFont(new java.awt.Font("Bodoni MT", 0, 36)); // NOI18N
         labelTitle.setForeground(new java.awt.Color(229, 229, 183));
@@ -308,12 +318,12 @@ public class Aurora extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 155, Short.MAX_VALUE))
         );
 

@@ -9,7 +9,10 @@ import controladores.productos.ProductoDAO;
 import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
 import modelos.clases.productos.Proveedor;
@@ -34,6 +37,15 @@ public class Emperatriz extends javax.swing.JFrame {
     public Emperatriz() {
         initComponents();
         this.nombreProducto = "Emperatriz";
+
+        try {
+            URL imagenURL = new URL("https://i.ibb.co/JrPghYN/noble4.jpg");
+            ImageIcon imagen = new ImageIcon(imagenURL);
+            jLabel1.setIcon(imagen);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         this.carritoCompras = new CarritoCompras();
 
