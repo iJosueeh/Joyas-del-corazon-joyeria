@@ -2,7 +2,7 @@ package modelos.clases.usuarios;
 
 public class Usuario {
 
-    private int idUsuario;
+    private int id;
     private String nombre_completo;
     private String correo_electronico;
     private String contraseña;
@@ -18,7 +18,7 @@ public class Usuario {
     }
 
     public Usuario(String nombre_completo, String correo_electronico, String contraseña, String telefono, String direccion) {
-        this.idUsuario = idUsuario;
+        this.id = id;
         this.nombre_completo = nombre_completo;
         this.correo_electronico = correo_electronico;
         this.contraseña = contraseña;
@@ -29,8 +29,8 @@ public class Usuario {
         this.status = false;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getId() {
+        return id;
     }
 
     public String getNombre_completo() {
@@ -69,8 +69,8 @@ public class Usuario {
         return status;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setNombre_completo(String nombre_completo) {
@@ -122,7 +122,7 @@ public class Usuario {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Usuario{");
-        sb.append("idUsuario=").append(idUsuario);
+        sb.append("idUsuario=").append(id);
         sb.append(", nombre_completo=").append(nombre_completo);
         sb.append(", correo_electronico=").append(correo_electronico);
         sb.append(", contrase\u00f1a=").append(contraseña);

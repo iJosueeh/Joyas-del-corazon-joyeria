@@ -36,7 +36,7 @@ public class NuevaReseñas implements ActionListener {
             String userName = reseñaPanel.txtUsuario.getText();
             String comentario = reseñaPanel.txtAreaComentario.getText();
             int calificacion = Integer.parseInt(reseñaPanel.comboBoxCalificacion.getSelectedItem().toString());
-            int idUsuario = Usuario.getUsuarioActual().getIdUsuario();
+            int idUsuario = Usuario.getUsuarioActual().getId();
 
             if (comentario.equals("Escribe tu comentario..")) {
                 JOptionPane.showMessageDialog(null, "Por favor, ingresa el comentario adecuado.");

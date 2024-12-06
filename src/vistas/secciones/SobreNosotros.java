@@ -73,7 +73,7 @@ public class SobreNosotros extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(229, 229, 183));
-        jLabel5.setText("Sobre Nosotros");
+        jLabel5.setText("Nuestro Objetivo");
 
         jLabel6.setFont(new java.awt.Font("Readex Pro Medium", 0, 10)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(229, 229, 183));

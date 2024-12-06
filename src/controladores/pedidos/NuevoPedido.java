@@ -53,7 +53,7 @@ public class NuevoPedido implements ActionListener {
                     return;
                 }
 
-                int usuarioId = Usuario.getUsuarioActual().getIdUsuario();
+                int usuarioId = Usuario.getUsuarioActual().getId();
                 int cantidad = 1;
 
                 carritoDAO.agregarProducto(usuarioId, producto, cantidad);

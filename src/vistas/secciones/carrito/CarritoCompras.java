@@ -45,7 +45,7 @@ public class CarritoCompras extends javax.swing.JFrame {
         cuponDAO = new CuponesDAO();
 
         if (Usuario.isLoggedIn()) {
-            txtIdCliente.setText(String.valueOf(usuarioLogueado.getIdUsuario()));
+            txtIdCliente.setText(String.valueOf(usuarioLogueado.getId()));
             txtNombre.setText(usuarioLogueado.getNombre_completo());
             txtDireccion.setText(usuarioLogueado.getDireccion());
             txtTelefono.setText(usuarioLogueado.getTelefono());
@@ -54,20 +54,20 @@ public class CarritoCompras extends javax.swing.JFrame {
 
         cargarCarrito();
 
-        double subtotalTotal = carritoDAO.calcularSubtotalTotal(usuarioLogueado.getIdUsuario());
+        double subtotalTotal = carritoDAO.calcularSubtotalTotal(usuarioLogueado.getId());
         txtSubTotal.setText(String.valueOf(subtotalTotal));
         double costoEnvio = carritoDAO.calcularCostoEnvio();
         txtCostoEnvio.setText(String.valueOf(costoEnvio));
         txtDescuento.setText(String.valueOf("0"));
         txtSubTotalFinal.setText(String.valueOf(subtotalTotal + costoEnvio));
-        double montoTotal = carritoDAO.calcularTotal(usuarioLogueado.getIdUsuario(), 0.0);
+        double montoTotal = carritoDAO.calcularTotal(usuarioLogueado.getId(), 0.0);
         txtMontoTotal.setText(String.valueOf(montoTotal));
     }
 
     public void cargarCarrito() {
         DefaultTableModel modelo = (DefaultTableModel) tablaCarrito.getModel();
         modelo.setRowCount(0); // Limpiar la tabla
-        int usuarioId = usuarioLogueado.getIdUsuario();
+        int usuarioId = usuarioLogueado.getId();
         List<Object[]> carrito = carritoDAO.obtenerCarrito(usuarioId);
 
         for (Object[] fila : carrito) {
@@ -537,7 +537,7 @@ public class CarritoCompras extends javax.swing.JFrame {
 
         if (respuesta == JOptionPane.YES_OPTION) {
 
-            int usuarioId = Usuario.getUsuarioActual().getIdUsuario();
+            int usuarioId = Usuario.getUsuarioActual().getId();
             carritoDAO.vaciarCarrito(usuarioId);
             tablaCarritoProductos.setRowCount(0);
 
@@ -549,7 +549,7 @@ public class CarritoCompras extends javax.swing.JFrame {
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
 
-        int usuarioId = usuarioLogueado.getIdUsuario();
+        int usuarioId = usuarioLogueado.getId();
         List<Object[]> carrito = carritoDAO.obtenerCarrito(usuarioId);
 
         if (carrito.isEmpty()) {
@@ -624,7 +624,7 @@ public class CarritoCompras extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Cupón válido. Máximo de usos: " + cupon.getUso_maximo());
                     txtDescuento.setText(cupon.getValor_descuento() + "%"); // Mostramos el descuento como porcentaje
 
-                    double subtotalTotal = carritoDAO.calcularSubtotalTotal(usuarioLogueado.getIdUsuario());
+                    double subtotalTotal = carritoDAO.calcularSubtotalTotal(usuarioLogueado.getId());
                     double costoEnvio = carritoDAO.calcularCostoEnvio();
                     double montoTotal = subtotalTotal + costoEnvio;
 
