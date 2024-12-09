@@ -7,6 +7,8 @@ package vistas.menu.admin.usuarios;
 import vistas.menu.admin.productos.*;
 import controladores.productos.ProductoDAO;
 import controladores.usuarios.UsuariosDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
 import modelos.clases.usuarios.Usuario;
@@ -124,7 +126,12 @@ public class EliminarUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        GestionarUsuarios gestionarUsuarios = new GestionarUsuarios();
+        GestionarUsuarios gestionarUsuarios = null;
+        try {
+            gestionarUsuarios = new GestionarUsuarios();
+        } catch (Exception ex) {
+            Logger.getLogger(EliminarUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
         gestionarUsuarios.setVisible(true);
         gestionarUsuarios.setLocationRelativeTo(null);
         this.dispose();
@@ -154,7 +161,7 @@ public class EliminarUsuarios extends javax.swing.JFrame {
             String motivo = (String) comboBoxMotivo.getSelectedItem();
 
             UsuariosDAO usuarioDAO = new UsuariosDAO();
-            Usuario usuario = usuarioDAO.obtenerUsuarioPorId(idUsuario);
+            Usuario usuario = usuarioDAO.obtenerPorId(idUsuario);
 
             if (motivo.equals("Otro")) {
                 String motivoPersonalizado = JOptionPane.showInputDialog("Ingresa el motivo para eliminar el usuario:");
@@ -184,7 +191,7 @@ public class EliminarUsuarios extends javax.swing.JFrame {
                     JOptionPane.YES_NO_OPTION);
 
             if (confirmacion == JOptionPane.YES_OPTION) {
-                boolean eliminarUsuario = usuarioDAO.eliminarUsuario(idUsuario);
+                boolean eliminarUsuario = usuarioDAO.eliminar(idUsuario);
 
                 if (eliminarUsuario) {
                     JOptionPane.showMessageDialog(null,

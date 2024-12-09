@@ -24,7 +24,7 @@ public class GestionarPedidos extends javax.swing.JFrame {
     private PedidoDAO pedidoDAO;
     private UsuariosDAO usuarioDAO;
 
-    public GestionarPedidos() {
+    public GestionarPedidos() throws Exception {
         initComponents();
 
         this.pedidoDAO = new PedidoDAO();
@@ -37,11 +37,11 @@ public class GestionarPedidos extends javax.swing.JFrame {
         tablaPedidos.setDefaultEditor(Object.class, null); //
     }
 
-    private void cargarPedidosEnTabla() {
+    private void cargarPedidosEnTabla() throws Exception {
         DefaultTableModel modeloTabla = (DefaultTableModel) tablaPedidos.getModel();
         modeloTabla.setRowCount(0); 
 
-        List<Pedido> pedidos = pedidoDAO.obtenerPedidos();
+        List<Pedido> pedidos = pedidoDAO.listarTodos();
 
         for (Pedido pedido : pedidos) {
             Object[] fila = {

@@ -19,6 +19,8 @@ import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelos.clases.pedidos.Cupon;
 import modelos.clases.pedidos.DetallePedido;
 import modelos.clases.pedidos.Pedido;
@@ -597,19 +599,23 @@ public class CarritoCompras extends javax.swing.JFrame {
         pedido.setDetalles(detalles);
 
         PedidoDAO pedidoDAO = new PedidoDAO();
-        if (pedidoDAO.agregarPedido(pedido)) {
-            JOptionPane.showMessageDialog(null, "Compra realizada con éxito. Gracias por tu pedido.");
-
-            carritoDAO.vaciarCarrito(usuarioId);
-            cargarCarrito();
-
-            txtSubTotal.setText("0.00");
-            txtCostoEnvio.setText("0.00");
-            txtDescuento.setText("0%");
-            txtSubTotalFinal.setText("0.00");
-            txtMontoTotal.setText("0.00");
-        } else {
-            JOptionPane.showMessageDialog(null, "Ocurrió un error al procesar la compra. Inténtelo nuevamente.");
+        try {
+            if (pedidoDAO.insertar(pedido)) {
+                JOptionPane.showMessageDialog(null, "Compra realizada con éxito. Gracias por tu pedido.");
+                
+                carritoDAO.vaciarCarrito(usuarioId);
+                cargarCarrito();
+                
+                txtSubTotal.setText("0.00");
+                txtCostoEnvio.setText("0.00");
+                txtDescuento.setText("0%");
+                txtSubTotalFinal.setText("0.00");
+                txtMontoTotal.setText("0.00");
+            } else {
+                JOptionPane.showMessageDialog(null, "Ocurrió un error al procesar la compra. Inténtelo nuevamente.");
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(CarritoCompras.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnComprarActionPerformed
 

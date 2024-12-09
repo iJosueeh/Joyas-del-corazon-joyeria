@@ -4,8 +4,8 @@
  */
 package vistas.menu.admin.usuarios;
 
+import vistas.menu.admin.productos.EditarProductos;
 import vistas.menu.admin.productos.EliminarProducto;
-import vistas.menu.admin.productos.EditarProducto;
 import vistas.menu.admin.productos.AgregarProducto;
 import controladores.usuarios.UsuariosDAO;
 import java.util.List;
@@ -22,7 +22,7 @@ public class GestionarUsuarios extends javax.swing.JFrame {
     private Usuario usuarioLogueado = Usuario.getUsuarioActual();
     private UsuariosDAO usuarioDAO;
 
-    public GestionarUsuarios() {
+    public GestionarUsuarios() throws Exception {
         initComponents();
 
         this.usuarioDAO = new UsuariosDAO();
@@ -35,11 +35,11 @@ public class GestionarUsuarios extends javax.swing.JFrame {
         tablaUsuarios.setDefaultEditor(Object.class, null); //
     }
 
-    private void cargarUsuariosEnTabla() {
+    private void cargarUsuariosEnTabla() throws Exception {
         DefaultTableModel modeloTabla = (DefaultTableModel) tablaUsuarios.getModel();
         modeloTabla.setRowCount(0);
         
-        List<Usuario> usuarios = usuarioDAO.obtenerUsuarios();
+        List<Usuario> usuarios = usuarioDAO.listarTodos();
 
         for (Usuario usuario : usuarios) {
             Object[] fila = {
@@ -178,7 +178,7 @@ public class GestionarUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProductoActionPerformed
-        EditarUsuarios editarUsuarios = new EditarUsuarios();
+        EditarProductos editarUsuarios = new EditarProductos();
         editarUsuarios.setVisible(true);
         editarUsuarios.setLocationRelativeTo(null);
         this.dispose();

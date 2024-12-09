@@ -12,6 +12,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelos.clases.pedidos.DetallePedido;
 import modelos.clases.pedidos.Pedido;
@@ -200,7 +202,12 @@ public class EditarPedido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        GestionarPedidos gestionarPedidos = new GestionarPedidos();
+        GestionarPedidos gestionarPedidos = null;
+        try {
+            gestionarPedidos = new GestionarPedidos();
+        } catch (Exception ex) {
+            Logger.getLogger(EditarPedido.class.getName()).log(Level.SEVERE, null, ex);
+        }
         gestionarPedidos.setVisible(true);
         gestionarPedidos.setLocationRelativeTo(null);
         this.dispose();
@@ -257,7 +264,7 @@ public class EditarPedido extends javax.swing.JFrame {
 
             // Llamar al DAO para agregar el pedido
             PedidoDAO pedidoDAO = new PedidoDAO();
-            boolean pedidoAgregado = pedidoDAO.agregarPedido(pedido);
+            boolean pedidoAgregado = pedidoDAO.insertar(pedido);
 
             if (pedidoAgregado) {
                 JOptionPane.showMessageDialog(
@@ -309,7 +316,7 @@ public class EditarPedido extends javax.swing.JFrame {
 
             // Crear una instancia de PedidoDAO y obtener el pedido
             PedidoDAO pedidoDAO = new PedidoDAO();
-            Pedido pedido = pedidoDAO.obtenerPedidoPorId(idPedido);
+            Pedido pedido = pedidoDAO.obtenerPorId(idPedido);
 
             // Verificar si el pedido fue encontrado
             if (pedido == null) {

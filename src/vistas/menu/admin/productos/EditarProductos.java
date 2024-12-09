@@ -2,23 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vistas.menu.admin.usuarios;
+package vistas.menu.admin.productos;
 
 import vistas.menu.admin.productos.*;
 import controladores.productos.ProductoDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
+import vistas.menu.admin.usuarios.GestionarUsuarios;
 
 /**
  *
  * @author HOME
  */
-public class EditarUsuarios extends javax.swing.JFrame {
+public class EditarProductos extends javax.swing.JFrame {
 
     /**
      * Creates new form AgregarProducto
      */
-    public EditarUsuarios() {
+    public EditarProductos() {
         initComponents();
     }
 
@@ -56,7 +59,7 @@ public class EditarUsuarios extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
-        jLabel1.setText("Editar un nuevo Usuario");
+        jLabel1.setText("Editar un nuevo Producto");
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel2.setText("ID del Usuario:");
@@ -116,7 +119,7 @@ public class EditarUsuarios extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(64, 64, 64))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -213,9 +216,14 @@ public class EditarUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        GestionarUsuarios gestionarUsuarios = new GestionarUsuarios();
-        gestionarUsuarios.setVisible(true);
-        gestionarUsuarios.setLocationRelativeTo(null);
+        GestionarProductos gestionarProductos = null;
+        try {
+            gestionarProductos = new GestionarProductos();
+        } catch (Exception ex) {
+            Logger.getLogger(EditarProductos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        gestionarProductos.setVisible(true);
+        gestionarProductos.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -231,7 +239,7 @@ public class EditarUsuarios extends javax.swing.JFrame {
             int id = Integer.parseInt(idProducto);
 
             ProductoDAO productoDAO = new ProductoDAO();
-            Producto editarProducto = productoDAO.obtenerProductoPorId(id);
+            Producto editarProducto = productoDAO.obtenerPorId(id);
 
             if (editarProducto == null) {
                 JOptionPane.showMessageDialog(null, "No se encontró el producto con el ID ingresado.", "Error", JOptionPane.WARNING_MESSAGE);
@@ -253,7 +261,7 @@ public class EditarUsuarios extends javax.swing.JFrame {
 
             Producto productoEditado = new Producto(editarProducto.getIdColeccion(), nombre, descripcion, precio, cantidad, stock);
 
-            boolean consultaEditar = productoDAO.actualizarProducto(productoEditado);
+            boolean consultaEditar = productoDAO.actualizar(productoEditado);
 
             if (consultaEditar) {
                 JOptionPane.showMessageDialog(null, "El producto ha sido editado correctamente.");
@@ -293,7 +301,7 @@ public class EditarUsuarios extends javax.swing.JFrame {
             int id = Integer.parseInt(idProducto);
 
             ProductoDAO productoDAO = new ProductoDAO();
-            Producto editarProducto = productoDAO.obtenerProductoPorId(id);
+            Producto editarProducto = productoDAO.obtenerPorId(id);
 
             if (editarProducto == null) {
                 JOptionPane.showMessageDialog(null, "No se encontró el producto con el ID ingresado.", "Error", JOptionPane.WARNING_MESSAGE);

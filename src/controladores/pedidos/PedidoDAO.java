@@ -5,6 +5,7 @@
 package controladores.pedidos;
 
 import com.mysql.cj.xdevapi.Statement;
+import controladores.ICRUD;
 import controladores.usuarios.UsuariosDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import modelos.clases.pedidos.Pedido;
 import modelos.dao.ConexionBD;
-import modelos.interfaces.IPedido;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ import modelos.clases.productos.Producto;
  *
  * @author HOME
  */
-public class PedidoDAO implements IPedido {
+public class PedidoDAO implements ICRUD<Pedido> {
 
     ConexionBD cn = new ConexionBD();
     Connection con;
@@ -35,7 +35,7 @@ public class PedidoDAO implements IPedido {
     ResultSet rs;
 
     @Override
-    public Boolean agregarPedido(Pedido pedido) {
+    public boolean insertar(Pedido clase) throws Exception {
         String sqlPedido = "INSERT INTO Pedido (idCliente, fecha, direccion, total, estado) "
                 + "VALUES (?, ?, ?, ?, ?)";
         String sqlDetalles = "INSERT INTO DetallesPedidos (id_pedido, id_producto, cantidad, precio_unitario, subtotal)"
@@ -46,11 +46,11 @@ public class PedidoDAO implements IPedido {
             con.setAutoCommit(false);
 
             psPedido = con.prepareStatement(sqlPedido, PreparedStatement.RETURN_GENERATED_KEYS);
-            psPedido.setInt(1, pedido.getIdCliente());
-            psPedido.setTimestamp(2, new Timestamp(pedido.getFecha().getTime()));
-            psPedido.setString(3, pedido.getDireccion());
-            psPedido.setDouble(4, pedido.getTotal());
-            psPedido.setString(5, pedido.getEstado());
+            psPedido.setInt(1, clase.getIdCliente());
+            psPedido.setTimestamp(2, new Timestamp(clase.getFecha().getTime()));
+            psPedido.setString(3, clase.getDireccion());
+            psPedido.setDouble(4, clase.getTotal());
+            psPedido.setString(5, clase.getEstado());
             psPedido.executeUpdate();
 
             rs = psPedido.getGeneratedKeys();
@@ -60,7 +60,7 @@ public class PedidoDAO implements IPedido {
             }
 
             psDetalle = con.prepareStatement(sqlDetalles);
-            for (DetallePedido detalle : pedido.getDetalles()) {
+            for (DetallePedido detalle : clase.getDetalles()) {
                 psDetalle.setInt(1, idPedido);
                 psDetalle.setInt(2, detalle.getProducto().getId());
                 psDetalle.setInt(3, detalle.getCantidad());
@@ -86,7 +86,43 @@ public class PedidoDAO implements IPedido {
     }
 
     @Override
-    public Pedido obtenerPedidoPorId(int idPedido) {
+    public boolean actualizar(Pedido clase) throws Exception {
+        String sqlPedido = "UPDATE Pedido SET idCliente = ?, fecha = ?, direccion = ?, total = ?, estado = ? WHERE id = ?";
+
+        try {
+            if (clase.getId() <= 0) {
+                JOptionPane.showMessageDialog(null, "El ID del pedido no es válido.");
+                return false;
+            }
+
+            con = cn.getConexion();
+            psPedido = con.prepareStatement(sqlPedido);
+
+            psPedido.setInt(1, clase.getIdCliente());
+            psPedido.setTimestamp(2, new Timestamp(clase.getFecha().getTime()));
+            psPedido.setString(3, clase.getDireccion());
+            psPedido.setDouble(4, clase.getTotal());
+            psPedido.setString(5, clase.getEstado());
+            psPedido.setInt(6, clase.getId());
+
+            int filasActualizadas = psPedido.executeUpdate();
+
+            return filasActualizadas > 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar el pedido: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean eliminar(int id) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Pedido obtenerPorId(int id) throws Exception {
         String sqlPedido = "SELECT * FROM Pedido WHERE id = ?";  // Consulta para obtener el pedido
         String sqlDetalles = "SELECT * FROM DetallesPedidos WHERE id_pedido = ?";  // Consulta para obtener los detalles del pedido
 
@@ -99,8 +135,8 @@ public class PedidoDAO implements IPedido {
             con = cn.getConexion();
 
             psPedido = con.prepareStatement(sqlPedido);
-            psPedido.setInt(1, idPedido); 
-            rsPedido = psPedido.executeQuery();  
+            psPedido.setInt(1, id);
+            rsPedido = psPedido.executeQuery();
 
             if (rsPedido.next()) {
                 pedido = new Pedido();
@@ -113,8 +149,8 @@ public class PedidoDAO implements IPedido {
             }
 
             psDetalle = con.prepareStatement(sqlDetalles);
-            psDetalle.setInt(1, idPedido);
-            rsDetalles = psDetalle.executeQuery(); 
+            psDetalle.setInt(1, id);
+            rsDetalles = psDetalle.executeQuery();
 
             List<DetallePedido> detalles = new ArrayList<>();
             while (rsDetalles.next()) {
@@ -144,7 +180,8 @@ public class PedidoDAO implements IPedido {
         return pedido;
     }
 
-    public List<Pedido> obtenerPedidos() {
+    @Override
+    public List<Pedido> listarTodos() throws Exception {
         List<Pedido> pedidos = new ArrayList<>();
         String sql = "SELECT p.id, p.idCliente, p.fecha, p.direccion, p.total, p.estado "
                 + "FROM Pedido p";
@@ -205,36 +242,6 @@ public class PedidoDAO implements IPedido {
         }
 
         return pedidos;
-    }
-
-    public boolean actualizarPedido(Pedido pedido) {
-        String sqlPedido = "UPDATE Pedido SET idCliente = ?, fecha = ?, direccion = ?, total = ?, estado = ? WHERE id = ?";
-
-        try {
-            if (pedido.getId() <= 0) {
-                JOptionPane.showMessageDialog(null, "El ID del pedido no es válido.");
-                return false;
-            }
-
-            con = cn.getConexion();
-            psPedido = con.prepareStatement(sqlPedido);
-
-            psPedido.setInt(1, pedido.getIdCliente());
-            psPedido.setTimestamp(2, new Timestamp(pedido.getFecha().getTime()));
-            psPedido.setString(3, pedido.getDireccion());
-            psPedido.setDouble(4, pedido.getTotal());
-            psPedido.setString(5, pedido.getEstado());
-            psPedido.setInt(6, pedido.getId());
-
-            int filasActualizadas = psPedido.executeUpdate();
-
-            return filasActualizadas > 0;
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al actualizar el pedido: " + e.getMessage());
-            e.printStackTrace();
-            return false;
-        }
     }
 
 }

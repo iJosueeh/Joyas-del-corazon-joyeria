@@ -4,6 +4,7 @@
  */
 package vistas.menu.admin.productos;
 
+import vistas.menu.admin.usuarios.EditarUsuario;
 import controladores.productos.ProductoDAO;
 import javax.swing.table.DefaultTableModel;
 import modelos.clases.usuarios.Usuario;
@@ -18,7 +19,7 @@ public class GestionarProductos extends javax.swing.JFrame {
     private Usuario usuarioLogueado = Usuario.getUsuarioActual();
     ProductoDAO productoDAO;
 
-    public GestionarProductos() {
+    public GestionarProductos() throws Exception {
         initComponents();
 
         ProductoDAO productoDAO = new ProductoDAO();
@@ -154,7 +155,7 @@ public class GestionarProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProductoActionPerformed
-        EditarProducto editarProducto = new EditarProducto();
+        EditarUsuario editarProducto = new EditarUsuario();
         editarProducto.setVisible(true);
         editarProducto.setLocationRelativeTo(null);
         this.dispose();

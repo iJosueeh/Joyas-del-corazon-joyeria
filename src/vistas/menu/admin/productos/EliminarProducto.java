@@ -5,6 +5,8 @@
 package vistas.menu.admin.productos;
 
 import controladores.productos.ProductoDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
 
@@ -121,7 +123,12 @@ public class EliminarProducto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        GestionarProductos gestionarProductos = new GestionarProductos();
+        GestionarProductos gestionarProductos = null;
+        try {
+            gestionarProductos = new GestionarProductos();
+        } catch (Exception ex) {
+            Logger.getLogger(EliminarProducto.class.getName()).log(Level.SEVERE, null, ex);
+        }
         gestionarProductos.setVisible(true);
         gestionarProductos.setLocationRelativeTo(null);
         this.dispose();
@@ -149,7 +156,7 @@ public class EliminarProducto extends javax.swing.JFrame {
 
             String motivo = (String) comboBoxMotivo.getSelectedItem();
 
-            Producto producto = productoDAO.obtenerProductoPorId(idProducto);
+            Producto producto = productoDAO.obtenerPorId(idProducto);
 
             if (producto == null) {
                 JOptionPane.showMessageDialog(null,
@@ -165,7 +172,7 @@ public class EliminarProducto extends javax.swing.JFrame {
                     JOptionPane.YES_NO_OPTION);
 
             if (confirmacion == JOptionPane.YES_OPTION) {
-                boolean eliminarProducto = productoDAO.eliminarProducto(idProducto);
+                boolean eliminarProducto = productoDAO.eliminar(idProducto);
 
                 if (eliminarProducto) {
                     JOptionPane.showMessageDialog(null,
