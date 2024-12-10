@@ -9,8 +9,10 @@ import controladores.productos.ProductoDAO;
 import controladores.proveedores.ProveedorDAO;
 import controladores.reseñas.NuevaReseñas;
 import controladores.reseñas.ReseñasDAO;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
 import modelos.clases.productos.Proveedor;
@@ -36,6 +38,18 @@ public class Aurum_1 extends javax.swing.JFrame {
         initComponents();
         
         this.nombreProducto = "Aurum";
+        try {
+            URL imagenURL = new URL("https://ibb.co/YjR21Xc");
+            ImageIcon imagen = new ImageIcon(imagenURL);
+            jLabel1.setIcon(imagen);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        
+        
+        
+        
+        
         this.idProducto = reseñaDAO.obtenerIdProducto(nombreProducto);
         this.carritoCompras = new CarritoCompras();
 

@@ -40,9 +40,9 @@ public class Aurora extends javax.swing.JFrame {
         this.nombreProducto = "Aurora";
 
         try {
-            URL imagenURL = new URL("https://i.ibb.co/zndcqB4/midas3.jpg");
-            ImageIcon imagen = new ImageIcon(imagenURL);
-            jLabel1.setIcon(imagen);
+            URL imagenURL = new URL("https://i.ibb.co/C1RNHK1/file-24.jpg");
+            ImageIcon imagent = new ImageIcon(imagenURL);
+            jLabel1.setIcon(imagent);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

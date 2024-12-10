@@ -13,6 +13,7 @@ import modelos.dao.ConexionBD;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Coleccion;
@@ -117,18 +118,25 @@ public class CarritoDAO {
         return 10.0;
     }
 
+  
     public double aplicarDescuento(double subtotalTotal, double porcentajeDescuento) {
+        Predicate<Double> validarDescuento = descuento -> descuento >= 0 && descuento <= 100;
+        if (!validarDescuento.test(porcentajeDescuento)) {
+            throw new IllegalArgumentException("Porcentaje de descuento inválido.");
+        }
         return subtotalTotal - (subtotalTotal * (porcentajeDescuento / 100));
     }
+
 
     public double calcularTotal(int usuarioId, double porcentajeDescuento) {
         double subtotalTotal = calcularSubtotalTotal(usuarioId);
         double costoEnvio = calcularCostoEnvio();
-
         double subtotalConDescuento = aplicarDescuento(subtotalTotal, porcentajeDescuento);
-
-        double total = subtotalConDescuento + costoEnvio;
-        return total;
+        return subtotalConDescuento + costoEnvio;
     }
 
+    private void manejarError(SQLException e) {
+        Consumer<String> mostrarError = mensaje -> System.err.println("Error: " + mensaje);
+        mostrarError.accept(e.toString());
+    }
 }
