@@ -7,6 +7,8 @@ package controladores.login;
 import controladores.usuarios.UsuariosDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -68,7 +70,12 @@ public class RegisterUsuarios implements ActionListener {
             }
 
             Usuario nuevoUsuario = new Usuario(nombreCompleto, correo, contraseña, telefono, direccion);
-            boolean nuevoRegistro = usuarioDAO.registrarUsuario(nuevoUsuario);
+            boolean nuevoRegistro = false;
+            try {
+                nuevoRegistro = usuarioDAO.insertar(nuevoUsuario);
+            } catch (Exception ex) {
+                Logger.getLogger(RegisterUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             if (nuevoRegistro) {
                 JOptionPane.showMessageDialog(null, "Usuario registrado correctamente.", "Alerta", JOptionPane.INFORMATION_MESSAGE);

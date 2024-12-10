@@ -2,24 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vistas.menu.admin.productos;
+package vistas.menu.admin.usuarios;
 
 import controladores.productos.ProductoDAO;
 import controladores.usuarios.UsuariosDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Producto;
 import modelos.clases.usuarios.Usuario;
+import vistas.menu.admin.productos.GestionarProductos;
 
 /**
  *
  * @author HOME
  */
-public class EditarProducto extends javax.swing.JFrame {
+public class EditarUsuario extends javax.swing.JFrame {
 
     /**
      * Creates new form AgregarProducto
      */
-    public EditarProducto() {
+    public EditarUsuario() {
         initComponents();
     }
 
@@ -61,7 +64,7 @@ public class EditarProducto extends javax.swing.JFrame {
         jLabel9.setText("Correo Electronico:");
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
-        jLabel1.setText("Editar un nuevo Producto");
+        jLabel1.setText("Editar un nuevo Usuario");
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
         jLabel2.setText("ID del Usuario:");
@@ -224,9 +227,14 @@ public class EditarProducto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        GestionarProductos gestionarProductos = new GestionarProductos();
-        gestionarProductos.setVisible(true);
-        gestionarProductos.setLocationRelativeTo(null);
+        GestionarUsuarios gestionarUsuarios = null;
+        try {
+            gestionarUsuarios = new GestionarUsuarios();
+        } catch (Exception ex) {
+            Logger.getLogger(EditarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        gestionarUsuarios.setVisible(true);
+        gestionarUsuarios.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -242,7 +250,7 @@ public class EditarProducto extends javax.swing.JFrame {
             int id = Integer.parseInt(idUsuario);
 
             UsuariosDAO usuariosDAO = new UsuariosDAO();
-            Usuario usuario = usuariosDAO.obtenerUsuarioPorId(id);
+            Usuario usuario = usuariosDAO.obtenerPorId(id);
 
             if (usuario == null) {
                 JOptionPane.showMessageDialog(null, "No se encontró el usuario con el ID ingresado.", "Error", JOptionPane.WARNING_MESSAGE);
@@ -282,7 +290,7 @@ public class EditarProducto extends javax.swing.JFrame {
             int id = Integer.parseInt(idUsuario);
 
             UsuariosDAO usuariosDAO = new UsuariosDAO();
-            Usuario usuario = usuariosDAO.obtenerUsuarioPorId(id);
+            Usuario usuario = usuariosDAO.obtenerPorId(id);
 
             if (usuario == null) {
                 JOptionPane.showMessageDialog(null, "No se encontró el usuario con el ID ingresado.", "Error", JOptionPane.WARNING_MESSAGE);
@@ -305,7 +313,7 @@ public class EditarProducto extends javax.swing.JFrame {
             Usuario usuarioEditado = new Usuario(nombreCompleto, correo, contraseña, telefono, direccion);
             usuarioEditado.setRol(rol);
 
-            boolean consultaEditar = usuariosDAO.actualizarUsuario(usuarioEditado);
+            boolean consultaEditar = usuariosDAO.actualizar(usuarioEditado);
 
             if (consultaEditar) {
                 JOptionPane.showMessageDialog(null, "El usuario ha sido editado correctamente.");

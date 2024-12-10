@@ -6,6 +6,8 @@ package vistas.menu.admin.productos;
 
 import controladores.colecciones.ColeccionesDAO;
 import controladores.productos.ProductoDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Coleccion;
 import modelos.clases.productos.Producto;
@@ -200,7 +202,12 @@ public class AgregarProducto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        GestionarProductos gestionarProductos = new GestionarProductos();
+        GestionarProductos gestionarProductos = null;
+        try {
+            gestionarProductos = new GestionarProductos();
+        } catch (Exception ex) {
+            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+        }
         gestionarProductos.setVisible(true);
         gestionarProductos.setLocationRelativeTo(null);
         this.dispose();
@@ -252,7 +259,7 @@ public class AgregarProducto extends javax.swing.JFrame {
 
             if (producto != null) {
                 ProductoDAO productoDAO = new ProductoDAO();
-                boolean consultaAgregar = productoDAO.agregarProducto(producto);
+                boolean consultaAgregar = productoDAO.insertar(producto);
 
                 if (consultaAgregar) {
                     JOptionPane.showMessageDialog(null,

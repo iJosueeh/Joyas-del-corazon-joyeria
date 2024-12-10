@@ -8,6 +8,8 @@ import vistas.menu.admin.productos.*;
 import controladores.colecciones.ColeccionesDAO;
 import controladores.productos.ProductoDAO;
 import controladores.usuarios.UsuariosDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelos.clases.productos.Coleccion;
 import modelos.clases.productos.Producto;
@@ -194,7 +196,12 @@ public class AgregarUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        GestionarUsuarios gestionarUsuarios = new GestionarUsuarios();
+        GestionarUsuarios gestionarUsuarios = null;
+        try {
+            gestionarUsuarios = new GestionarUsuarios();
+        } catch (Exception ex) {
+            Logger.getLogger(AgregarUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
         gestionarUsuarios.setVisible(true);
         gestionarUsuarios.setLocationRelativeTo(null);
         this.dispose();
@@ -217,7 +224,12 @@ public class AgregarUsuarios extends javax.swing.JFrame {
         nuevoUsuario.setRol(rol);
 
         UsuariosDAO usuariosDAO = new UsuariosDAO();
-        boolean consultaRegistrar = usuariosDAO.registrarUsuario(nuevoUsuario);
+        boolean consultaRegistrar = false;
+        try {
+            consultaRegistrar = usuariosDAO.insertar(nuevoUsuario);
+        } catch (Exception ex) {
+            Logger.getLogger(AgregarUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         if (consultaRegistrar) {
             JOptionPane.showMessageDialog(null, "Usuario registrado con éxito.");

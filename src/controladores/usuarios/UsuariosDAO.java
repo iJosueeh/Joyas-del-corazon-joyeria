@@ -4,6 +4,7 @@
  */
 package controladores.usuarios;
 
+import controladores.ICRUD;
 import modelos.dao.ConexionBD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +16,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import modelos.interfaces.IUsuario;
 
-public class UsuariosDAO implements IUsuario {
+public class UsuariosDAO implements IUsuario, ICRUD<Usuario> {
 
     ConexionBD cn = new ConexionBD();
     Connection con;
@@ -87,42 +88,6 @@ public class UsuariosDAO implements IUsuario {
     }
 
     @Override
-    public Boolean registrarUsuario(Usuario usuario) {
-        String sql = "INSERT INTO usuarios (nombre_completo, correo_electronico, contraseña, telefono, estado, direccion, rol) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-        try {
-            con = cn.getConexion();
-            ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-
-            ps.setString(1, usuario.getNombre_completo());
-            ps.setString(2, usuario.getCorreo_electronico());
-            ps.setString(3, usuario.getContraseña());
-            ps.setString(4, usuario.getTelefono());
-            ps.setString(5, usuario.getEstado());
-            ps.setString(6, usuario.getDireccion());
-            ps.setString(7, usuario.getRol());
-
-            int filasInsertadas = ps.executeUpdate();
-
-            if (filasInsertadas > 0) {
-                try (ResultSet rs = ps.getGeneratedKeys()) {
-                    if (rs.next()) {
-                        int idGenerado = rs.getInt(1);
-                        usuario.setId(idGenerado);
-                    }
-                }
-            }
-            return true;
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
-            return false;
-        }
-
-    }
-
-    @Override
     public Boolean actualizarEstadoInactivo(int idUsuario) {
         String sql = "UPDATE usuarios SET estado = 'inactivo' WHERE id = ?";
 
@@ -158,37 +123,107 @@ public class UsuariosDAO implements IUsuario {
         }
     }
 
-    public List<Usuario> obtenerUsuarios() {
-        List<Usuario> usuarios = new ArrayList<>();
-        String sql = "SELECT id, nombre_completo, correo_electronico, contraseña, telefono, estado, direccion, rol FROM usuarios";
-
+    public String obtenerNombreClientePorId(int idCliente) {
+        String sql = "SELECT nombre_completo FROM usuarios WHERE id = ?";
         try {
-
             con = cn.getConexion();
             ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
 
-            while (rs.next()) {
-                Usuario usuario = new Usuario();
-
-                usuario.setId(rs.getInt("id"));
-                usuario.setNombre_completo(rs.getString("nombre_completo"));
-                usuario.setCorreo_electronico(rs.getString("correo_electronico"));
-                usuario.setContraseña(rs.getString("contraseña"));
-                usuario.setTelefono(rs.getString("telefono"));
-                usuario.setEstado(rs.getString("estado"));
-                usuario.setDireccion(rs.getString("direccion"));
-                usuario.setRol(rs.getString("rol"));
-
-                usuarios.add(usuario);
+            ps.setInt(1, idCliente);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("nombre_completo");
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return usuarios;
+        return null;
     }
 
-    public Usuario obtenerUsuarioPorId(int id) {
+    @Override
+    public boolean insertar(Usuario clase) throws Exception {
+        String sql = "INSERT INTO usuarios (nombre_completo, correo_electronico, contraseña, telefono, estado, direccion, rol) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+
+            ps.setString(1, clase.getNombre_completo());
+            ps.setString(2, clase.getCorreo_electronico());
+            ps.setString(3, clase.getContraseña());
+            ps.setString(4, clase.getTelefono());
+            ps.setString(5, clase.getEstado());
+            ps.setString(6, clase.getDireccion());
+            ps.setString(7, clase.getRol());
+
+            int filasInsertadas = ps.executeUpdate();
+
+            if (filasInsertadas > 0) {
+                try (ResultSet rs = ps.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        int idGenerado = rs.getInt(1);
+                        clase.setId(idGenerado);
+                    }
+                }
+            }
+            return true;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    }
+
+    @Override
+    public boolean actualizar(Usuario clase) throws Exception {
+        String sql = "UPDATE usuarios SET nombre_completo = ?, correo_electronico = ?, contraseña = ?, telefono = ?, estado = ?, direccion = ?, rol = ? WHERE id = ?";
+
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, clase.getNombre_completo());
+            ps.setString(2, clase.getCorreo_electronico());
+            ps.setString(3, clase.getContraseña());
+            ps.setString(4, clase.getTelefono());
+            ps.setString(5, clase.getEstado());
+            ps.setString(6, clase.getDireccion());
+            ps.setString(7, clase.getRol());
+            ps.setInt(8, clase.getId());
+
+            int filasActualizadas = ps.executeUpdate();
+
+            return filasActualizadas > 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    }
+
+    @Override
+    public boolean eliminar(int id) throws Exception {
+        String sql = "DELETE FROM usuarios WHERE id = ?";
+
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            int filasEliminadas = ps.executeUpdate();
+            return filasEliminadas > 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    }
+
+    @Override
+    public Usuario obtenerPorId(int id) throws Exception {
         Usuario usuario = null;
         String sql = "SELECT * FROM usuarios WHERE id = ?";
 
@@ -219,65 +254,34 @@ public class UsuariosDAO implements IUsuario {
         return usuario;
     }
 
-    public boolean actualizarUsuario(Usuario usuario) {
-        String sql = "UPDATE usuarios SET nombre_completo = ?, correo_electronico = ?, contraseña = ?, telefono = ?, estado = ?, direccion = ?, rol = ? WHERE id = ?";
+    @Override
+    public List<Usuario> listarTodos() throws Exception {
+        List<Usuario> usuarios = new ArrayList<>();
+        String sql = "SELECT id, nombre_completo, correo_electronico, contraseña, telefono, estado, direccion, rol FROM usuarios";
 
         try {
+
             con = cn.getConexion();
             ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
 
-            ps.setString(1, usuario.getNombre_completo());
-            ps.setString(2, usuario.getCorreo_electronico());
-            ps.setString(3, usuario.getContraseña());
-            ps.setString(4, usuario.getTelefono());
-            ps.setString(5, usuario.getEstado());
-            ps.setString(6, usuario.getDireccion());
-            ps.setString(7, usuario.getRol());
-            ps.setInt(8, usuario.getId());
+            while (rs.next()) {
+                Usuario usuario = new Usuario();
 
-            int filasActualizadas = ps.executeUpdate();
+                usuario.setId(rs.getInt("id"));
+                usuario.setNombre_completo(rs.getString("nombre_completo"));
+                usuario.setCorreo_electronico(rs.getString("correo_electronico"));
+                usuario.setContraseña(rs.getString("contraseña"));
+                usuario.setTelefono(rs.getString("telefono"));
+                usuario.setEstado(rs.getString("estado"));
+                usuario.setDireccion(rs.getString("direccion"));
+                usuario.setRol(rs.getString("rol"));
 
-            return filasActualizadas > 0;
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
-            return false;
-        }
-    }
-
-    public boolean eliminarUsuario(int idUsuario) {
-        String sql = "DELETE FROM usuarios WHERE id = ?";
-
-        try {
-            con = cn.getConexion();
-            ps = con.prepareStatement(sql);
-
-            ps.setInt(1, idUsuario);
-
-            int filasEliminadas = ps.executeUpdate();
-            return filasEliminadas > 0;
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
-            return false;
-        }
-    }
-
-    public String obtenerNombreClientePorId(int idCliente) {
-        String sql = "SELECT nombre_completo FROM usuarios WHERE id = ?";
-        try {
-            con = cn.getConexion();
-            ps = con.prepareStatement(sql);
-
-            ps.setInt(1, idCliente);
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    return rs.getString("nombre_completo");
-                }
+                usuarios.add(usuario);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return usuarios;
     }
 }
