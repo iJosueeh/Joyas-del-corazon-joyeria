@@ -58,15 +58,20 @@ public class AgregarProducto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(118, 98, 78));
+
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Agregar un nuevo Producto");
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("Coleccion:");
 
         comboBoxColeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Midas Touch", "Hojas Eternas", "Esencia noble" }));
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("Nombre:");
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +81,7 @@ public class AgregarProducto extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Descripcion:");
 
         txtDescripcion.setColumns(20);
@@ -83,12 +89,15 @@ public class AgregarProducto extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtDescripcion);
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("Precio:");
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(229, 229, 183));
         jLabel6.setText("Cantidad:");
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(229, 229, 183));
         jLabel7.setText("Stock:");
 
         jButton1.setText("Agregar Producto");

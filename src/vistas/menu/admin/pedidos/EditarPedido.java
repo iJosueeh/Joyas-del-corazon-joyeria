@@ -63,7 +63,11 @@ public class EditarPedido extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(118, 98, 78));
+        jPanel1.setForeground(new java.awt.Color(118, 98, 78));
+
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Editar un nuevo Pedido");
 
         jButton1.setText("Editar Pedido");
@@ -81,17 +85,22 @@ public class EditarPedido extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(229, 229, 183));
         jLabel8.setText("ID del Cliente:");
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("Fecha:");
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("Direccion:");
 
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Total:");
 
+        jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("ID del Pedido:");
 
         txtBuscarIdPedido.addActionListener(new java.awt.event.ActionListener() {

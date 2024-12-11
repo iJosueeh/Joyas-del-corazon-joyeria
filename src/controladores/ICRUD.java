@@ -9,6 +9,7 @@ import java.util.List;
 /**
  *
  * @author HOME
+ * @param <T>
  */
 public interface ICRUD<T> {
 

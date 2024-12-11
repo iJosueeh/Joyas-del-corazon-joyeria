@@ -71,6 +71,10 @@ public class GestionarPedidos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(118, 98, 78));
+
+        tablaPedidos.setBackground(new java.awt.Color(0, 0, 0));
+        tablaPedidos.setForeground(new java.awt.Color(229, 229, 183));
         tablaPedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

@@ -58,18 +58,24 @@ public class EditarProductos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(118, 98, 78));
+
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Editar un nuevo Producto");
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(229, 229, 183));
         jLabel2.setText("ID del Usuario:");
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(229, 229, 183));
         jLabel3.setText("Nombre:");
 
         txtNombre.setEditable(false);
 
         jLabel4.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 183));
         jLabel4.setText("Descripcion:");
 
         txtDescripcion.setEditable(false);
@@ -80,15 +86,18 @@ public class EditarProductos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtDescripcion);
 
         jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(229, 229, 183));
         jLabel5.setText("Precio: ");
 
         txtPrecio.setEditable(false);
 
         jLabel6.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(229, 229, 183));
         jLabel6.setText("Cantidad:");
 
         txtCantidad.setEditable(false);
 
+        jLabel7.setForeground(new java.awt.Color(229, 229, 183));
         jLabel7.setText("Stock:");
 
         txtStock.setEditable(false);

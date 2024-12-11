@@ -60,7 +60,11 @@ public class AgregarUsuarios extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(118, 98, 78));
+        jPanel1.setForeground(new java.awt.Color(118, 98, 78));
+
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 183));
         jLabel1.setText("Agregar un nuevo Usuarios");
 
         jButton1.setText("Agregar Usuarios");
@@ -78,23 +82,29 @@ public class AgregarUsuarios extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(229, 229, 183));
         jLabel8.setText("Nombre Completo: ");
 
         jLabel9.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(229, 229, 183));
         jLabel9.setText("Correo Electronico:");
 
         jLabel10.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(229, 229, 183));
         jLabel10.setText("Contraseña:");
 
         jLabel11.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(229, 229, 183));
         jLabel11.setText("Telefono:");
 
         jLabel12.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(229, 229, 183));
         jLabel12.setText("Direccion:");
 
         comboBoxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "usuario", "administrador" }));
 
         jLabel13.setFont(new java.awt.Font("Bodoni MT", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(229, 229, 183));
         jLabel13.setText("Rol:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
